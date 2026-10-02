@@ -1,98 +1,172 @@
 <!DOCTYPE html>
-<html class="dark scroll-smooth" lang="en" style="">
+<html class="dark scroll-smooth" lang="en">
 
 <head>
     <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="web_standard" name="shell-type">
-    <title>Ali Tarek Hrhera // Senior Android Architect &amp; AI Engineer</title>
-    <link href="https://fonts.googleapis.com" rel="preconnect">
-    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap"
-        rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-        rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ali Tarek Hrhera — Senior Android Architect & Edge AI Engineer with 8+ years building offline-first, high-performance mobile systems.">
+    <title>Ali Tarek Hrhera // Senior Android Architect & AI Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <style>
-        @@layer base {
-
-            html,
-            body {
-                margin: 0;
-                padding: 0;
-            }
-
-            body {
-                overscroll-behavior: none;
-            }
-
-            main> :first-child {
-                margin-top: 0 !important;
-            }
-
-            main> :last-child {
-                margin-bottom: 0 !important;
-            }
+        :root {
+            --cyan: #00f0ff;
+            --green: #4edea3;
+            --bg: #0a0e16;
         }
 
-        ::-webkit-scrollbar {
-            width: 6px;
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: #0a0e16; }
+        ::-webkit-scrollbar-thumb { background: #1c2028; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(0,240,255,0.3); }
+
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0.35; transform: scale(1); }
+            50% { opacity: 0.65; transform: scale(1.04); }
+        }
+        @keyframes flowArrow {
+            0% { transform: translateX(0); opacity: 0.3; }
+            50% { opacity: 1; }
+            100% { transform: translateX(6px); opacity: 0.3; }
+        }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes typewriter {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        @keyframes scanline {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100vh); }
         }
 
-        ::-webkit-scrollbar-track {
-            background: #0a0e16;
+        .animate-glow { animation: pulseGlow 8s ease-in-out infinite; }
+        .animate-flow-arrow { animation: flowArrow 1.5s cubic-bezier(0.4,0,0.6,1) infinite; }
+
+        /* Scroll-reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+
+        /* Active nav link */
+        .nav-link.active {
+            color: #dbfcff;
+            background: rgba(0,240,255,0.08);
+            border-color: rgba(0,240,255,0.3);
         }
 
-        ::-webkit-scrollbar-thumb {
-            background: #1c2028;
-            border-radius: 3px;
+        /* Terminal cursor */
+        .cursor::after {
+            content: '|';
+            animation: blink 1s step-end infinite;
+            color: #00f0ff;
         }
 
-        ::-webkit-scrollbar-thumb:hover {
-            background: #00f0ff44;
+        /* Mobile menu */
+        #mobile-menu {
+            transition: max-height 0.35s ease, opacity 0.35s ease;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+        #mobile-menu.open {
+            max-height: 400px;
+            opacity: 1;
         }
 
-        @@keyframes pulseGlow {
-
-            0%,
-            100% {
-                opacity: 0.35;
-                transform: scale(1);
-            }
-
-            50% {
-                opacity: 0.65;
-                transform: scale(1.04);
-            }
+        /* Gradient text */
+        .gradient-text {
+            background: linear-gradient(135deg, #00f0ff, #7df4ff 40%, #4edea3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .animate-glow {
-            animation: pulseGlow 8s ease-in-out infinite;
+        /* Glow border on hover */
+        .glow-card {
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .glow-card:hover {
+            box-shadow: 0 0 28px rgba(0,240,255,0.12);
+        }
+        .glow-card-green:hover {
+            border-color: rgba(78,222,163,0.5) !important;
+            box-shadow: 0 0 28px rgba(78,222,163,0.12);
         }
 
-        @@keyframes flowArrow {
-            0% {
-                transform: translateX(0);
-                opacity: 0.3;
-            }
-
-            50% {
-                opacity: 1;
-            }
-
-            100% {
-                transform: translateX(6px);
-                opacity: 0.3;
-            }
+        /* Section label line */
+        .section-label::before {
+            content: '';
+            display: inline-block;
+            width: 24px;
+            height: 1px;
+            background: rgba(0,240,255,0.4);
+            vertical-align: middle;
+            margin-right: 8px;
         }
 
-        .animate-flow-arrow {
-            animation: flowArrow 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        /* Achievement chip */
+        .achievement {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 3px 10px;
+            border-radius: 999px;
+            font-size: 10px;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            border: 1px solid rgba(0,240,255,0.25);
+            background: rgba(0,240,255,0.06);
+            color: #7df4ff;
+        }
+
+        /* Timeline connector */
+        .timeline-line {
+            position: absolute;
+            left: 19px;
+            top: 40px;
+            bottom: -16px;
+            width: 2px;
+            background: linear-gradient(to bottom, rgba(0,240,255,0.3), transparent);
+        }
+
+        /* Star badge */
+        .star-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 2px 8px;
+            border-radius: 999px;
+            font-size: 10px;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            background: rgba(251,191,36,0.1);
+            border: 1px solid rgba(251,191,36,0.3);
+            color: #fbbf24;
         }
     </style>
     <script id="tailwind-config">
@@ -127,30 +201,9 @@
                         "on-primary": "#00363a",
                         "on-primary-fixed-variant": "#002b2e"
                     },
-                    borderRadius: {
-                        "DEFAULT": "0.125rem",
-                        "lg": "0.375rem",
-                        "xl": "0.75rem",
-                        "2xl": "1rem",
-                        "full": "9999px"
-                    },
-                    spacing: {
-                        "gutter": "1.5rem",
-                        "space-xs": "0.25rem",
-                        "space-sm": "0.5rem",
-                        "space-md": "1rem",
-                        "space-lg": "1.5rem",
-                        "space-xl": "2.5rem"
-                    },
                     fontFamily: {
-                        "headline-lg": ["Inter", "sans-serif"],
-                        "title-sm": ["Inter", "sans-serif"],
-                        "headline-md": ["Inter", "sans-serif"],
-                        "display-xl": ["Inter", "sans-serif"],
-                        "code-lg": ["JetBrains Mono", "monospace"],
-                        "body-lg": ["Inter", "sans-serif"],
-                        "label-sm": ["JetBrains Mono", "monospace"],
-                        "body-md": ["JetBrains Mono", "monospace"]
+                        "sans": ["Inter", "sans-serif"],
+                        "mono": ["JetBrains Mono", "monospace"]
                     }
                 }
             }
@@ -158,361 +211,246 @@
     </script>
 </head>
 
-<body
-    class="bg-surface font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-black min-h-screen relative overflow-x-hidden">
-    <!-- Subtle Cybernetic Ambient Background Grid & Radial Glows -->
-    <div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
-        <div
-            class="absolute inset-0 bg-[linear-gradient(to_right,#141923_1px,transparent_1px),linear-gradient(to_bottom,#141923_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-35">
-        </div>
-        <div
-            class="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-gradient-to-tr from-cyan-600/15 via-primary-container/10 to-secondary/10 blur-[130px] rounded-full animate-glow">
-        </div>
-        <div
-            class="absolute top-[45%] -right-48 w-[600px] h-[600px] bg-secondary/8 blur-[150px] rounded-full pointer-events-none">
-        </div>
-        <div
-            class="absolute bottom-20 -left-48 w-[600px] h-[600px] bg-cyan-500/8 blur-[160px] rounded-full pointer-events-none">
-        </div>
-    </div>
-    <!-- FLOATING MODERN GLASS TOP NAVIGATION -->
-    <header class="fixed top-4 inset-x-0 z-50 px-gutter pointer-events-none flex justify-center">
-        <div
-            class="pointer-events-auto max-w-[1360px] w-full rounded-2xl bg-surface-container-lowest/80 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.45)] px-space-md py-2.5 flex items-center justify-between gap-space-md transition-all duration-300">
-            <!-- Brand & Shell identity -->
-            <a class="flex items-center gap-space-sm group" href="#"><img
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbgsY-oqgMmwEGHAXndy05WJi9Y5ypvmG1ZrIWeiKBVrZ2mAJFY1EzVko&amp;s=10"
-                    alt="Ali Hrhera Logo"
-                    class="h-8 md:h-9 w-auto object-contain rounded-md filter brightness-110 drop-shadow-[0_0_12px_rgba(0,240,255,0.25)] group-hover:scale-105 transition-transform">
-                <div class="flex flex-col">
-                    <div class="flex items-center gap-1.5"><span
-                            class="font-headline-md text-sm text-primary font-bold tracking-tight">Ali
-                            Hrhera</span><span
-                            class="w-1.5 h-1.5 rounded-full bg-secondary shadow-[0_0_6px_#4edea3]"></span></div><span
-                        class="font-label-sm text-[10px] text-secondary tracking-widest leading-none">~/ath $</span>
-                </div>
-            </a>
-            <!-- Navigation Links -->
-            <nav
-                class="hidden lg:flex items-center gap-1 p-1 rounded-xl bg-surface-container-high/60 border border-white/5 text-xs font-label-sm">
-                <a class="px-3 py-1.5 rounded-lg text-primary font-semibold bg-cyan-950/40 border border-cyan-500/30 shadow-[0_0_10px_rgba(0,240,255,0.15)] transition-all"
-                    href="#hero">About</a>
-                <a class="px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-white/5 transition-colors"
-                    href="#experience">Experience</a>
-                <a class="px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-white/5 transition-colors"
-                    href="#opensource">Open Source</a>
-                <a class="px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-white/5 transition-colors"
-                    href="#skills">Skills</a>
-                <a class="px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-white/5 transition-colors"
-                    href="#contact">Contact</a>
-            </nav>
-            <!-- Right Utility Actions -->
-            <div class="flex items-center gap-space-xs sm:gap-space-sm">
-                <!-- Live Availability Status Indicator -->
-                <div
-                    class="hidden xl:flex items-center gap-2 px-2.5 py-1.5 rounded-lg bg-surface-container-high/80 border border-secondary/20">
-                    <span class="relative flex h-2 w-2">
-                        <span
-                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
-                        <span
-                            class="relative inline-flex rounded-full h-2 w-2 bg-secondary shadow-[0_0_8px_#4edea3]"></span>
-                    </span>
-                    <span
-                        class="font-label-sm text-[10px] text-secondary-fixed uppercase tracking-wider font-semibold">Available
-                        for Lead Roles</span>
-                </div>
-                <!-- GitHub Pill -->
-                <a aria-label="GitHub Profile"
-                    class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-surface-container-high/80 border border-white/10 hover:border-cyan-400/40 text-on-surface-variant hover:text-primary transition-all text-xs font-label-sm group"
-                    href="https://github.com/alihrhera" rel="noopener noreferrer" target="_blank"><span
-                        class="material-symbols-outlined text-[18px] text-cyan-400">code</span><span
-                        class="hidden sm:inline">GitHub</span></a>
-                <!-- LinkedIn Link -->
-                <a aria-label="LinkedIn Profile"
-                    class="w-8 h-8 rounded-lg flex items-center justify-center bg-surface-container-high/80 border border-white/10 text-on-surface-variant hover:border-secondary/40 hover:text-secondary transition-all"
-                    href="https://www.linkedin.com/in/alihrhera/" rel="noopener noreferrer" target="_blank">
-                    <svg class="w-[18px] h-[18px] fill-current" viewBox="0 0 24 24" aria-hidden="true">
-                        <path
-                            d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V8.98h3.42v1.57h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.37 4.28 5.46v6.29zM5.34 7.41a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM3.56 20.45h3.56V8.98H3.56v11.47zM22.22 0H1.78C.8 0 0 .8 0 1.78v20.44C0 23.2.8 24 1.78 24h20.44c.98 0 1.78-.8 1.78-1.78V1.78C24 .8 23.2 0 22.22 0z" />
-                    </svg>
-                </a>
+<body class="bg-surface-container-lowest font-sans text-on-surface antialiased min-h-screen overflow-x-hidden">
 
-                <!-- Direct Connect CTA -->
-                <a class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gradient-to-r from-primary-container to-cyan-400 text-black font-label-sm text-xs font-bold uppercase tracking-wider hover:brightness-110 hover:shadow-[0_0_20px_rgba(0,240,255,0.4)] transition-all"
-                    href="#contact">
-                    <span class="material-symbols-outlined text-[15px]">terminal</span>
-                    <span class="hidden sm:inline">&gt;_ Let's Connect</span>
-                    <span class="sm:hidden">Connect</span>
+    <!-- Ambient Background -->
+    <div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
+        <div class="absolute inset-0 bg-[linear-gradient(to_right,#141923_1px,transparent_1px),linear-gradient(to_bottom,#141923_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-30"></div>
+        <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-gradient-to-tr from-cyan-600/15 via-cyan-400/8 to-secondary/8 blur-[130px] rounded-full animate-glow"></div>
+        <div class="absolute top-[45%] -right-48 w-[600px] h-[600px] bg-secondary/6 blur-[150px] rounded-full"></div>
+        <div class="absolute bottom-20 -left-48 w-[600px] h-[600px] bg-cyan-500/6 blur-[160px] rounded-full"></div>
+    </div>
+
+    <!-- ═══════════════════════════════════════
+         NAVIGATION
+    ═══════════════════════════════════════ -->
+    <header class="fixed top-4 inset-x-0 z-50 px-4 sm:px-6 pointer-events-none flex justify-center">
+        <div class="pointer-events-auto w-full max-w-[1360px] rounded-2xl bg-surface-container-lowest/85 backdrop-blur-xl border border-white/8 shadow-[0_8px_32px_rgba(0,0,0,0.5)] px-4 py-2.5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 transition-all duration-300">
+            <!-- Brand -->
+            <div class="flex items-center justify-between">
+                <a href="#hero" class="flex items-center gap-2.5 group">
+                    <div class="w-8 h-8 rounded-lg bg-cyan-950/60 border border-cyan-500/30 flex items-center justify-center text-primary-container font-mono text-xs font-bold group-hover:border-cyan-400/60 transition-colors">ATH</div>
+                    <div class="flex flex-col">
+                        <span class="font-sans text-sm text-primary font-bold tracking-tight leading-none">Ali Hrhera</span>
+                        <span class="font-mono text-[10px] text-secondary tracking-widest leading-none mt-0.5">~/ath $</span>
+                    </div>
                 </a>
+                <!-- Mobile menu button -->
+                <button id="menu-toggle" class="sm:hidden w-8 h-8 flex flex-col items-center justify-center gap-1.5 cursor-pointer" aria-label="Toggle menu">
+                    <span class="w-5 h-0.5 bg-on-surface-variant transition-all duration-300" id="bar1"></span>
+                    <span class="w-5 h-0.5 bg-on-surface-variant transition-all duration-300" id="bar2"></span>
+                    <span class="w-4 h-0.5 bg-on-surface-variant transition-all duration-300" id="bar3"></span>
+                </button>
+            </div>
+            <!-- Desktop Nav -->
+            <nav class="hidden sm:flex items-center gap-1 p-1 rounded-xl bg-surface-container-high/50 border border-white/5 text-xs font-mono">
+                <a class="nav-link px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-white/5 border border-transparent transition-all" href="#hero">About</a>
+                <a class="nav-link px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-white/5 border border-transparent transition-all" href="#experience">Experience</a>
+                <a class="nav-link px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-white/5 border border-transparent transition-all" href="#opensource">Open Source</a>
+                <a class="nav-link px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-white/5 border border-transparent transition-all" href="#skills">Skills</a>
+                <a class="nav-link px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-white/5 border border-transparent transition-all" href="#contact">Contact</a>
+            </nav>
+            <!-- Right Actions -->
+            <div class="hidden sm:flex items-center gap-2">
+                <div class="hidden lg:flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-surface-container-high/70 border border-secondary/20">
+                    <span class="relative flex h-1.5 w-1.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span><span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-secondary shadow-[0_0_6px_#4edea3]"></span></span>
+                    <span class="font-mono text-[10px] text-secondary-fixed uppercase tracking-wider font-semibold">Available · Lead Roles</span>
+                </div>
+                <a href="https://github.com/alihrhera" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-surface-container-high/70 border border-white/8 hover:border-cyan-400/35 text-on-surface-variant hover:text-primary transition-all text-xs font-mono cursor-pointer">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.929.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                    <span>GitHub</span>
+                </a>
+                <a href="#contact" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gradient-to-r from-primary-container to-cyan-400 text-black font-mono text-xs font-bold uppercase tracking-wider hover:brightness-110 hover:shadow-[0_0_18px_rgba(0,240,255,0.35)] transition-all cursor-pointer">&gt;_ Connect</a>
             </div>
         </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="sm:hidden absolute top-full left-0 right-0 mt-2 mx-4 rounded-2xl bg-surface-container-lowest/95 backdrop-blur-xl border border-white/8 overflow-hidden">
+            <nav class="flex flex-col p-3 gap-1 font-mono text-sm">
+                <a class="px-4 py-2.5 rounded-xl text-on-surface-variant hover:text-primary hover:bg-white/5 transition-colors" href="#hero" onclick="closeMenu()">About</a>
+                <a class="px-4 py-2.5 rounded-xl text-on-surface-variant hover:text-primary hover:bg-white/5 transition-colors" href="#experience" onclick="closeMenu()">Experience</a>
+                <a class="px-4 py-2.5 rounded-xl text-on-surface-variant hover:text-primary hover:bg-white/5 transition-colors" href="#opensource" onclick="closeMenu()">Open Source</a>
+                <a class="px-4 py-2.5 rounded-xl text-on-surface-variant hover:text-primary hover:bg-white/5 transition-colors" href="#skills" onclick="closeMenu()">Skills</a>
+                <a class="px-4 py-2.5 rounded-xl text-on-surface-variant hover:text-primary hover:bg-white/5 transition-colors" href="#contact" onclick="closeMenu()">Contact</a>
+                <div class="border-t border-white/5 mt-1 pt-2 flex gap-2">
+                    <a href="https://github.com/alihrhera" target="_blank" rel="noopener" class="flex-1 py-2 rounded-xl bg-surface-container-high/60 border border-white/5 text-center text-on-surface-variant text-xs hover:text-primary transition-colors">GitHub</a>
+                    <a href="#contact" onclick="closeMenu()" class="flex-1 py-2 rounded-xl bg-gradient-to-r from-primary-container to-cyan-400 text-black text-center text-xs font-bold">Connect</a>
+                </div>
+            </nav>
+        </div>
     </header>
+
     <main class="w-full pt-28 pb-16">
-        <div class="flex flex-col w-full">
-            <!-- SECTION 1: HERO & ARCHITECTURAL HUD -->
-            <section class="relative w-full py-space-xl lg:py-24" id="hero">
-                <div class="max-w-[1440px] mx-auto px-gutter relative">
-                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
-                        <!-- Left: Punchline & Architecture Profile (7 cols) -->
-                        <div class="lg:col-span-7 flex flex-col items-start gap-space-md">
-                            <!-- Badges -->
-                            <div class="flex flex-wrap items-center gap-2">
-                                <span
-                                    class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-950/50 border border-cyan-500/30 font-label-sm text-xs text-primary shadow-[0_0_12px_rgba(0,240,255,0.15)]">
-                                    <span
-                                        class="w-2 h-2 rounded-full bg-primary-container shadow-[0_0_8px_#00f0ff]"></span>
-                                    Senior Android Engineer &amp; Systems Architect
+        <div class="flex flex-col w-full gap-0">
+
+            <!-- ═══════════════════════════════════════
+                 SECTION 1: HERO
+            ═══════════════════════════════════════ -->
+            <section id="hero" class="relative w-full py-16 lg:py-24">
+                <div class="max-w-[1440px] mx-auto px-6">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+
+                        <!-- Left: Identity + Headline -->
+                        <div class="lg:col-span-7 flex flex-col gap-6">
+                            <!-- Status badges -->
+                            <div class="flex flex-wrap items-center gap-2 reveal">
+                                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-950/50 border border-cyan-500/30 font-mono text-xs text-primary shadow-[0_0_12px_rgba(0,240,255,0.12)]">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-primary-container shadow-[0_0_8px_#00f0ff]"></span>
+                                    Senior Android Engineer & Systems Architect
                                 </span>
-                                <span
-                                    class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container/10 border border-secondary/30 font-label-sm text-xs text-secondary tracking-wide">
+                                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container/10 border border-secondary/30 font-mono text-xs text-secondary">
                                     <span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
                                     8+ Years Production Experience
                                 </span>
                             </div>
-                            <!-- Main Hero Heading with Gradient Text Accent -->
-                            <h1
-                                class="font-display-xl text-3xl sm:text-5xl lg:text-[56px] text-white font-extrabold tracking-tight leading-[1.1] max-w-3xl">
+
+                            <!-- Main heading -->
+                            <h1 class="font-sans text-4xl sm:text-5xl lg:text-[56px] text-white font-extrabold tracking-tight leading-[1.1] reveal reveal-delay-1">
                                 Engineering High-Performance Android Systems &amp;
-                                <span
-                                    class="bg-clip-text text-transparent bg-gradient-to-r from-primary-container via-cyan-200 to-secondary drop-shadow-[0_0_25px_rgba(0,240,255,0.3)]">
-                                    On-Device AI.
-                                </span>
+                                <span class="gradient-text"> On-Device AI.</span>
                             </h1>
-                            <!-- Bio Statement -->
-                            <p
-                                class="font-body-lg text-base sm:text-lg text-on-surface-variant max-w-2xl leading-relaxed">
-                                Hi there 👋 I'm <span
-                                    class="text-white font-semibold underline decoration-cyan-400/50 underline-offset-4">Ali
-                                    Tarek Hrhera</span>. Architecting mission-critical, offline-first mobile
-                                infrastructures across construction-tech, digital healthcare, and commerce using 100%
-                                Jetpack Compose, modular Kotlin coroutines, and cutting-edge on-device NPU inference.
+
+                            <!-- Bio -->
+                            <p class="font-sans text-base sm:text-lg text-on-surface-variant leading-relaxed max-w-2xl reveal reveal-delay-2">
+                                Hi there, I'm <span class="text-white font-semibold">Ali Tarek Hrhera</span>. Architecting mission-critical, offline-first mobile infrastructures across construction-tech, digital healthcare, and commerce using 100% Jetpack Compose, modular Kotlin coroutines, and cutting-edge on-device NPU inference.
                             </p>
-                            <!-- Interactive Actions & Quick Spec Download -->
-                            <div class="flex flex-wrap items-center gap-space-sm pt-2">
-                                <a class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-surface-container-high/90 border border-white/10 hover:border-cyan-400/40 text-on-surface hover:text-primary hover:bg-surface-container transition-all font-body-md text-xs"
-                                    href="https://github.com/alihrhera" rel="noopener noreferrer" target="_blank">
-                                    <span class="material-symbols-outlined text-[18px] text-cyan-400">code</span>
-                                    <span class="">github.com/alihrhera</span>
-                                </a>
-                                <!-- Terminal curl button -->
-                                <button
-                                    class="inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-surface-container-high/90 border border-white/10 hover:border-secondary/40 text-secondary transition-all font-label-sm text-xs group"
-                                    onclick="navigator.clipboard.writeText('curl -s https://alihrhera.dev/resume.txt'); const el=document.getElementById('curl-copied-badge'); el.classList.remove('hidden'); setTimeout(()=&gt;el.classList.add('hidden'), 2000);">
-                                    <span class="material-symbols-outlined text-[16px] text-secondary">terminal</span>
-                                    <span class="">curl -s ath.dev/spec</span>
-                                    <span
-                                        class="hidden text-[10px] bg-secondary text-black px-1.5 py-0.5 rounded font-bold"
-                                        id="curl-copied-badge">Copied!</span>
-                                </button>
+
+                            <!-- GitHub Achievements -->
+                            <div class="flex flex-wrap gap-2 reveal reveal-delay-2">
+                                <span class="achievement">🦈 Pull Shark ×3</span>
+                                <span class="achievement">🌍 Arctic Code Vault</span>
+                                <span class="achievement">⚡ Quickdraw</span>
+                                <span class="achievement">👥 Pair Extraordinaire</span>
                             </div>
-                            <!-- Live Telemetry Badges Strip -->
-                            <div class="w-full pt-4 grid grid-cols-2 sm:grid-cols-4 gap-2.5">
-                                <div
-                                    class="p-3 rounded-xl bg-surface-container-low/80 backdrop-blur-md border border-white/5 hover:border-cyan-400/30 transition-all flex flex-col">
-                                    <div
-                                        class="flex items-center justify-between text-on-surface-variant font-label-sm text-[10px] uppercase">
-                                        <span class="">Runtime Frames</span>
-                                        <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
-                                    </div>
-                                    <span
-                                        class="font-headline-md text-lg text-secondary font-bold tracking-tight mt-0.5">120
-                                        Hz Peak</span>
-                                    <span class="text-[10px] text-on-surface-variant font-label-sm">Compose 1.7
-                                        UI</span>
+
+                            <!-- CTAs -->
+                            <div class="flex flex-wrap items-center gap-3 reveal reveal-delay-3">
+                                <a href="https://github.com/alihrhera" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-surface-container-high/80 border border-white/8 hover:border-cyan-400/40 text-on-surface hover:text-primary transition-all font-mono text-xs cursor-pointer">
+                                    <svg class="w-4 h-4 fill-current text-cyan-400" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.929.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                                    github.com/alihrhera
+                                </a>
+                                <a href="https://www.linkedin.com/in/alihrhera/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-surface-container-high/80 border border-white/8 hover:border-secondary/40 text-on-surface hover:text-secondary transition-all font-mono text-xs cursor-pointer">
+                                    <svg class="w-4 h-4 fill-current text-secondary" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V8.98h3.42v1.57h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.37 4.28 5.46v6.29zM5.34 7.41a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM3.56 20.45h3.56V8.98H3.56v11.47zM22.22 0H1.78C.8 0 0 .8 0 1.78v20.44C0 23.2.8 24 1.78 24h20.44c.98 0 1.78-.8 1.78-1.78V1.78C24 .8 23.2 0 22.22 0z"/></svg>
+                                    in/alihrhera
+                                </a>
+                                <a href="mailto:alihrhera1@gmail.com" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-primary-container/90 to-cyan-400/90 text-black font-mono text-xs font-bold uppercase tracking-wider hover:brightness-110 hover:shadow-[0_0_20px_rgba(0,240,255,0.35)] transition-all cursor-pointer">
+                                    <span class="material-symbols-outlined text-[15px]">mail</span>
+                                    Let's Talk
+                                </a>
+                            </div>
+
+                            <!-- Live Telemetry Stats -->
+                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-2 reveal reveal-delay-4">
+                                <div class="p-3 rounded-xl bg-surface-container-low/80 border border-white/5 hover:border-cyan-400/25 transition-all flex flex-col gap-1 cursor-default">
+                                    <span class="font-mono text-[10px] text-on-surface-variant uppercase tracking-wide">Runtime</span>
+                                    <span class="font-sans text-base text-secondary font-bold">120 Hz Peak</span>
+                                    <span class="font-mono text-[10px] text-on-surface-variant">Compose 1.7 UI</span>
                                 </div>
-                                <div
-                                    class="p-3 rounded-xl bg-surface-container-low/80 backdrop-blur-md border border-white/5 hover:border-cyan-400/30 transition-all flex flex-col">
-                                    <div
-                                        class="flex items-center justify-between text-on-surface-variant font-label-sm text-[10px] uppercase">
-                                        <span class="">Local NPU Latency</span>
-                                        <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
-                                    </div>
-                                    <span
-                                        class="font-headline-md text-lg text-primary font-bold tracking-tight mt-0.5">&lt;
-                                        42ms</span>
-                                    <span class="text-[10px] text-on-surface-variant font-label-sm">Quantized
-                                        INT8</span>
+                                <div class="p-3 rounded-xl bg-surface-container-low/80 border border-white/5 hover:border-cyan-400/25 transition-all flex flex-col gap-1 cursor-default">
+                                    <span class="font-mono text-[10px] text-on-surface-variant uppercase tracking-wide">NPU Latency</span>
+                                    <span class="font-sans text-base text-primary font-bold">&lt; 42ms</span>
+                                    <span class="font-mono text-[10px] text-on-surface-variant">Quantized INT8</span>
                                 </div>
-                                <div
-                                    class="p-3 rounded-xl bg-surface-container-low/80 backdrop-blur-md border border-white/5 hover:border-secondary/30 transition-all flex flex-col">
-                                    <div
-                                        class="flex items-center justify-between text-on-surface-variant font-label-sm text-[10px] uppercase">
-                                        <span class="">Crash-Free SLA</span>
-                                        <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
-                                    </div>
-                                    <span
-                                        class="font-headline-md text-lg text-secondary font-bold tracking-tight mt-0.5">99.98%</span>
-                                    <span class="text-[10px] text-on-surface-variant font-label-sm">500k+
-                                        Devices</span>
+                                <div class="p-3 rounded-xl bg-surface-container-low/80 border border-white/5 hover:border-secondary/25 transition-all flex flex-col gap-1 cursor-default">
+                                    <span class="font-mono text-[10px] text-on-surface-variant uppercase tracking-wide">Crash-Free</span>
+                                    <span class="font-sans text-base text-secondary font-bold">99.98%</span>
+                                    <span class="font-mono text-[10px] text-on-surface-variant">500k+ Devices</span>
                                 </div>
-                                <div
-                                    class="p-3 rounded-xl bg-surface-container-low/80 backdrop-blur-md border border-white/5 hover:border-cyan-400/30 transition-all flex flex-col">
-                                    <div
-                                        class="flex items-center justify-between text-on-surface-variant font-label-sm text-[10px] uppercase">
-                                        <span class="">Field Sync</span>
-                                        <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
-                                    </div>
-                                    <span
-                                        class="font-headline-md text-lg text-primary font-bold tracking-tight mt-0.5">Zero
-                                        Loss</span>
-                                    <span class="text-[10px] text-on-surface-variant font-label-sm">Offline-First
-                                        Engine</span>
+                                <div class="p-3 rounded-xl bg-surface-container-low/80 border border-white/5 hover:border-cyan-400/25 transition-all flex flex-col gap-1 cursor-default">
+                                    <span class="font-mono text-[10px] text-on-surface-variant uppercase tracking-wide">Field Sync</span>
+                                    <span class="font-sans text-base text-primary font-bold">Zero Loss</span>
+                                    <span class="font-mono text-[10px] text-on-surface-variant">Offline-First</span>
                                 </div>
                             </div>
                         </div>
-                        <!-- Right: Interactive Multi-Tab Reactive Architecture Console HUD (5 cols) -->
-                        <div class="lg:col-span-5 relative">
-                            <div
-                                class="absolute -inset-1 bg-gradient-to-r from-cyan-500/20 via-primary-container/10 to-secondary/20 rounded-2xl blur-xl opacity-60">
-                            </div>
-                            <div
-                                class="w-full rounded-2xl bg-surface-container-low/90 backdrop-blur-xl border border-cyan-500/20 p-space-md shadow-2xl relative">
-                                <!-- Terminal Header & Tabs -->
-                                <div class="flex flex-col gap-2 pb-space-sm border-b border-white/5">
+
+                        <!-- Right: Interactive Code Console -->
+                        <div class="lg:col-span-5 relative reveal reveal-delay-2">
+                            <div class="absolute -inset-1 bg-gradient-to-r from-cyan-500/15 via-primary-container/8 to-secondary/15 rounded-2xl blur-xl opacity-70"></div>
+                            <div class="relative w-full rounded-2xl bg-surface-container-low/90 backdrop-blur-xl border border-cyan-500/20 p-5 shadow-2xl">
+                                <!-- Terminal Header -->
+                                <div class="flex flex-col gap-2 pb-4 border-b border-white/5">
                                     <div class="flex items-center justify-between">
                                         <div class="flex items-center gap-1.5">
-                                            <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
-                                            <span class="w-3 h-3 rounded-full bg-yellow-500/80 inline-block"></span>
-                                            <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
-                                            <span
-                                                class="ml-2 font-label-sm text-xs text-on-surface-variant font-mono">edge_orchestrator.kt</span>
+                                            <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+                                            <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
+                                            <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
+                                            <span class="ml-2 font-mono text-xs text-on-surface-variant">edge_orchestrator.kt</span>
                                         </div>
-                                        <span
-                                            class="font-label-sm text-[10px] text-secondary bg-secondary-container/20 border border-secondary/30 px-2 py-0.5 rounded-full font-bold">STATE_ACTIVE</span>
+                                        <span class="font-mono text-[10px] text-secondary bg-secondary-container/15 border border-secondary/25 px-2 py-0.5 rounded-full font-bold">STATE_ACTIVE</span>
                                     </div>
-                                    <!-- Interactive Code Switcher Tabs -->
-                                    <div class="flex items-center gap-1 pt-1 overflow-x-auto text-[11px] font-label-sm">
-                                        <button
-                                            class="px-2.5 py-1 rounded bg-cyan-950/80 text-primary border border-cyan-500/40 tab-btn active"
-                                            onclick="switchSnippet('npu', this)">[Edge NPU Engine]</button>
-                                        <button
-                                            class="px-2.5 py-1 rounded bg-surface-container-high/60 text-on-surface-variant hover:text-white border border-transparent tab-btn"
-                                            onclick="switchSnippet('sync', this)">[Offline Room Sync]</button>
-                                        <button
-                                            class="px-2.5 py-1 rounded bg-surface-container-high/60 text-on-surface-variant hover:text-white border border-transparent tab-btn"
-                                            onclick="switchSnippet('compose', this)">[Compose StateFlow]</button>
+                                    <!-- Tabs -->
+                                    <div class="flex items-center gap-1 overflow-x-auto text-[11px] font-mono">
+                                        <button class="px-2.5 py-1 rounded bg-cyan-950/80 text-primary border border-cyan-500/40 tab-btn active whitespace-nowrap cursor-pointer" onclick="switchSnippet('npu', this)">[Edge NPU]</button>
+                                        <button class="px-2.5 py-1 rounded bg-surface-container-high/60 text-on-surface-variant hover:text-white border border-transparent tab-btn whitespace-nowrap cursor-pointer" onclick="switchSnippet('sync', this)">[Offline Sync]</button>
+                                        <button class="px-2.5 py-1 rounded bg-surface-container-high/60 text-on-surface-variant hover:text-white border border-transparent tab-btn whitespace-nowrap cursor-pointer" onclick="switchSnippet('compose', this)">[Compose]</button>
                                     </div>
                                 </div>
-                                <!-- Code Snippet Area -->
-                                <div
-                                    class="font-body-md text-xs text-on-surface bg-surface-container-lowest/90 p-space-md rounded-xl border border-white/5 my-space-sm min-h-[220px] overflow-x-auto leading-relaxed">
-                                    <!-- Snippet 1: Edge NPU -->
+                                <!-- Code Area -->
+                                <div class="font-mono text-xs bg-surface-container-lowest/90 p-4 rounded-xl border border-white/5 my-4 min-h-[200px] overflow-x-auto leading-relaxed">
                                     <div class="code-tab-content space-y-1" id="snippet-npu">
-                                        <p class="text-on-surface-variant"><span
-                                                class="text-cyan-400 font-semibold">package</span>
-                                            com.ath.edge.inference</p>
-                                        <p class="text-on-surface-variant font-label-sm py-0.5">// MediaPipe &amp;
-                                            TFLite NPU Hardware Delegate</p>
-                                        <p class=""><span class="text-cyan-400 font-bold">class</span> <span
-                                                class="text-secondary font-bold">EdgeNpuPipeline</span>
-                                            @@Inject <span class="text-cyan-400">constructor</span>(
-                                        </p>
-                                        <p class="pl-4 text-on-surface-variant">private val model: <span
-                                                class="text-primary font-semibold">GeminiNanoOrchestrator</span>,</p>
-                                        <p class="pl-4 text-on-surface-variant">private val dispatcher: <span
-                                                class="text-primary font-semibold">CoroutineDispatcher</span></p>
-                                        <p class="">) {</p>
-                                        <p class="pl-4"><span class="text-cyan-400 font-bold">val</span> edgeOutput:
-                                            StateFlow&lt;<span class="text-primary">InferenceState</span>&gt; =</p>
+                                        <p class="text-on-surface-variant"><span class="text-cyan-400 font-semibold">package</span> com.ath.edge.inference</p>
+                                        <p class="text-on-surface-variant font-mono text-[11px] py-0.5">// MediaPipe &amp; TFLite NPU Hardware Delegate</p>
+                                        <p><span class="text-cyan-400 font-bold">class</span> <span class="text-secondary font-bold">EdgeNpuPipeline</span> <span class="text-cyan-400">@Inject constructor</span>(</p>
+                                        <p class="pl-4 text-on-surface-variant">private val model: <span class="text-primary font-semibold">GeminiNanoOrchestrator</span>,</p>
+                                        <p class="pl-4 text-on-surface-variant">private val dispatcher: <span class="text-primary font-semibold">CoroutineDispatcher</span></p>
+                                        <p>) {</p>
+                                        <p class="pl-4"><span class="text-cyan-400 font-bold">val</span> edgeOutput: StateFlow&lt;<span class="text-primary">InferenceState</span>&gt; =</p>
                                         <p class="pl-8 text-secondary">cameraImageProxy.asFlow()</p>
-                                        <p class="pl-12 text-on-surface">.flowOn(dispatcher)</p>
-                                        <p class="pl-12 text-on-surface">.map { frame -&gt; model.inferZeroCopy(frame)
-                                            }</p>
-                                        <p class="pl-12 text-primary-fixed-dim">.stateIn(scope, SharingStarted.Lazily,
-                                            Idle)</p>
-                                        <p class="">}</p>
+                                        <p class="pl-12">.flowOn(dispatcher)</p>
+                                        <p class="pl-12">.map { frame → model.inferZeroCopy(frame) }</p>
+                                        <p class="pl-12 text-primary-fixed-dim">.stateIn(scope, SharingStarted.Lazily, Idle)</p>
+                                        <p>}</p>
                                     </div>
-                                    <!-- Snippet 2: Offline Sync -->
                                     <div class="code-tab-content hidden space-y-1" id="snippet-sync">
-                                        <p class="text-on-surface-variant"><span
-                                                class="text-cyan-400 font-semibold">package</span> com.ath.offline.sync
-                                        </p>
-                                        <p class="text-on-surface-variant font-label-sm py-0.5">// Conflict-Free
-                                            Replicated Offline Store</p>
-                                        <p class=""><span class="text-cyan-400 font-bold">suspend fun</span>
-                                            <span class="text-secondary font-bold">reconcileDirtyQueue</span>() =
-                                            withContext(Dispatchers.IO) {
-                                        </p>
-                                        <p class="pl-4 text-on-surface-variant">val pending =
-                                            encryptedRoom.queryUnsynced()</p>
-                                        <p class="pl-4 text-primary">pending.chunked(50).forEach { batch -&gt;</p>
-                                        <p class="pl-8 text-on-surface">val ack = remoteGateway.syncBatch(batch)</p>
-                                        <p class="pl-8 text-secondary">encryptedRoom.markCommitted(ack.committedIds)
-                                        </p>
-                                        <p class="pl-4 text-primary">}</p>
-                                        <p class="pl-4 text-on-surface-variant">
-                                            telemetry.logEvent("SYNC_ZERO_DATA_LOSS")</p>
-                                        <p class="">}</p>
+                                        <p class="text-on-surface-variant"><span class="text-cyan-400 font-semibold">package</span> com.ath.offline.sync</p>
+                                        <p class="text-on-surface-variant font-mono text-[11px] py-0.5">// Conflict-Free Replicated Offline Store</p>
+                                        <p><span class="text-cyan-400 font-bold">suspend fun</span> <span class="text-secondary font-bold">reconcileDirtyQueue</span>() =</p>
+                                        <p class="pl-4">withContext(Dispatchers.IO) {</p>
+                                        <p class="pl-8 text-on-surface-variant">val pending = encryptedRoom.queryUnsynced()</p>
+                                        <p class="pl-8 text-primary">pending.chunked(50).forEach { batch →</p>
+                                        <p class="pl-12">val ack = remoteGateway.syncBatch(batch)</p>
+                                        <p class="pl-12 text-secondary">encryptedRoom.markCommitted(ack.committedIds)</p>
+                                        <p class="pl-8 text-primary">}</p>
+                                        <p class="pl-8 text-on-surface-variant">telemetry.logEvent("SYNC_ZERO_DATA_LOSS")</p>
+                                        <p>}</p>
                                     </div>
-                                    <!-- Snippet 3: Compose StateFlow -->
                                     <div class="code-tab-content hidden space-y-1" id="snippet-compose">
-                                        <p class="text-on-surface-variant"><span
-                                                class="text-cyan-400 font-semibold">package</span> com.ath.ui.dashboard
-                                        </p>
-                                        <p class="text-on-surface-variant font-label-sm py-0.5">// 120Hz
-                                            Zero-Recomposition Compose Consumer</p>
-                                        <p class=""><span class="text-cyan-400 font-bold">@@Composable</span></p>
-                                        <p class=""><span class="text-cyan-400 font-bold">fun</span> <span
-                                                class="text-secondary font-bold">TelemetryDashboardScreen</span>(vm:
-                                            DashboardViewModel) {</p>
-                                        <p class="pl-4">val state by vm.uiState.<span
-                                                class="text-cyan-400">collectAsStateWithLifecycle</span>()</p>
-                                        <p class="pl-4 text-primary">LazyColumn(modifier = Modifier.fillMaxSize()) {
-                                        </p>
-                                        <p class="pl-8 text-on-surface">items(state.streams, key = { it.sensorId }) {
-                                            stream -&gt;</p>
+                                        <p class="text-on-surface-variant"><span class="text-cyan-400 font-semibold">package</span> com.ath.ui.dashboard</p>
+                                        <p class="text-on-surface-variant font-mono text-[11px] py-0.5">// 120Hz Zero-Recomposition Consumer</p>
+                                        <p><span class="text-cyan-400 font-bold">@Composable</span></p>
+                                        <p><span class="text-cyan-400 font-bold">fun</span> <span class="text-secondary font-bold">TelemetryDashboard</span>(vm: DashboardViewModel) {</p>
+                                        <p class="pl-4">val state by vm.uiState.<span class="text-cyan-400">collectAsStateWithLifecycle</span>()</p>
+                                        <p class="pl-4 text-primary">LazyColumn(modifier = Modifier.fillMaxSize()) {</p>
+                                        <p class="pl-8">items(state.streams, key = { it.sensorId }) { stream →</p>
                                         <p class="pl-12 text-secondary">SensorMetricCard(stream = stream)</p>
-                                        <p class="pl-8 text-on-surface">}</p>
+                                        <p class="pl-8">}</p>
                                         <p class="pl-4 text-primary">}</p>
-                                        <p class="">}</p>
+                                        <p>}</p>
                                     </div>
                                 </div>
-                                <!-- Module Topology Footer -->
-                                <div class="pt-1 space-y-2">
-                                    <div
-                                        class="flex items-center justify-between font-label-sm text-[11px] text-on-surface-variant">
-                                        <span class="flex items-center gap-1.5">
-                                            <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
-                                            LAYER TOPOLOGY
-                                        </span>
-                                        <span class="text-secondary font-semibold">88% TEST COVERAGE (JACOCO)</span>
+                                <!-- Footer Modules -->
+                                <div class="grid grid-cols-3 gap-2 mb-3">
+                                    <div class="p-2 rounded-lg bg-surface-container-high/60 border border-white/5 text-center">
+                                        <span class="font-mono text-xs text-primary font-bold block">:feature:npu</span>
+                                        <span class="font-mono text-[10px] text-on-surface-variant">FP16 Hardware</span>
                                     </div>
-                                    <div class="grid grid-cols-3 gap-2">
-                                        <div
-                                            class="p-2 rounded-lg bg-surface-container-high/60 border border-white/5 text-center">
-                                            <span
-                                                class="font-label-sm text-xs text-primary font-bold block">:feature:npu</span>
-                                            <span class="font-label-sm text-[10px] text-on-surface-variant">FP16
-                                                Hardware</span>
-                                        </div>
-                                        <div
-                                            class="p-2 rounded-lg bg-surface-container-high/60 border border-white/5 text-center">
-                                            <span
-                                                class="font-label-sm text-xs text-secondary font-bold block">:core:database</span>
-                                            <span class="font-label-sm text-[10px] text-on-surface-variant">SQLCipher
-                                                VSS</span>
-                                        </div>
-                                        <div
-                                            class="p-2 rounded-lg bg-surface-container-high/60 border border-white/5 text-center">
-                                            <span
-                                                class="font-label-sm text-xs text-primary-fixed-dim font-bold block">:ui:compose</span>
-                                            <span class="font-label-sm text-[10px] text-on-surface-variant">Clean
-                                                Tokens</span>
-                                        </div>
+                                    <div class="p-2 rounded-lg bg-surface-container-high/60 border border-white/5 text-center">
+                                        <span class="font-mono text-xs text-secondary font-bold block">:core:database</span>
+                                        <span class="font-mono text-[10px] text-on-surface-variant">SQLCipher VSS</span>
+                                    </div>
+                                    <div class="p-2 rounded-lg bg-surface-container-high/60 border border-white/5 text-center">
+                                        <span class="font-mono text-xs text-primary-fixed-dim font-bold block">:ui:compose</span>
+                                        <span class="font-mono text-[10px] text-on-surface-variant">Clean Tokens</span>
                                     </div>
                                 </div>
-                                <!-- Mini Live Latency Sparkline -->
-                                <div
-                                    class="mt-3 flex items-center justify-between bg-surface-container-lowest/80 px-3 py-2 rounded-lg border border-white/5">
+                                <!-- Latency Bar -->
+                                <div class="flex items-center justify-between bg-surface-container-lowest/80 px-3 py-2 rounded-lg border border-white/5">
                                     <div class="flex items-center gap-2">
                                         <span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
-                                        <span class="font-label-sm text-[11px] text-on-surface">Main Thread Latency:
-                                            1.2ms (Zero Jank)</span>
+                                        <span class="font-mono text-[11px]">Main Thread: 1.2ms (Zero Jank)</span>
                                     </div>
-                                    <svg class="w-28 h-5 text-primary-container" fill="none" viewBox="0 0 120 20">
-                                        <path d="M0 16 L20 14 L35 17 L50 6 L65 12 L80 4 L95 8 L120 2"
-                                            stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2"></path>
+                                    <svg class="w-24 h-5 text-primary-container" fill="none" viewBox="0 0 100 20">
+                                        <path d="M0 16 L15 13 L30 16 L45 6 L60 11 L75 3 L90 7 L100 2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
                                     </svg>
                                 </div>
                             </div>
@@ -520,881 +458,646 @@
                     </div>
                 </div>
             </section>
-            <!-- SECTION 2: ARCHITECTURAL PILLARS & PHILOSOPHY -->
-            <section class="w-full bg-surface-container-lowest/70 py-space-xl relative border-y border-white/5">
-                <div class="max-w-[1440px] mx-auto px-gutter">
-                    <!-- Header -->
-                    <div class="flex flex-col gap-1 mb-space-lg">
-                        <div class="flex items-center gap-2">
-                            <span class="font-label-sm text-xs text-secondary uppercase tracking-widest font-bold">01
-                                // PHILOSOPHY &amp; CORE ARCHITECTURAL PILLARS</span>
-                            <span class="h-[1px] w-12 bg-cyan-500/30"></span>
-                        </div>
-                        <h2 class="font-headline-lg text-2xl sm:text-3xl text-primary font-bold">
-                            Principled Engineering for Mission-Critical Mobile Systems.
-                        </h2>
-                        <p class="font-body-lg text-sm sm:text-base text-on-surface-variant max-w-3xl leading-relaxed">
-                            Mobile environments present unique architectural stresses: offline tunnel networks,
-                            restricted memory envelopes, and thermal throttling. My system designs focus on determinism,
-                            maintainability, and client autonomy.
-                        </p>
+
+            <!-- ═══════════════════════════════════════
+                 SECTION 2: ARCHITECTURAL PILLARS
+            ═══════════════════════════════════════ -->
+            <section class="w-full bg-surface-container-lowest/70 py-16 border-y border-white/5">
+                <div class="max-w-[1440px] mx-auto px-6">
+                    <div class="flex flex-col gap-1 mb-10 reveal">
+                        <span class="section-label font-mono text-xs text-secondary uppercase tracking-widest font-bold">01 // Philosophy & Core Pillars</span>
+                        <h2 class="font-sans text-2xl sm:text-3xl text-primary font-bold mt-2">Principled Engineering for Mission-Critical Mobile Systems.</h2>
+                        <p class="font-sans text-sm sm:text-base text-on-surface-variant max-w-3xl leading-relaxed mt-1">Mobile environments present unique stresses: offline tunnels, restricted memory, thermal throttling. My designs focus on determinism, maintainability, and client autonomy.</p>
                     </div>
-                    <!-- 4 Glassy Cards Grid -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md">
-                        <!-- Pillar 1 -->
-                        <div
-                            class="p-space-lg rounded-2xl bg-surface-container-low/75 backdrop-blur-md border border-cyan-500/15 hover:border-cyan-400/50 hover:shadow-[0_0_24px_rgba(0,240,255,0.15)] transition-all duration-300 flex flex-col justify-between group">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <div class="p-6 rounded-2xl bg-surface-container-low/75 backdrop-blur-md border border-cyan-500/15 glow-card hover:border-cyan-400/45 flex flex-col justify-between gap-4 group reveal reveal-delay-1">
                             <div class="space-y-3">
-                                <div
-                                    class="w-12 h-12 rounded-xl bg-cyan-950/40 border border-cyan-500/30 flex items-center justify-center text-primary-container group-hover:scale-110 transition-transform">
-                                    <span class="material-symbols-outlined text-[26px]">cloud_off</span>
+                                <div class="w-11 h-11 rounded-xl bg-cyan-950/40 border border-cyan-500/30 flex items-center justify-center text-primary-container group-hover:scale-110 transition-transform">
+                                    <span class="material-symbols-outlined text-2xl">cloud_off</span>
                                 </div>
-                                <h3 class="font-headline-md text-base text-white font-semibold">Offline-First &amp;
-                                    Resilient Sync</h3>
-                                <p class="font-body-md text-xs text-on-surface-variant leading-relaxed">
-                                    Encrypted SQLCipher databases, CRDT-inspired reconciliation rules, and durable
-                                    WorkManager sync queues that recover from arbitrary network drops without data
-                                    corruption.
-                                </p>
+                                <h3 class="font-sans text-base text-white font-semibold">Offline-First &amp; Resilient Sync</h3>
+                                <p class="font-mono text-xs text-on-surface-variant leading-relaxed">Encrypted SQLCipher databases, CRDT-inspired reconciliation, and durable WorkManager queues that recover from arbitrary network drops without data corruption.</p>
                             </div>
-                            <div class="pt-space-md flex flex-wrap gap-1.5">
-                                <span
-                                    class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-label-sm text-[11px] border border-cyan-500/20">Room</span>
-                                <span
-                                    class="px-2 py-0.5 rounded bg-surface-container-high text-secondary font-label-sm text-[11px] border border-secondary/20">SQLCipher</span>
-                                <span
-                                    class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-[11px]">WorkManager</span>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-mono text-[11px] border border-cyan-500/20">Room</span>
+                                <span class="px-2 py-0.5 rounded bg-surface-container-high text-secondary font-mono text-[11px] border border-secondary/20">SQLCipher</span>
+                                <span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-mono text-[11px]">WorkManager</span>
                             </div>
                         </div>
-                        <!-- Pillar 2 -->
-                        <div
-                            class="p-space-lg rounded-2xl bg-surface-container-low/75 backdrop-blur-md border border-secondary/15 hover:border-secondary/50 hover:shadow-[0_0_24px_rgba(78,222,163,0.15)] transition-all duration-300 flex flex-col justify-between group">
+                        <div class="p-6 rounded-2xl bg-surface-container-low/75 backdrop-blur-md border border-secondary/15 glow-card glow-card-green flex flex-col justify-between gap-4 group reveal reveal-delay-2">
                             <div class="space-y-3">
-                                <div
-                                    class="w-12 h-12 rounded-xl bg-emerald-950/40 border border-secondary/30 flex items-center justify-center text-secondary group-hover:scale-110 transition-transform">
-                                    <span class="material-symbols-outlined text-[26px]">layers</span>
+                                <div class="w-11 h-11 rounded-xl bg-emerald-950/40 border border-secondary/30 flex items-center justify-center text-secondary group-hover:scale-110 transition-transform">
+                                    <span class="material-symbols-outlined text-2xl">layers</span>
                                 </div>
-                                <h3 class="font-headline-md text-base text-white font-semibold">100% Declarative
-                                    Compose UI</h3>
-                                <p class="font-body-md text-xs text-on-surface-variant leading-relaxed">
-                                    Enterprise design token architectures, custom LayoutModifiers, accessibility
-                                    semantics, and strict recomposition auditing via Layout Inspector for smooth 120Hz
-                                    interactions.
-                                </p>
+                                <h3 class="font-sans text-base text-white font-semibold">100% Declarative Compose UI</h3>
+                                <p class="font-mono text-xs text-on-surface-variant leading-relaxed">Enterprise design token architectures, custom LayoutModifiers, accessibility semantics, and strict recomposition auditing for smooth 120Hz interactions.</p>
                             </div>
-                            <div class="pt-space-md flex flex-wrap gap-1.5">
-                                <span
-                                    class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-label-sm text-[11px] border border-cyan-500/20">Jetpack
-                                    Compose</span>
-                                <span
-                                    class="px-2 py-0.5 rounded bg-surface-container-high text-secondary font-label-sm text-[11px] border border-secondary/20">Design
-                                    Tokens</span>
-                                <span
-                                    class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-[11px]">0
-                                    Recompose</span>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-mono text-[11px] border border-cyan-500/20">Jetpack Compose</span>
+                                <span class="px-2 py-0.5 rounded bg-surface-container-high text-secondary font-mono text-[11px] border border-secondary/20">Design Tokens</span>
+                                <span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-mono text-[11px]">0 Recompose</span>
                             </div>
                         </div>
-                        <!-- Pillar 3 -->
-                        <div
-                            class="p-space-lg rounded-2xl bg-surface-container-low/75 backdrop-blur-md border border-cyan-500/15 hover:border-cyan-400/50 hover:shadow-[0_0_24px_rgba(0,240,255,0.15)] transition-all duration-300 flex flex-col justify-between group">
+                        <div class="p-6 rounded-2xl bg-surface-container-low/75 backdrop-blur-md border border-cyan-500/15 glow-card hover:border-cyan-400/45 flex flex-col justify-between gap-4 group reveal reveal-delay-3">
                             <div class="space-y-3">
-                                <div
-                                    class="w-12 h-12 rounded-xl bg-cyan-950/40 border border-cyan-500/30 flex items-center justify-center text-primary-fixed-dim group-hover:scale-110 transition-transform">
-                                    <span class="material-symbols-outlined text-[26px]">neurology</span>
+                                <div class="w-11 h-11 rounded-xl bg-cyan-950/40 border border-cyan-500/30 flex items-center justify-center text-primary-fixed-dim group-hover:scale-110 transition-transform">
+                                    <span class="material-symbols-outlined text-2xl">neurology</span>
                                 </div>
-                                <h3 class="font-headline-md text-base text-white font-semibold">On-Device AI &amp; Edge
-                                    Agents</h3>
-                                <p class="font-body-md text-xs text-on-surface-variant leading-relaxed">
-                                    Local INT8 quantization with MediaPipe and Gemini Nano. Edge document embeddings
-                                    (Local Vector RAG) and real-time computer vision inference with zero server
-                                    overhead.
-                                </p>
+                                <h3 class="font-sans text-base text-white font-semibold">On-Device AI &amp; Edge Agents</h3>
+                                <p class="font-mono text-xs text-on-surface-variant leading-relaxed">Local INT8 quantization with MediaPipe and Gemini Nano. Edge document embeddings (Local Vector RAG) and real-time computer vision with zero server overhead.</p>
                             </div>
-                            <div class="pt-space-md flex flex-wrap gap-1.5">
-                                <span
-                                    class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-label-sm text-[11px] border border-cyan-500/20">Gemini
-                                    Nano</span>
-                                <span
-                                    class="px-2 py-0.5 rounded bg-surface-container-high text-secondary font-label-sm text-[11px] border border-secondary/20">MediaPipe</span>
-                                <span
-                                    class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-[11px]">Mobile
-                                    RAG</span>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-mono text-[11px] border border-cyan-500/20">Gemini Nano</span>
+                                <span class="px-2 py-0.5 rounded bg-surface-container-high text-secondary font-mono text-[11px] border border-secondary/20">MediaPipe</span>
+                                <span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-mono text-[11px]">Mobile RAG</span>
                             </div>
                         </div>
-                        <!-- Pillar 4 -->
-                        <div
-                            class="p-space-lg rounded-2xl bg-surface-container-low/75 backdrop-blur-md border border-white/10 hover:border-cyan-400/50 hover:shadow-[0_0_24px_rgba(0,240,255,0.15)] transition-all duration-300 flex flex-col justify-between group">
+                        <div class="p-6 rounded-2xl bg-surface-container-low/75 backdrop-blur-md border border-white/8 glow-card hover:border-cyan-400/45 flex flex-col justify-between gap-4 group reveal reveal-delay-4">
                             <div class="space-y-3">
-                                <div
-                                    class="w-12 h-12 rounded-xl bg-surface-container-high border border-white/15 flex items-center justify-center text-tertiary-fixed-dim group-hover:scale-110 transition-transform">
-                                    <span class="material-symbols-outlined text-[26px]">schema</span>
+                                <div class="w-11 h-11 rounded-xl bg-surface-container-high border border-white/15 flex items-center justify-center text-tertiary-fixed-dim group-hover:scale-110 transition-transform">
+                                    <span class="material-symbols-outlined text-2xl">schema</span>
                                 </div>
-                                <h3 class="font-headline-md text-base text-white font-semibold">Modular Clean
-                                    Architecture</h3>
-                                <p class="font-body-md text-xs text-on-surface-variant leading-relaxed">
-                                    Separation into `:feature`, `:core`, and `:domain` modules. Fast compile times via
-                                    build-cache, Dagger-Hilt dependency injection, and comprehensive unit tests with
-                                    Turbine and MockK.
-                                </p>
+                                <h3 class="font-sans text-base text-white font-semibold">Modular Clean Architecture</h3>
+                                <p class="font-mono text-xs text-on-surface-variant leading-relaxed">Separation into :feature, :core, and :domain modules. Fast compile times via build-cache, Dagger-Hilt dependency injection, and comprehensive unit tests with Turbine.</p>
                             </div>
-                            <div class="pt-space-md flex flex-wrap gap-1.5">
-                                <span
-                                    class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-label-sm text-[11px] border border-cyan-500/20">Multi-Module</span>
-                                <span
-                                    class="px-2 py-0.5 rounded bg-surface-container-high text-secondary font-label-sm text-[11px] border border-secondary/20">Hilt
-                                    / Koin</span>
-                                <span
-                                    class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-[11px]">Turbine</span>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-mono text-[11px] border border-cyan-500/20">Multi-Module</span>
+                                <span class="px-2 py-0.5 rounded bg-surface-container-high text-secondary font-mono text-[11px] border border-secondary/20">Hilt / Koin</span>
+                                <span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-mono text-[11px]">Turbine</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <!-- SECTION 4: VERIFIED WORK EXPERIENCE & ARCHITECTURAL TRACK RECORD -->
-            <section class="w-full bg-surface-container-lowest/80 py-space-xl border-y border-white/5" id="experience">
-                <div class="max-w-[1440px] mx-auto px-gutter">
-                    <div class="flex flex-col gap-1 mb-space-lg">
-                        <div class="flex items-center gap-2">
-                            <span class="font-label-sm text-xs text-secondary uppercase tracking-widest font-bold">03
-                                // VERIFIED WORK EXPERIENCE</span>
-                            <span class="h-[1px] w-12 bg-cyan-500/30"></span>
-                        </div>
-                        <h2 class="font-headline-lg text-2xl sm:text-3xl text-primary font-bold">
-                            Proven Architectural Track Record in High-Stakes Production.
-                        </h2>
-                        <p class="font-body-lg text-sm sm:text-base text-on-surface-variant max-w-3xl leading-relaxed">
-                            From zero-connectivity European construction sites to strict HIPAA healthcare streaming and
-                            high-volume e-commerce checkouts.
-                        </p>
+
+            <!-- ═══════════════════════════════════════
+                 SECTION 3: WORK EXPERIENCE
+            ═══════════════════════════════════════ -->
+            <section id="experience" class="w-full py-16 bg-surface-container-lowest/80 border-b border-white/5">
+                <div class="max-w-[1440px] mx-auto px-6">
+                    <div class="flex flex-col gap-1 mb-10 reveal">
+                        <span class="section-label font-mono text-xs text-secondary uppercase tracking-widest font-bold">02 // Verified Work Experience</span>
+                        <h2 class="font-sans text-2xl sm:text-3xl text-primary font-bold mt-2">Proven Architectural Track Record in High-Stakes Production.</h2>
+                        <p class="font-sans text-sm sm:text-base text-on-surface-variant max-w-3xl leading-relaxed mt-1">From zero-connectivity European construction sites to strict HIPAA healthcare streaming and high-volume e-commerce checkouts.</p>
                     </div>
-                    <div class="space-y-space-md">
-                        <!-- Job 1: PlanRadar -->
-                        <div
-                            class="p-space-lg rounded-2xl bg-surface-container-low/80 backdrop-blur-md border border-cyan-500/20 hover:border-cyan-400/50 hover:shadow-[0_4px_30px_rgba(0,240,255,0.1)] transition-all duration-300 flex flex-col gap-space-sm group">
-                            <div
-                                class="flex flex-col lg:flex-row lg:items-center justify-between gap-2 border-b border-white/5 pb-space-sm">
+
+                    <div class="space-y-4">
+                        <!-- PlanRadar -->
+                        <div class="p-6 rounded-2xl bg-surface-container-low/80 backdrop-blur-md border border-cyan-500/20 glow-card hover:border-cyan-400/45 flex flex-col gap-4 reveal">
+                            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-3 border-b border-white/5 pb-4">
                                 <div class="flex items-center gap-3">
-                                    <div
-                                        class="w-10 h-10 rounded-xl bg-cyan-950/60 border border-cyan-500/30 flex items-center justify-center font-bold text-cyan-400 text-sm">
-                                        PR
-                                    </div>
+                                    <div class="w-10 h-10 rounded-xl bg-cyan-950/60 border border-cyan-500/30 flex items-center justify-center font-bold text-cyan-400 text-sm font-mono shrink-0">PR</div>
                                     <div>
-                                        <div class="flex items-center gap-2">
-                                            <span
-                                                class="font-label-sm text-xs text-primary uppercase font-bold tracking-wider">PlanRadar
-                                                • Global Enterprise ConTech</span>
-                                            <span
-                                                class="px-2 py-0.5 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 text-[10px] font-label-sm">500k+
-                                                Active Field Units</span>
+                                        <div class="flex flex-wrap items-center gap-2">
+                                            <span class="font-mono text-xs text-primary uppercase font-bold tracking-wider">PlanRadar · Global Enterprise ConTech</span>
+                                            <span class="px-2 py-0.5 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 text-[10px] font-mono">500k+ Active Field Units</span>
                                         </div>
-                                        <h3 class="font-headline-md text-xl text-white font-bold">Senior Android
-                                            Developer</h3>
+                                        <h3 class="font-sans text-xl text-white font-bold">Senior Android Developer</h3>
                                     </div>
                                 </div>
-                                <div class="flex items-center gap-2">
-                                    <span
-                                        class="px-3 py-1 rounded-lg bg-surface-container-high border border-white/5 font-label-sm text-xs text-secondary font-mono">2025
-                                        — 2026</span>
-                                    <span
-                                        class="px-3 py-1 rounded-lg bg-surface-container-high border border-white/5 font-label-sm text-xs text-on-surface-variant">Austria
-                                        / Remote</span>
+                                <div class="flex items-center gap-2 shrink-0">
+                                    <span class="px-3 py-1 rounded-lg bg-surface-container-high border border-white/5 font-mono text-xs text-secondary">2025 — 2026</span>
+                                    <span class="px-3 py-1 rounded-lg bg-surface-container-high border border-white/5 font-mono text-xs text-on-surface-variant">Austria / Remote</span>
                                 </div>
                             </div>
-                            <p class="font-body-lg text-sm text-on-surface-variant leading-relaxed">
-                                Scaled the core Android platform for construction documentation, BIM model rendering,
-                                and task inspection management. Pioneered high-throughput background sync strategies
-                                handling multi-gigabyte architectural blueprints and offline inspection reports with
-                                zero data loss. Modernized legacy components into modular Kotlin Clean Architecture.
-                            </p>
-                            <!-- Architecture Impact Highlights -->
-                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-1">
+                            <p class="font-sans text-sm text-on-surface-variant leading-relaxed">Scaled the core Android platform for construction documentation, BIM model rendering, and task inspection management. Pioneered high-throughput background sync strategies handling multi-gigabyte architectural blueprints and offline inspection reports with zero data loss. Modernized legacy components into modular Kotlin Clean Architecture.</p>
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
                                 <div class="p-2.5 rounded-lg bg-surface-container-high/60 border border-white/5">
-                                    <span class="font-label-sm text-[10px] text-cyan-300 uppercase block">Scale &amp;
-                                        Blueprint Load</span>
-                                    <span class="font-headline-md text-sm text-white font-bold">60% Faster BIM
-                                        Render</span>
+                                    <span class="font-mono text-[10px] text-cyan-300 uppercase block">Blueprint Load</span>
+                                    <span class="font-sans text-sm text-white font-bold">60% Faster BIM Render</span>
                                 </div>
                                 <div class="p-2.5 rounded-lg bg-surface-container-high/60 border border-white/5">
-                                    <span class="font-label-sm text-[10px] text-secondary uppercase block">Sync
-                                        Integrity</span>
-                                    <span class="font-headline-md text-sm text-secondary font-bold">Zero-Loss 2G
-                                        Replay</span>
+                                    <span class="font-mono text-[10px] text-secondary uppercase block">Sync Integrity</span>
+                                    <span class="font-sans text-sm text-secondary font-bold">Zero-Loss 2G Replay</span>
                                 </div>
                                 <div class="p-2.5 rounded-lg bg-surface-container-high/60 border border-white/5">
-                                    <span class="font-label-sm text-[10px] text-primary uppercase block">Codebase
-                                        Evolution</span>
-                                    <span class="font-headline-md text-sm text-primary font-bold">100% Jetpack
-                                        Compose</span>
+                                    <span class="font-mono text-[10px] text-primary uppercase block">Codebase</span>
+                                    <span class="font-sans text-sm text-primary font-bold">100% Jetpack Compose</span>
                                 </div>
                             </div>
-                            <div class="pt-2 flex flex-wrap gap-1.5">
-                                <span
-                                    class="px-2.5 py-1 rounded-lg bg-surface-container-high text-primary font-label-sm text-xs border border-cyan-500/20">BIM
-                                    / Plan Viewer</span>
-                                <span
-                                    class="px-2.5 py-1 rounded-lg bg-surface-container-high text-secondary font-label-sm text-xs border border-secondary/20">Offline
-                                    Synchronization</span>
-                                <span
-                                    class="px-2.5 py-1 rounded-lg bg-surface-container-high text-white font-label-sm text-xs">Compose
-                                    Modernization</span>
-                                <span
-                                    class="px-2.5 py-1 rounded-lg bg-surface-container-high text-on-surface-variant font-label-sm text-xs">Multi-Module
-                                    Gradle</span>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="px-2.5 py-1 rounded-lg bg-surface-container-high text-primary font-mono text-xs border border-cyan-500/20">BIM / Plan Viewer</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-surface-container-high text-secondary font-mono text-xs border border-secondary/20">Offline Synchronization</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-surface-container-high text-white font-mono text-xs">Compose Modernization</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-surface-container-high text-on-surface-variant font-mono text-xs">Multi-Module Gradle</span>
                             </div>
                         </div>
-                        <!-- Job 2: HealloCare -->
-                        <div
-                            class="p-space-lg rounded-2xl bg-surface-container-low/80 backdrop-blur-md border border-secondary/20 hover:border-secondary/50 hover:shadow-[0_4px_30px_rgba(78,222,163,0.1)] transition-all duration-300 flex flex-col gap-space-sm group">
-                            <div
-                                class="flex flex-col lg:flex-row lg:items-center justify-between gap-2 border-b border-white/5 pb-space-sm">
+
+                        <!-- HealloCare -->
+                        <div class="p-6 rounded-2xl bg-surface-container-low/80 backdrop-blur-md border border-secondary/20 glow-card glow-card-green flex flex-col gap-4 reveal">
+                            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-3 border-b border-white/5 pb-4">
                                 <div class="flex items-center gap-3">
-                                    <div
-                                        class="w-10 h-10 rounded-xl bg-emerald-950/60 border border-secondary/30 flex items-center justify-center font-bold text-secondary text-sm">
-                                        HC
-                                    </div>
+                                    <div class="w-10 h-10 rounded-xl bg-emerald-950/60 border border-secondary/30 flex items-center justify-center font-bold text-secondary text-sm font-mono shrink-0">HC</div>
                                     <div>
-                                        <div class="flex items-center gap-2">
-                                            <span
-                                                class="font-label-sm text-xs text-secondary uppercase font-bold tracking-wider">HealloCare
-                                                • HealthTech &amp; Telemedicine</span>
-                                            <span
-                                                class="px-2 py-0.5 rounded-full bg-emerald-950/60 border border-secondary/30 text-secondary text-[10px] font-label-sm">HIPAA
-                                                &amp; GDPR Certified</span>
+                                        <div class="flex flex-wrap items-center gap-2">
+                                            <span class="font-mono text-xs text-secondary uppercase font-bold tracking-wider">HealloCare · HealthTech & Telemedicine</span>
+                                            <span class="px-2 py-0.5 rounded-full bg-emerald-950/60 border border-secondary/30 text-secondary text-[10px] font-mono">HIPAA & GDPR Certified</span>
                                         </div>
-                                        <h3 class="font-headline-md text-xl text-white font-bold">Senior Android
-                                            Developer</h3>
+                                        <h3 class="font-sans text-xl text-white font-bold">Senior Android Developer</h3>
                                     </div>
                                 </div>
-                                <div class="flex items-center gap-2">
-                                    <span
-                                        class="px-3 py-1 rounded-lg bg-surface-container-high border border-white/5 font-label-sm text-xs text-secondary font-mono">2023
-                                        — 2025</span>
-                                    <span
-                                        class="px-3 py-1 rounded-lg bg-surface-container-high border border-white/5 font-label-sm text-xs text-on-surface-variant">Health
-                                        Tech</span>
+                                <div class="flex items-center gap-2 shrink-0">
+                                    <span class="px-3 py-1 rounded-lg bg-surface-container-high border border-white/5 font-mono text-xs text-secondary">2023 — 2025</span>
+                                    <span class="px-3 py-1 rounded-lg bg-surface-container-high border border-white/5 font-mono text-xs text-on-surface-variant">Health Tech</span>
                                 </div>
                             </div>
-                            <p class="font-body-lg text-sm text-on-surface-variant leading-relaxed">
-                                Engineered patient-vital telemetry systems and low-latency telemedicine consultation
-                                pipelines. Enforced strict HIPAA data security protocols via SQLCipher database
-                                encryption and hardware-backed biometric keystore management. Maintained 99.98%
-                                crash-free sessions across intensive medical real-time video consults.
-                            </p>
-                            <!-- Architecture Impact Highlights -->
-                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-1">
+                            <p class="font-sans text-sm text-on-surface-variant leading-relaxed">Engineered patient-vital telemetry systems and low-latency telemedicine consultation pipelines. Enforced strict HIPAA data security protocols via SQLCipher database encryption and hardware-backed biometric keystore management. Maintained 99.98% crash-free sessions across intensive medical real-time video consults.</p>
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
                                 <div class="p-2.5 rounded-lg bg-surface-container-high/60 border border-white/5">
-                                    <span class="font-label-sm text-[10px] text-secondary uppercase block">Reliability
-                                        SLA</span>
-                                    <span class="font-headline-md text-sm text-secondary font-bold">99.98%
-                                        Crash-Free</span>
+                                    <span class="font-mono text-[10px] text-secondary uppercase block">Reliability SLA</span>
+                                    <span class="font-sans text-sm text-secondary font-bold">99.98% Crash-Free</span>
                                 </div>
                                 <div class="p-2.5 rounded-lg bg-surface-container-high/60 border border-white/5">
-                                    <span class="font-label-sm text-[10px] text-cyan-300 uppercase block">Streaming
-                                        Latency</span>
-                                    <span class="font-headline-md text-sm text-cyan-300 font-bold">&lt; 180ms
-                                        WebRTC</span>
+                                    <span class="font-mono text-[10px] text-cyan-300 uppercase block">Streaming Latency</span>
+                                    <span class="font-sans text-sm text-cyan-300 font-bold">&lt; 180ms WebRTC</span>
                                 </div>
                                 <div class="p-2.5 rounded-lg bg-surface-container-high/60 border border-white/5">
-                                    <span class="font-label-sm text-[10px] text-primary uppercase block">Security
-                                        Layer</span>
-                                    <span class="font-headline-md text-sm text-white font-bold">Hardware Keystore
-                                        Enclave</span>
+                                    <span class="font-mono text-[10px] text-primary uppercase block">Security Layer</span>
+                                    <span class="font-sans text-sm text-white font-bold">Hardware Keystore Enclave</span>
                                 </div>
                             </div>
-                            <div class="pt-2 flex flex-wrap gap-1.5">
-                                <span
-                                    class="px-2.5 py-1 rounded-lg bg-surface-container-high text-primary font-label-sm text-xs border border-cyan-500/20">HIPAA
-                                    Compliance</span>
-                                <span
-                                    class="px-2.5 py-1 rounded-lg bg-surface-container-high text-secondary font-label-sm text-xs border border-secondary/20">WebRTC
-                                    Video</span>
-                                <span
-                                    class="px-2.5 py-1 rounded-lg bg-surface-container-high text-white font-label-sm text-xs">Encrypted
-                                    SQLCipher</span>
-                                <span
-                                    class="px-2.5 py-1 rounded-lg bg-surface-container-high text-on-surface-variant font-label-sm text-xs">Coroutines
-                                    &amp; StateFlow</span>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="px-2.5 py-1 rounded-lg bg-surface-container-high text-primary font-mono text-xs border border-cyan-500/20">HIPAA Compliance</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-surface-container-high text-secondary font-mono text-xs border border-secondary/20">WebRTC Video</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-surface-container-high text-white font-mono text-xs">Encrypted SQLCipher</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-surface-container-high text-on-surface-variant font-mono text-xs">Coroutines & StateFlow</span>
                             </div>
                         </div>
-                        <!-- Job 3: WNDO -->
-                        <div
-                            class="p-space-lg rounded-2xl bg-surface-container-low/80 backdrop-blur-md border border-cyan-500/20 hover:border-cyan-400/50 hover:shadow-[0_4px_30px_rgba(0,240,255,0.1)] transition-all duration-300 flex flex-col gap-space-sm group">
-                            <div
-                                class="flex flex-col lg:flex-row lg:items-center justify-between gap-2 border-b border-white/5 pb-space-sm">
+
+                        <!-- WNDO -->
+                        <div class="p-6 rounded-2xl bg-surface-container-low/80 backdrop-blur-md border border-cyan-500/20 glow-card hover:border-cyan-400/45 flex flex-col gap-4 reveal">
+                            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-3 border-b border-white/5 pb-4">
                                 <div class="flex items-center gap-3">
-                                    <div
-                                        class="w-10 h-10 rounded-xl bg-cyan-950/60 border border-cyan-500/30 flex items-center justify-center font-bold text-cyan-300 text-sm">
-                                        WN
-                                    </div>
+                                    <div class="w-10 h-10 rounded-xl bg-cyan-950/60 border border-cyan-500/30 flex items-center justify-center font-bold text-cyan-300 text-sm font-mono shrink-0">WN</div>
                                     <div>
-                                        <div class="flex items-center gap-2">
-                                            <span
-                                                class="font-label-sm text-xs text-primary-fixed-dim uppercase font-bold tracking-wider">WNDO
-                                                • Hyper-Growth Social Commerce</span>
-                                            <span
-                                                class="px-2 py-0.5 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 text-[10px] font-label-sm">Millions
-                                                of Transactions</span>
+                                        <div class="flex flex-wrap items-center gap-2">
+                                            <span class="font-mono text-xs text-primary-fixed-dim uppercase font-bold tracking-wider">WNDO · Hyper-Growth Social Commerce</span>
+                                            <span class="px-2 py-0.5 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 text-[10px] font-mono">Millions of Transactions</span>
                                         </div>
-                                        <h3 class="font-headline-md text-xl text-white font-bold">Senior Android
-                                            Developer</h3>
+                                        <h3 class="font-sans text-xl text-white font-bold">Senior Android Developer</h3>
                                     </div>
                                 </div>
-                                <div class="flex items-center gap-2">
-                                    <span
-                                        class="px-3 py-1 rounded-lg bg-surface-container-high border border-white/5 font-label-sm text-xs text-secondary font-mono">2021
-                                        — 2023</span>
-                                    <span
-                                        class="px-3 py-1 rounded-lg bg-surface-container-high border border-white/5 font-label-sm text-xs text-on-surface-variant">Scale-Up
-                                        Commerce</span>
+                                <div class="flex items-center gap-2 shrink-0">
+                                    <span class="px-3 py-1 rounded-lg bg-surface-container-high border border-white/5 font-mono text-xs text-secondary">2021 — 2023</span>
+                                    <span class="px-3 py-1 rounded-lg bg-surface-container-high border border-white/5 font-mono text-xs text-on-surface-variant">Scale-Up Commerce</span>
                                 </div>
                             </div>
-                            <p class="font-body-lg text-sm text-on-surface-variant leading-relaxed">
-                                Architected the checkout, catalog, and high-concurrency order processing modules.
-                                Reduced cold application startup latency by 42% through baseline profile generation,
-                                lazy component initializers, and dependency graph pruning. Co-led the engineering
-                                transition from XML layouts to 100% Jetpack Compose.
-                            </p>
-                            <!-- Architecture Impact Highlights -->
-                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-1">
+                            <p class="font-sans text-sm text-on-surface-variant leading-relaxed">Architected the checkout, catalog, and high-concurrency order processing modules. Reduced cold application startup latency by 42% through baseline profile generation, lazy component initializers, and dependency graph pruning. Co-led the engineering transition from XML layouts to 100% Jetpack Compose.</p>
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
                                 <div class="p-2.5 rounded-lg bg-surface-container-high/60 border border-white/5">
-                                    <span class="font-label-sm text-[10px] text-cyan-300 uppercase block">Startup
-                                        Latency</span>
-                                    <span class="font-headline-md text-sm text-primary font-bold">42% Faster Cold
-                                        Boot</span>
+                                    <span class="font-mono text-[10px] text-cyan-300 uppercase block">Startup Latency</span>
+                                    <span class="font-sans text-sm text-primary font-bold">42% Faster Cold Boot</span>
                                 </div>
                                 <div class="p-2.5 rounded-lg bg-surface-container-high/60 border border-white/5">
-                                    <span class="font-label-sm text-[10px] text-secondary uppercase block">Checkout
-                                        Concurrency</span>
-                                    <span class="font-headline-md text-sm text-secondary font-bold">Zero-Lock
-                                        Queuing</span>
+                                    <span class="font-mono text-[10px] text-secondary uppercase block">Checkout Concurrency</span>
+                                    <span class="font-sans text-sm text-secondary font-bold">Zero-Lock Queuing</span>
                                 </div>
                                 <div class="p-2.5 rounded-lg bg-surface-container-high/60 border border-white/5">
-                                    <span class="font-label-sm text-[10px] text-on-surface uppercase block">App Size
-                                        Shrink</span>
-                                    <span class="font-headline-md text-sm text-white font-bold">Dynamic Modules
-                                        (-28%)</span>
+                                    <span class="font-mono text-[10px] text-on-surface uppercase block">App Size</span>
+                                    <span class="font-sans text-sm text-white font-bold">Dynamic Modules (-28%)</span>
                                 </div>
                             </div>
-                            <div class="pt-2 flex flex-wrap gap-1.5">
-                                <span
-                                    class="px-2.5 py-1 rounded-lg bg-surface-container-high text-primary font-label-sm text-xs border border-cyan-500/20">Baseline
-                                    Profiles</span>
-                                <span
-                                    class="px-2.5 py-1 rounded-lg bg-surface-container-high text-secondary font-label-sm text-xs border border-secondary/20">Dynamic
-                                    Feature Modules</span>
-                                <span
-                                    class="px-2.5 py-1 rounded-lg bg-surface-container-high text-white font-label-sm text-xs">Payment
-                                    SDKs</span>
-                                <span
-                                    class="px-2.5 py-1 rounded-lg bg-surface-container-high text-on-surface-variant font-label-sm text-xs">Jetpack
-                                    Compose</span>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="px-2.5 py-1 rounded-lg bg-surface-container-high text-primary font-mono text-xs border border-cyan-500/20">Baseline Profiles</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-surface-container-high text-secondary font-mono text-xs border border-secondary/20">Dynamic Feature Modules</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-surface-container-high text-white font-mono text-xs">Payment SDKs</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-surface-container-high text-on-surface-variant font-mono text-xs">Jetpack Compose</span>
                             </div>
                         </div>
-                        <!-- Foundation History Grid -->
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-space-md pt-2">
-                            <div
-                                class="p-space-md rounded-2xl bg-surface-container-low/70 border border-white/5 hover:border-cyan-500/30 transition-all flex flex-col justify-between">
+
+                        <!-- Foundation Grid -->
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 reveal">
+                            <div class="p-5 rounded-2xl bg-surface-container-low/70 border border-white/5 hover:border-cyan-500/25 transition-all flex flex-col justify-between gap-3">
                                 <div>
-                                    <div class="flex items-center justify-between">
-                                        <span class="font-label-sm text-xs text-secondary font-mono">2019 — 2021</span>
-                                        <span class="font-label-sm text-[11px] text-on-surface-variant">Enterprise
-                                            Solutions</span>
+                                    <div class="flex items-center justify-between mb-1">
+                                        <span class="font-mono text-xs text-secondary">2019 — 2021</span>
+                                        <span class="font-mono text-[11px] text-on-surface-variant">Enterprise</span>
                                     </div>
-                                    <h4 class="font-headline-md text-base text-white font-semibold pt-1">Elmeya Soft
-                                    </h4>
-                                    <p class="font-label-sm text-xs text-primary pb-2 font-mono">M.S Android Developer
-                                    </p>
-                                    <p class="font-body-md text-xs text-on-surface-variant leading-relaxed">
-                                        Led architectural refactoring from RxJava2 to Kotlin Coroutines, MVVM adoption,
-                                        and multi-tier enterprise client software.
-                                    </p>
+                                    <h4 class="font-sans text-base text-white font-semibold">Elmeya Soft</h4>
+                                    <p class="font-mono text-xs text-primary mb-2">M.S Android Developer</p>
+                                    <p class="font-mono text-xs text-on-surface-variant leading-relaxed">Led architectural refactoring from RxJava2 to Kotlin Coroutines, MVVM adoption, and multi-tier enterprise client software.</p>
                                 </div>
-                                <div class="pt-3 font-label-sm text-[11px] text-cyan-400/80">Kotlin • Coroutines •
-                                    Multi-tier</div>
+                                <div class="font-mono text-[11px] text-cyan-400/80">Kotlin · Coroutines · Multi-tier</div>
                             </div>
-                            <div
-                                class="p-space-md rounded-2xl bg-surface-container-low/70 border border-white/5 hover:border-cyan-500/30 transition-all flex flex-col justify-between">
+                            <div class="p-5 rounded-2xl bg-surface-container-low/70 border border-white/5 hover:border-cyan-500/25 transition-all flex flex-col justify-between gap-3">
                                 <div>
-                                    <div class="flex items-center justify-between">
-                                        <span class="font-label-sm text-xs text-secondary font-mono">2017 — 2019</span>
-                                        <span class="font-label-sm text-[11px] text-on-surface-variant">Native
-                                            Services</span>
+                                    <div class="flex items-center justify-between mb-1">
+                                        <span class="font-mono text-xs text-secondary">2017 — 2019</span>
+                                        <span class="font-mono text-[11px] text-on-surface-variant">Native Services</span>
                                     </div>
-                                    <h4 class="font-headline-md text-base text-white font-semibold pt-1">ITBuziness
-                                    </h4>
-                                    <p class="font-label-sm text-xs text-primary pb-2 font-mono">Android Developer</p>
-                                    <p class="font-body-md text-xs text-on-surface-variant leading-relaxed">
-                                        High-throughput REST client integrations, disk-caching mechanisms, and reactive
-                                        client-server communication channels.
-                                    </p>
+                                    <h4 class="font-sans text-base text-white font-semibold">ITBuziness</h4>
+                                    <p class="font-mono text-xs text-primary mb-2">Android Developer</p>
+                                    <p class="font-mono text-xs text-on-surface-variant leading-relaxed">High-throughput REST client integrations, disk-caching mechanisms, and reactive client-server communication channels.</p>
                                 </div>
-                                <div class="pt-3 font-label-sm text-[11px] text-secondary/80">Room • Retrofit • OkHttp
-                                </div>
+                                <div class="font-mono text-[11px] text-secondary/80">Room · Retrofit · OkHttp</div>
                             </div>
-                            <div
-                                class="p-space-md rounded-2xl bg-surface-container-low/70 border border-white/5 hover:border-cyan-500/30 transition-all flex flex-col justify-between">
+                            <div class="p-5 rounded-2xl bg-surface-container-low/70 border border-white/5 hover:border-cyan-500/25 transition-all flex flex-col justify-between gap-3">
                                 <div>
-                                    <div class="flex items-center justify-between">
-                                        <span class="font-label-sm text-xs text-secondary font-mono">2016 — 2017</span>
-                                        <span
-                                            class="font-label-sm text-[11px] text-on-surface-variant">Foundation</span>
+                                    <div class="flex items-center justify-between mb-1">
+                                        <span class="font-mono text-xs text-secondary">2016 — 2017</span>
+                                        <span class="font-mono text-[11px] text-on-surface-variant">Foundation</span>
                                     </div>
-                                    <h4 class="font-headline-md text-base text-white font-semibold pt-1">Tech Engines
-                                    </h4>
-                                    <p class="font-label-sm text-xs text-primary pb-2 font-mono">Android Developer</p>
-                                    <p class="font-body-md text-xs text-on-surface-variant leading-relaxed">
-                                        Native Android foundations, Java-to-Kotlin transition, layout rendering
-                                        optimizations, and strict memory leak diagnostics.
-                                    </p>
+                                    <h4 class="font-sans text-base text-white font-semibold">Tech Engines</h4>
+                                    <p class="font-mono text-xs text-primary mb-2">Android Developer</p>
+                                    <p class="font-mono text-xs text-on-surface-variant leading-relaxed">Native Android foundations, Java-to-Kotlin transition, layout rendering optimizations, and strict memory leak diagnostics.</p>
                                 </div>
-                                <div class="pt-3 font-label-sm text-[11px] text-cyan-300/80">Java / Kotlin • Profiling
-                                </div>
+                                <div class="font-mono text-[11px] text-cyan-300/80">Java / Kotlin · Profiling</div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <!-- SECTION 5: OPEN SOURCE & COMMUNITY IMPACT -->
-            <section class="w-full py-space-xl relative" id="opensource">
-                <div class="max-w-[1440px] mx-auto px-gutter">
-                    <div class="flex flex-col gap-1 mb-space-lg">
-                        <div class="flex items-center gap-2">
-                            <span class="font-label-sm text-xs text-primary uppercase tracking-widest font-bold">04 //
-                                OPEN SOURCE &amp; LEADERSHIP</span>
-                            <span class="h-[1px] w-12 bg-cyan-500/30"></span>
-                        </div>
-                        <h2 class="font-headline-lg text-2xl sm:text-3xl text-primary font-bold">
-                            Engineering Contributions to Global OSS Ecosystems.
-                        </h2>
-                        <p class="font-body-lg text-sm sm:text-base text-on-surface-variant max-w-3xl leading-relaxed">
-                            Production contributions to widely-deployed open source codebases and continuous mentorship
-                            for the next generation of mobile software engineers.
-                        </p>
+
+            <!-- ═══════════════════════════════════════
+                 SECTION 4: OPEN SOURCE & GITHUB IMPACT
+            ═══════════════════════════════════════ -->
+            <section id="opensource" class="w-full py-16 relative">
+                <div class="max-w-[1440px] mx-auto px-6">
+                    <div class="flex flex-col gap-1 mb-10 reveal">
+                        <span class="section-label font-mono text-xs text-primary uppercase tracking-widest font-bold">03 // Open Source & GitHub Impact</span>
+                        <h2 class="font-sans text-2xl sm:text-3xl text-primary font-bold mt-2">Contributions to Global OSS Ecosystems.</h2>
+                        <p class="font-sans text-sm sm:text-base text-on-surface-variant max-w-3xl leading-relaxed mt-1">Production contributions to widely-deployed open source codebases trusted by millions of users worldwide.</p>
                     </div>
-                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-space-md">
-                        <!-- Open Source Card 1: LibreTube #7916 -->
-                        <div
-                            class="p-space-lg rounded-2xl bg-surface-container-low/80 backdrop-blur-md border border-cyan-500/20 hover:border-cyan-400 hover:shadow-[0_0_24px_rgba(0,240,255,0.2)] transition-all duration-300 flex flex-col justify-between group">
+
+                    <!-- GitHub Impact Stats Banner -->
+                    <div class="mb-6 p-5 rounded-2xl bg-surface-container-low/80 border border-cyan-500/20 reveal">
+                        <div class="flex flex-wrap items-center gap-2 mb-4">
+                            <svg class="w-5 h-5 fill-current text-cyan-400" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.929.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                            <span class="font-mono text-sm text-primary font-bold">GitHub Contribution Scale</span>
+                        </div>
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                            <div class="p-3 rounded-xl bg-surface-container-lowest/80 border border-yellow-500/20 text-center">
+                                <div class="text-xl font-bold text-white font-sans">12.8k</div>
+                                <div class="text-[11px] text-yellow-400 font-mono">⭐ LibreTube Stars</div>
+                            </div>
+                            <div class="p-3 rounded-xl bg-surface-container-lowest/80 border border-yellow-500/20 text-center">
+                                <div class="text-xl font-bold text-white font-sans">6.4k</div>
+                                <div class="text-[11px] text-yellow-400 font-mono">⭐ AmazeFileManager Stars</div>
+                            </div>
+                            <div class="p-3 rounded-xl bg-surface-container-lowest/80 border border-cyan-500/20 text-center">
+                                <div class="text-xl font-bold text-white font-sans">680+</div>
+                                <div class="text-[11px] text-cyan-400 font-mono">Forks on LibreTube</div>
+                            </div>
+                            <div class="p-3 rounded-xl bg-surface-container-lowest/80 border border-secondary/20 text-center">
+                                <div class="text-xl font-bold text-white font-sans">150+</div>
+                                <div class="text-[11px] text-secondary font-mono">VADT Engineers Mentored</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+                        <!-- LibreTube PR #7916 -->
+                        <div class="p-6 rounded-2xl bg-surface-container-low/80 backdrop-blur-md border border-cyan-500/20 glow-card hover:border-cyan-400 flex flex-col justify-between gap-4 group reveal reveal-delay-1">
                             <div class="space-y-3">
                                 <div class="flex items-center justify-between">
-                                    <span class="font-label-sm text-xs text-secondary font-mono">PULL REQUEST
-                                        #7916</span>
-                                    <span
-                                        class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-secondary-container/20 border border-secondary/30 text-secondary font-label-sm text-xs font-bold">
+                                    <div class="flex items-center gap-2">
+                                        <span class="font-mono text-xs text-secondary">PULL REQUEST #7916</span>
+                                        <span class="star-badge">12.8k ⭐</span>
+                                    </div>
+                                    <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-secondary-container/20 border border-secondary/30 text-secondary font-mono text-xs font-bold">
                                         <span class="material-symbols-outlined text-[14px]">check_circle</span> MERGED
                                     </span>
                                 </div>
-                                <h3 class="font-headline-md text-base text-white font-bold">LibreTube Core Streaming
-                                    Pipeline</h3>
-                                <p class="font-body-md text-xs text-on-surface-variant leading-relaxed">
-                                    Engineered critical media streaming stability updates within LibreTube, the popular
-                                    privacy-respecting client for YouTube. Optimized ExoPlayer / Media3 lifecycle
-                                    handling and background buffer recovery under network latency.
-                                </p>
-                                <div
-                                    class="flex items-center gap-2 font-label-sm text-[10px] text-cyan-400 bg-cyan-950/50 px-2.5 py-1 rounded border border-cyan-500/20">
-                                    <span class="">commit: 4a9d7f0</span>
-                                    <span class="">•</span>
-                                    <span class="">ExoPlayer / Media3</span>
+                                <h3 class="font-sans text-base text-white font-bold">LibreTube Core Streaming Pipeline</h3>
+                                <p class="font-mono text-xs text-on-surface-variant leading-relaxed">Engineered critical media streaming stability updates within LibreTube, the popular privacy-respecting YouTube client. Optimized ExoPlayer / Media3 lifecycle handling and background buffer recovery under network latency.</p>
+                                <div class="flex items-center gap-2 font-mono text-[10px] text-cyan-400 bg-cyan-950/50 px-2.5 py-1.5 rounded-lg border border-cyan-500/20">
+                                    <span>commit: 4a9d7f0</span><span>·</span><span>ExoPlayer / Media3</span>
                                 </div>
                             </div>
-                            <div class="pt-space-md flex items-center justify-between border-t border-white/5">
-                                <span class="font-label-sm text-xs text-on-surface-variant">LibreTube / Android</span>
-                                <a class="text-primary hover:text-cyan-300 font-label-sm text-xs font-bold flex items-center gap-1 group-hover:translate-x-0.5 transition-transform"
-                                    href="https://github.com/libre-tube/LibreTube/pull/7916" rel="noopener noreferrer"
-                                    target="_blank">
-                                    <span class="">Inspect PR</span>
-                                    <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+                            <div class="flex items-center justify-between border-t border-white/5 pt-4">
+                                <span class="font-mono text-xs text-on-surface-variant">libre-tube/LibreTube</span>
+                                <a class="text-primary hover:text-cyan-300 font-mono text-xs font-bold flex items-center gap-1 group-hover:translate-x-0.5 transition-transform cursor-pointer" href="https://github.com/libre-tube/LibreTube/pull/7916" target="_blank" rel="noopener noreferrer">
+                                    Inspect PR <span class="material-symbols-outlined text-[14px]">open_in_new</span>
                                 </a>
                             </div>
                         </div>
-                        <!-- Open Source Card 2: LibreTube #8607 -->
-                        <div
-                            class="p-space-lg rounded-2xl bg-surface-container-low/80 backdrop-blur-md border border-cyan-500/20 hover:border-cyan-400 hover:shadow-[0_0_24px_rgba(0,240,255,0.2)] transition-all duration-300 flex flex-col justify-between group">
+
+                        <!-- LibreTube PR #8607 -->
+                        <div class="p-6 rounded-2xl bg-surface-container-low/80 backdrop-blur-md border border-cyan-500/20 glow-card hover:border-cyan-400 flex flex-col justify-between gap-4 group reveal reveal-delay-2">
                             <div class="space-y-3">
                                 <div class="flex items-center justify-between">
-                                    <span class="font-label-sm text-xs text-primary-fixed-dim font-mono">PULL REQUEST
-                                        #8607</span>
-                                    <span
-                                        class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-cyan-950/60 border border-cyan-500/40 text-primary font-label-sm text-xs font-bold">
-                                        <span class="material-symbols-outlined text-[14px]">pending</span> ACTIVE
-                                        REVIEW
+                                    <div class="flex items-center gap-2">
+                                        <span class="font-mono text-xs text-primary-fixed-dim">PULL REQUEST #8607</span>
+                                        <span class="star-badge">12.8k ⭐</span>
+                                    </div>
+                                    <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-cyan-950/60 border border-cyan-500/40 text-primary font-mono text-xs font-bold">
+                                        <span class="material-symbols-outlined text-[14px]">pending</span> REVIEW
                                     </span>
                                 </div>
-                                <h3 class="font-headline-md text-base text-white font-bold">LibreTube Advanced
-                                    Optimization</h3>
-                                <p class="font-body-md text-xs text-on-surface-variant leading-relaxed">
-                                    Architectural performance contribution addressing background audio playback, network
-                                    reconnection state transitions, and memory footprint reduction during extended
-                                    continuous media sessions.
-                                </p>
-                                <div
-                                    class="flex items-center gap-2 font-label-sm text-[10px] text-cyan-400 bg-cyan-950/50 px-2.5 py-1 rounded border border-cyan-500/20">
-                                    <span class="">commit: e219b4c</span>
-                                    <span class="">•</span>
-                                    <span class="">Kotlin Flow Engine</span>
+                                <h3 class="font-sans text-base text-white font-bold">LibreTube Advanced Optimization</h3>
+                                <p class="font-mono text-xs text-on-surface-variant leading-relaxed">Architectural performance contribution addressing background audio playback, network reconnection state transitions, and memory footprint reduction during extended continuous media sessions.</p>
+                                <div class="flex items-center gap-2 font-mono text-[10px] text-cyan-400 bg-cyan-950/50 px-2.5 py-1.5 rounded-lg border border-cyan-500/20">
+                                    <span>commit: e219b4c</span><span>·</span><span>Kotlin Flow Engine</span>
                                 </div>
                             </div>
-                            <div class="pt-space-md flex items-center justify-between border-t border-white/5">
-                                <span class="font-label-sm text-xs text-on-surface-variant">LibreTube / Core</span>
-                                <a class="text-primary hover:text-cyan-300 font-label-sm text-xs font-bold flex items-center gap-1 group-hover:translate-x-0.5 transition-transform"
-                                    href="https://github.com/libre-tube/LibreTube/pull/8607" rel="noopener noreferrer"
-                                    target="_blank">
-                                    <span class="">Inspect PR</span>
-                                    <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+                            <div class="flex items-center justify-between border-t border-white/5 pt-4">
+                                <span class="font-mono text-xs text-on-surface-variant">libre-tube/LibreTube</span>
+                                <a class="text-primary hover:text-cyan-300 font-mono text-xs font-bold flex items-center gap-1 group-hover:translate-x-0.5 transition-transform cursor-pointer" href="https://github.com/libre-tube/LibreTube/pull/8607" target="_blank" rel="noopener noreferrer">
+                                    Inspect PR <span class="material-symbols-outlined text-[14px]">open_in_new</span>
                                 </a>
                             </div>
                         </div>
-                        <!-- Community Leadership Card: VADT -->
-                        <div
-                            class="p-space-lg rounded-2xl bg-surface-container-low/80 backdrop-blur-md border border-secondary/20 hover:border-secondary hover:shadow-[0_0_24px_rgba(78,222,163,0.2)] transition-all duration-300 flex flex-col justify-between group">
+
+                        <!-- VADT -->
+                        <div class="p-6 rounded-2xl bg-surface-container-low/80 backdrop-blur-md border border-secondary/20 glow-card glow-card-green flex flex-col justify-between gap-4 group reveal reveal-delay-3">
                             <div class="space-y-3">
                                 <div class="flex items-center justify-between">
-                                    <span class="font-label-sm text-xs text-tertiary-fixed-dim font-mono">INITIATIVE
-                                        &amp; MENTORSHIP</span>
-                                    <span
-                                        class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-950/60 border border-secondary/30 text-secondary font-label-sm text-xs font-bold">
-                                        FOUNDER
-                                    </span>
+                                    <span class="font-mono text-xs text-tertiary-fixed-dim">INITIATIVE & MENTORSHIP</span>
+                                    <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-950/60 border border-secondary/30 text-secondary font-mono text-xs font-bold">FOUNDER</span>
                                 </div>
-                                <h3 class="font-headline-md text-base text-white font-bold">Volunteer Android Devs
-                                    Training (VADT)</h3>
-                                <p class="font-body-md text-xs text-on-surface-variant leading-relaxed">
-                                    Founder &amp; Lead Technical Mentor. Empowering software engineers across multiple
-                                    cohorts with deep-dive training in Kotlin Coroutines, Jetpack Compose, multi-module
-                                    architecture, and production testing rigor.
-                                </p>
-                                <div
-                                    class="flex items-center gap-2 font-label-sm text-[10px] text-secondary bg-emerald-950/50 px-2.5 py-1 rounded border border-secondary/20">
-                                    <span class="">community: 150+ Engineers</span>
-                                    <span class="">•</span>
-                                    <span class="">Open Curriculums</span>
+                                <h3 class="font-sans text-base text-white font-bold">Volunteer Android Devs Training (VADT)</h3>
+                                <p class="font-mono text-xs text-on-surface-variant leading-relaxed">Founder & Lead Technical Mentor. Empowering software engineers across multiple cohorts with deep-dive training in Kotlin Coroutines, Jetpack Compose, multi-module architecture, and production testing rigor.</p>
+                                <div class="flex items-center gap-2 font-mono text-[10px] text-secondary bg-emerald-950/50 px-2.5 py-1.5 rounded-lg border border-secondary/20">
+                                    <span>community: 150+ Engineers</span><span>·</span><span>Open Curriculums</span>
                                 </div>
                             </div>
-                            <div class="pt-space-md flex items-center justify-between border-t border-white/5">
-                                <span class="font-label-sm text-xs text-on-surface-variant">Mentorship •
-                                    Community</span>
-                                <a class="text-secondary hover:text-secondary-fixed font-label-sm text-xs font-bold flex items-center gap-1 group-hover:translate-x-0.5 transition-transform"
-                                    href="https://github.com/VolunteerAndroidDevelopersTraining-VADT"
-                                    rel="noopener noreferrer" target="_blank">
-                                    <span class="">Visit Org</span>
-                                    <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+                            <div class="flex items-center justify-between border-t border-white/5 pt-4">
+                                <span class="font-mono text-xs text-on-surface-variant">Mentorship · Community</span>
+                                <a class="text-secondary hover:text-secondary-fixed font-mono text-xs font-bold flex items-center gap-1 group-hover:translate-x-0.5 transition-transform cursor-pointer" href="https://github.com/VolunteerAndroidDevelopersTraining-VADT" target="_blank" rel="noopener noreferrer">
+                                    Visit Org <span class="material-symbols-outlined text-[14px]">open_in_new</span>
                                 </a>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <!-- SECTION 6: TECHNICAL SKILLS & STACK MATRIX -->
-            <section class="w-full bg-surface-container-lowest/80 py-space-xl border-y border-white/5" id="skills">
-                <div class="max-w-[1440px] mx-auto px-gutter">
-                    <div class="flex flex-col gap-1 mb-space-lg">
-                        <div class="flex items-center gap-2">
-                            <span class="font-label-sm text-xs text-secondary uppercase tracking-widest font-bold">05
-                                // TECHNICAL COMPETENCY MATRIX</span>
-                            <span class="h-[1px] w-12 bg-cyan-500/30"></span>
-                        </div>
-                        <h2 class="font-headline-lg text-2xl sm:text-3xl text-primary font-bold">
-                            Calibrated Tech Stack &amp; Architectural Arsenal.
-                        </h2>
+
+            <!-- ═══════════════════════════════════════
+                 SECTION 5: SKILLS MATRIX
+            ═══════════════════════════════════════ -->
+            <section id="skills" class="w-full bg-surface-container-lowest/80 py-16 border-y border-white/5">
+                <div class="max-w-[1440px] mx-auto px-6">
+                    <div class="flex flex-col gap-1 mb-10 reveal">
+                        <span class="section-label font-mono text-xs text-secondary uppercase tracking-widest font-bold">04 // Technical Competency Matrix</span>
+                        <h2 class="font-sans text-2xl sm:text-3xl text-primary font-bold mt-2">Calibrated Tech Stack &amp; Architectural Arsenal.</h2>
                     </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-md">
-                        <!-- Category 1 -->
-                        <div
-                            class="p-space-md rounded-2xl bg-surface-container-low/80 backdrop-blur-md border border-cyan-500/20 hover:border-cyan-400/50 transition-all flex flex-col gap-3">
-                            <span
-                                class="font-label-sm text-xs text-primary uppercase font-bold flex items-center gap-1.5">
-                                <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
-                                01 // CORE &amp; KOTLIN
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+                        <div class="p-5 rounded-2xl bg-surface-container-low/80 backdrop-blur-md border border-cyan-500/20 hover:border-cyan-400/45 transition-all flex flex-col gap-3 reveal reveal-delay-1">
+                            <span class="font-mono text-xs text-primary uppercase font-bold flex items-center gap-1.5">
+                                <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>Core &amp; Kotlin
                             </span>
-                            <ul class="space-y-2 font-body-md text-xs text-on-surface-variant">
-                                <li class="flex items-center gap-2"><span
-                                        class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Kotlin (Expert /
-                                    Idiomatic)</li>
-                                <li class="flex items-center gap-2"><span
-                                        class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Coroutines &amp; StateFlow
-                                </li>
-                                <li class="flex items-center gap-2"><span
-                                        class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Java (Native Core Runtime)
-                                </li>
-                                <li class="flex items-center gap-2"><span
-                                        class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Kotlin Multiplatform (KMP)
-                                </li>
+                            <ul class="space-y-2 font-mono text-xs text-on-surface-variant">
+                                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-secondary shrink-0"></span>Kotlin (Expert / Idiomatic)</li>
+                                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-secondary shrink-0"></span>Coroutines &amp; StateFlow</li>
+                                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-secondary shrink-0"></span>Java (Native Core Runtime)</li>
+                                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-secondary shrink-0"></span>Kotlin Multiplatform (KMP)</li>
                             </ul>
                         </div>
-                        <!-- Category 2 -->
-                        <div
-                            class="p-space-md rounded-2xl bg-surface-container-low/80 backdrop-blur-md border border-secondary/20 hover:border-secondary/50 transition-all flex flex-col gap-3">
-                            <span
-                                class="font-label-sm text-xs text-secondary uppercase font-bold flex items-center gap-1.5">
-                                <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
-                                02 // ARCHITECTURE
+                        <div class="p-5 rounded-2xl bg-surface-container-low/80 backdrop-blur-md border border-secondary/20 hover:border-secondary/45 transition-all flex flex-col gap-3 reveal reveal-delay-2">
+                            <span class="font-mono text-xs text-secondary uppercase font-bold flex items-center gap-1.5">
+                                <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Architecture
                             </span>
-                            <ul class="space-y-2 font-body-md text-xs text-on-surface-variant">
-                                <li class="flex items-center gap-2"><span
-                                        class="w-1.5 h-1.5 rounded-full bg-primary"></span>Clean Architecture</li>
-                                <li class="flex items-center gap-2"><span
-                                        class="w-1.5 h-1.5 rounded-full bg-primary"></span>Multi-Module Gradle</li>
-                                <li class="flex items-center gap-2"><span
-                                        class="w-1.5 h-1.5 rounded-full bg-primary"></span>Offline-First Design</li>
-                                <li class="flex items-center gap-2"><span
-                                        class="w-1.5 h-1.5 rounded-full bg-primary"></span>MVI &amp; Unidirectional
-                                    Flow</li>
+                            <ul class="space-y-2 font-mono text-xs text-on-surface-variant">
+                                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary shrink-0"></span>Clean Architecture</li>
+                                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary shrink-0"></span>Multi-Module Gradle</li>
+                                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary shrink-0"></span>Offline-First Design</li>
+                                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary shrink-0"></span>MVI &amp; Unidirectional Flow</li>
                             </ul>
                         </div>
-                        <!-- Category 3 -->
-                        <div
-                            class="p-space-md rounded-2xl bg-surface-container-low/80 backdrop-blur-md border border-white/10 hover:border-cyan-400/50 transition-all flex flex-col gap-3">
-                            <span
-                                class="font-label-sm text-xs text-tertiary-fixed-dim uppercase font-bold flex items-center gap-1.5">
-                                <span class="w-1.5 h-1.5 rounded-full bg-cyan-300"></span>
-                                03 // JETPACK &amp; LIBS
+                        <div class="p-5 rounded-2xl bg-surface-container-low/80 backdrop-blur-md border border-white/8 hover:border-cyan-400/45 transition-all flex flex-col gap-3 reveal reveal-delay-3">
+                            <span class="font-mono text-xs text-tertiary-fixed-dim uppercase font-bold flex items-center gap-1.5">
+                                <span class="w-1.5 h-1.5 rounded-full bg-cyan-300"></span>Jetpack &amp; Libs
                             </span>
-                            <ul class="space-y-2 font-body-md text-xs text-on-surface-variant">
-                                <li class="flex items-center gap-2"><span
-                                        class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Jetpack Compose UI</li>
-                                <li class="flex items-center gap-2"><span
-                                        class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Dagger / Hilt &amp; Koin
-                                </li>
-                                <li class="flex items-center gap-2"><span
-                                        class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Room &amp; SQLCipher</li>
-                                <li class="flex items-center gap-2"><span
-                                        class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Ktor &amp; Retrofit2</li>
+                            <ul class="space-y-2 font-mono text-xs text-on-surface-variant">
+                                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-secondary shrink-0"></span>Jetpack Compose UI</li>
+                                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-secondary shrink-0"></span>Dagger / Hilt &amp; Koin</li>
+                                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-secondary shrink-0"></span>Room &amp; SQLCipher</li>
+                                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-secondary shrink-0"></span>Ktor &amp; Retrofit2</li>
                             </ul>
                         </div>
-                        <!-- Category 4 -->
-                        <div
-                            class="p-space-md rounded-2xl bg-surface-container-low/80 backdrop-blur-md border border-cyan-500/20 hover:border-cyan-400/50 transition-all flex flex-col gap-3">
-                            <span
-                                class="font-label-sm text-xs text-primary uppercase font-bold flex items-center gap-1.5">
-                                <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
-                                04 // AI ON ANDROID
+                        <div class="p-5 rounded-2xl bg-surface-container-low/80 backdrop-blur-md border border-cyan-500/20 hover:border-cyan-400/45 transition-all flex flex-col gap-3 reveal reveal-delay-4">
+                            <span class="font-mono text-xs text-primary uppercase font-bold flex items-center gap-1.5">
+                                <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>AI on Android
                             </span>
-                            <ul class="space-y-2 font-body-md text-xs text-on-surface-variant">
-                                <li class="flex items-center gap-2"><span
-                                        class="w-1.5 h-1.5 rounded-full bg-primary"></span>Gemini Nano Local LLM</li>
-                                <li class="flex items-center gap-2"><span
-                                        class="w-1.5 h-1.5 rounded-full bg-primary"></span>TensorFlow Lite INT8</li>
-                                <li class="flex items-center gap-2"><span
-                                        class="w-1.5 h-1.5 rounded-full bg-primary"></span>MediaPipe Solutions</li>
-                                <li class="flex items-center gap-2"><span
-                                        class="w-1.5 h-1.5 rounded-full bg-primary"></span>Local Vector SQLite-VSS</li>
+                            <ul class="space-y-2 font-mono text-xs text-on-surface-variant">
+                                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary shrink-0"></span>Gemini Nano Local LLM</li>
+                                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary shrink-0"></span>TensorFlow Lite INT8</li>
+                                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary shrink-0"></span>MediaPipe Solutions</li>
+                                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary shrink-0"></span>Local Vector SQLite-VSS</li>
                             </ul>
                         </div>
-                        <!-- Category 5 -->
-                        <div
-                            class="p-space-md rounded-2xl bg-surface-container-low/80 backdrop-blur-md border border-secondary/20 hover:border-secondary/50 transition-all flex flex-col gap-3">
-                            <span
-                                class="font-label-sm text-xs text-secondary uppercase font-bold flex items-center gap-1.5">
-                                <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
-                                05 // TESTING &amp; CI/CD
+                        <div class="p-5 rounded-2xl bg-surface-container-low/80 backdrop-blur-md border border-secondary/20 hover:border-secondary/45 transition-all flex flex-col gap-3 reveal reveal-delay-4">
+                            <span class="font-mono text-xs text-secondary uppercase font-bold flex items-center gap-1.5">
+                                <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Testing &amp; CI/CD
                             </span>
-                            <ul class="space-y-2 font-body-md text-xs text-on-surface-variant">
-                                <li class="flex items-center gap-2"><span
-                                        class="w-1.5 h-1.5 rounded-full bg-secondary"></span>JUnit5 &amp; MockK</li>
-                                <li class="flex items-center gap-2"><span
-                                        class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Turbine Flow Testing</li>
-                                <li class="flex items-center gap-2"><span
-                                        class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Baseline Profiling</li>
-                                <li class="flex items-center gap-2"><span
-                                        class="w-1.5 h-1.5 rounded-full bg-secondary"></span>GitHub Actions &amp;
-                                    Fastlane</li>
+                            <ul class="space-y-2 font-mono text-xs text-on-surface-variant">
+                                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-secondary shrink-0"></span>JUnit5 &amp; MockK</li>
+                                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-secondary shrink-0"></span>Turbine Flow Testing</li>
+                                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-secondary shrink-0"></span>Baseline Profiling</li>
+                                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-secondary shrink-0"></span>GitHub Actions &amp; Fastlane</li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </section>
-            <!-- SECTION 7: INTERACTIVE HANDSHAKE / TERMINAL CONTACT -->
-            <section class="w-full py-space-xl relative" id="contact">
-                <div class="max-w-[1440px] mx-auto px-gutter">
-                    <div
-                        class="rounded-3xl bg-surface-container-low/90 backdrop-blur-xl border border-cyan-500/25 p-space-lg lg:p-space-xl shadow-2xl relative overflow-hidden">
-                        <!-- Glow accents -->
-                        <div
-                            class="absolute -right-20 -bottom-20 w-96 h-96 rounded-full bg-cyan-500/10 blur-[120px] pointer-events-none">
-                        </div>
-                        <div
-                            class="absolute -left-20 -top-20 w-96 h-96 rounded-full bg-secondary/10 blur-[120px] pointer-events-none">
-                        </div>
-                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center relative">
-                            <!-- Left: Contact Hook -->
-                            <div class="lg:col-span-7 flex flex-col gap-space-md">
+
+            <!-- ═══════════════════════════════════════
+                 SECTION 6: CONTACT
+            ═══════════════════════════════════════ -->
+            <section id="contact" class="w-full py-16">
+                <div class="max-w-[1440px] mx-auto px-6">
+                    <div class="rounded-3xl bg-surface-container-low/90 backdrop-blur-xl border border-cyan-500/20 p-8 lg:p-12 shadow-2xl relative overflow-hidden reveal">
+                        <div class="absolute -right-24 -bottom-24 w-96 h-96 rounded-full bg-cyan-500/8 blur-[120px] pointer-events-none"></div>
+                        <div class="absolute -left-24 -top-24 w-96 h-96 rounded-full bg-secondary/8 blur-[120px] pointer-events-none"></div>
+                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative">
+                            <!-- Left: Hook -->
+                            <div class="lg:col-span-7 flex flex-col gap-5">
                                 <div class="flex items-center gap-2">
-                                    <span
-                                        class="w-2.5 h-2.5 rounded-full bg-primary-container shadow-[0_0_8px_#00f0ff]"></span>
-                                    <span
-                                        class="font-label-sm text-xs text-primary uppercase font-bold tracking-wider">COLLABORATION
-                                        &amp; LEADERSHIP PIPELINE</span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-primary-container shadow-[0_0_8px_#00f0ff]"></span>
+                                    <span class="font-mono text-xs text-primary uppercase font-bold tracking-wider">Collaboration &amp; Leadership Pipeline</span>
                                 </div>
-                                <h2 class="font-headline-lg text-2xl sm:text-4xl text-white font-bold leading-tight">
-                                    Let's Build Resilient Android Systems Together.
-                                </h2>
-                                <p class="font-body-lg text-sm sm:text-base text-on-surface-variant leading-relaxed">
-                                    Whether you are scaling high-throughput offline-first enterprise applications,
-                                    transitioning to 100% Jetpack Compose design systems, or integrating low-latency
-                                    on-device AI pipelines, my engineering terminal is open.
-                                </p>
-                                <!-- Metadata badges -->
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
-                                    <div
-                                        class="flex items-center gap-2.5 p-2.5 rounded-xl bg-surface-container-high/60 border border-white/5 text-on-surface">
-                                        <span
-                                            class="material-symbols-outlined text-secondary text-[20px]">location_on</span>
-                                        <span class="font-body-md text-xs">Global Remote • Open to Relocation</span>
+                                <h2 class="font-sans text-2xl sm:text-4xl text-white font-bold leading-tight">Let's Build Resilient Android Systems Together.</h2>
+                                <p class="font-sans text-sm sm:text-base text-on-surface-variant leading-relaxed">Whether you're scaling high-throughput offline-first enterprise applications, transitioning to 100% Jetpack Compose design systems, or integrating low-latency on-device AI pipelines — my engineering terminal is open.</p>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                                    <div class="flex items-center gap-2.5 p-3 rounded-xl bg-surface-container-high/60 border border-white/5">
+                                        <span class="material-symbols-outlined text-secondary text-[20px]">location_on</span>
+                                        <span class="font-mono text-xs">Global Remote · Open to Relocation</span>
                                     </div>
-                                    <div
-                                        class="flex items-center gap-2.5 p-2.5 rounded-xl bg-surface-container-high/60 border border-white/5 text-on-surface">
-                                        <span
-                                            class="material-symbols-outlined text-cyan-400 text-[20px]">check_circle</span>
-                                        <span class="font-body-md text-xs">Available: Sr Android / AI Lead</span>
+                                    <div class="flex items-center gap-2.5 p-3 rounded-xl bg-surface-container-high/60 border border-white/5">
+                                        <span class="material-symbols-outlined text-cyan-400 text-[20px]">check_circle</span>
+                                        <span class="font-mono text-xs">Available: Sr Android / AI Lead</span>
                                     </div>
                                 </div>
-                                <div class="flex flex-wrap items-center gap-3 pt-2">
-                                    <a class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-primary-container to-cyan-400 text-black font-label-sm text-xs uppercase tracking-wider font-extrabold shadow-[0_0_20px_rgba(0,240,255,0.3)] hover:brightness-110 hover:scale-[1.02] active:scale-[0.98] transition-all"
-                                        href="https://www.linkedin.com/in/alihrhera/" rel="noopener noreferrer"
-                                        target="_blank">
+                                <div class="flex flex-wrap items-center gap-3">
+                                    <a class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-primary-container to-cyan-400 text-black font-mono text-xs uppercase tracking-wider font-extrabold shadow-[0_0_20px_rgba(0,240,255,0.25)] hover:brightness-110 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer" href="https://www.linkedin.com/in/alihrhera/" target="_blank" rel="noopener noreferrer">
                                         <span class="material-symbols-outlined text-[18px]">send</span>
-                                        <span class="">Message on LinkedIn</span>
+                                        Message on LinkedIn
                                     </a>
-                                    <a class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-surface-container-high/90 border border-white/10 hover:border-cyan-400/40 text-on-surface hover:text-primary transition-all font-body-md text-xs"
-                                        href="https://github.com/alihrhera" rel="noopener noreferrer" target="_blank">
-                                        <span class="material-symbols-outlined text-[18px] text-cyan-400">code</span>
-                                        <span class="">GitHub Repositories</span>
+                                    <a class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-surface-container-high/80 border border-white/8 hover:border-cyan-400/40 hover:text-primary transition-all font-mono text-xs cursor-pointer" href="mailto:alihrhera1@gmail.com">
+                                        <span class="material-symbols-outlined text-[18px] text-cyan-400">mail</span>
+                                        alihrhera1@gmail.com
                                     </a>
                                 </div>
                             </div>
-                            <!-- Right: Interactive Terminal Handshake Box -->
+                            <!-- Right: Terminal -->
                             <div class="lg:col-span-5">
-                                <div
-                                    class="p-space-md rounded-2xl bg-surface-container-lowest/90 backdrop-blur-xl border border-cyan-500/20 flex flex-col gap-space-sm shadow-xl">
+                                <div class="p-5 rounded-2xl bg-surface-container-lowest/90 backdrop-blur-xl border border-cyan-500/20 flex flex-col gap-4 shadow-xl">
                                     <div class="flex items-center justify-between pb-1 border-b border-white/5">
                                         <div class="flex items-center gap-1.5">
-                                            <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 inline-block"></span>
-                                            <span
-                                                class="font-label-sm text-xs text-on-surface-variant font-mono">sys://handshake.sh</span>
+                                            <span class="w-2.5 h-2.5 rounded-full bg-cyan-400"></span>
+                                            <span class="font-mono text-xs text-on-surface-variant">sys://handshake.sh</span>
                                         </div>
-                                        <span
-                                            class="font-label-sm text-[10px] text-secondary font-bold">SSL_ENCRYPTED</span>
+                                        <span class="font-mono text-[10px] text-secondary font-bold">SSL_ENCRYPTED</span>
                                     </div>
-                                    <div class="font-body-md text-xs text-on-surface space-y-2.5">
+                                    <div class="font-mono text-xs space-y-3">
                                         <div>
-                                            <p class="text-[11px] text-on-surface-variant font-label-sm mb-1"># Direct
-                                                Terminal Command:</p>
-                                            <div
-                                                class="p-2.5 rounded-lg bg-surface-container flex items-center justify-between gap-2 border border-white/5 group">
-                                                <code class="text-cyan-300 font-label-sm text-xs truncate select-all">curl
-                                                    -s https://alihrhera.dev/contact.sh | bash</code>
-                                                <button
-                                                    class="px-2 py-1 rounded bg-surface-container-high hover:bg-cyan-950 text-cyan-400 border border-cyan-500/30 text-[10px] font-label-sm uppercase font-bold shrink-0 transition-colors"
-                                                    onclick="navigator.clipboard.writeText('curl -s https://alihrhera.dev/contact.sh | bash'); this.innerText='COPIED'; setTimeout(()=&gt;this.innerText='COPY', 2000);">
-                                                    Copy
-                                                </button>
+                                            <p class="text-[11px] text-on-surface-variant mb-1"># Primary Email</p>
+                                            <div class="p-2.5 rounded-lg bg-surface-container flex items-center justify-between gap-2 border border-white/5">
+                                                <span class="text-primary font-bold select-all">alihrhera1@gmail.com</span>
+                                                <button class="px-2 py-1 rounded bg-surface-container-high hover:bg-emerald-950 text-secondary border border-secondary/30 text-[10px] font-bold uppercase shrink-0 transition-colors cursor-pointer" onclick="navigator.clipboard.writeText('alihrhera1@gmail.com'); this.innerText='COPIED!'; setTimeout(()=>this.innerText='COPY', 2000);">Copy</button>
                                             </div>
                                         </div>
                                         <div>
-                                            <p class="text-[11px] text-on-surface-variant font-label-sm mb-1"># Primary
-                                                Inbound Email:</p>
-                                            <div
-                                                class="p-2.5 rounded-lg bg-surface-container flex items-center justify-between gap-2 border border-white/5">
-                                                <span class="font-label-sm text-xs text-primary font-bold select-all"
-                                                    id="contact-email">alihrhera1@gmail.com</span>
-                                                <button
-                                                    class="px-2 py-1 rounded bg-surface-container-high hover:bg-emerald-950 text-secondary border border-secondary/30 text-[10px] font-label-sm uppercase font-bold shrink-0 transition-colors"
-                                                    onclick="navigator.clipboard.writeText('alihrhera@gmail.com'); this.innerText='COPIED!'; setTimeout(()=&gt;this.innerText='COPY', 2000);">
-                                                    Copy
-                                                </button>
+                                            <p class="text-[11px] text-on-surface-variant mb-1"># GitHub</p>
+                                            <div class="p-2.5 rounded-lg bg-surface-container flex items-center justify-between gap-2 border border-white/5">
+                                                <span class="text-cyan-300 select-all">github.com/alihrhera</span>
+                                                <a href="https://github.com/alihrhera" target="_blank" rel="noopener" class="px-2 py-1 rounded bg-surface-container-high hover:bg-cyan-950 text-cyan-400 border border-cyan-500/30 text-[10px] font-bold uppercase shrink-0 transition-colors cursor-pointer">Open</a>
                                             </div>
                                         </div>
-                                        <div class="pt-1">
-                                            <p class="text-[10px] text-on-surface-variant font-label-sm truncate">
-                                                # PGP Fingerprint: 4A8F B129 903C CC42 E89D 17FF 8920 ATH
-                                            </p>
+                                        <div>
+                                            <p class="text-[11px] text-on-surface-variant mb-1"># LinkedIn</p>
+                                            <div class="p-2.5 rounded-lg bg-surface-container flex items-center justify-between gap-2 border border-white/5">
+                                                <span class="text-secondary select-all">in/alihrhera</span>
+                                                <a href="https://www.linkedin.com/in/alihrhera/" target="_blank" rel="noopener" class="px-2 py-1 rounded bg-surface-container-high hover:bg-emerald-950 text-secondary border border-secondary/30 text-[10px] font-bold uppercase shrink-0 transition-colors cursor-pointer">Open</a>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="pt-1">
-                                        <a class="w-full py-2.5 rounded-xl bg-surface-container-high/90 hover:bg-surface-container text-center font-label-sm text-xs text-on-surface hover:text-cyan-300 block border border-white/5 hover:border-cyan-500/30 transition-all font-bold"
-                                            href="mailto:alihrhera@gmail.com">
-                                            Open Native Mail Client &gt;_
-                                        </a>
-                                    </div>
+                                    <a class="w-full py-2.5 rounded-xl bg-surface-container-high/90 hover:bg-surface-container text-center font-mono text-xs text-on-surface hover:text-cyan-300 border border-white/5 hover:border-cyan-500/30 transition-all font-bold cursor-pointer block" href="mailto:alihrhera1@gmail.com">
+                                        Open Native Mail Client &gt;_
+                                    </a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
+
         </div>
     </main>
-    <!-- MODERN MINIMALIST FOOTER -->
-    <footer class="w-full bg-surface-container-lowest/95 border-t border-white/5 py-space-xl">
-        <div class="max-w-[1440px] mx-auto px-gutter">
-            <div
-                class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-lg pb-space-lg border-b border-white/5">
-                <div class="space-y-2">
-                    <div class="flex items-center gap-2"><img
-                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbgsY-oqgMmwEGHAXndy05WJi9Y5ypvmG1ZrIWeiKBVrZ2mAJFY1EzVko&amp;s=10"
-                            alt="Ali Hrhera Logo" class="h-7 w-auto object-contain rounded inline-block mr-1"><span
-                            class="w-2.5 h-2.5 rounded bg-primary-container shadow-[0_0_8px_#00f0ff]"></span><span
-                            class="font-headline-md text-lg text-primary font-bold">Ali Tarek Hrhera</span><span
-                            class="font-label-sm text-xs text-secondary font-mono">~/ath $</span></div>
-                    <p class="font-body-md text-xs text-on-surface-variant">Senior Android Engineer &amp; Edge AI
-                        Systems Architect</p>
 
+    <!-- ═══════════════════════════════════════
+         FOOTER
+    ═══════════════════════════════════════ -->
+    <footer class="w-full bg-surface-container-lowest/95 border-t border-white/5 py-10">
+        <div class="max-w-[1440px] mx-auto px-6">
+            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-white/5">
+                <div class="space-y-1.5">
+                    <div class="flex items-center gap-2.5">
+                        <div class="w-7 h-7 rounded-lg bg-cyan-950/60 border border-cyan-500/30 flex items-center justify-center font-mono text-xs font-bold text-primary-container">ATH</div>
+                        <span class="font-sans text-lg text-primary font-bold">Ali Tarek Hrhera</span>
+                        <span class="font-mono text-xs text-secondary">~/ath $</span>
+                    </div>
+                    <p class="font-mono text-xs text-on-surface-variant">Senior Android Engineer &amp; Edge AI Systems Architect · Android Developer since 2016</p>
                 </div>
                 <div class="flex flex-wrap items-center gap-2.5">
-                    <a class="flex items-center gap-2 px-3 py-2 rounded-xl bg-surface-container-high/80 border border-white/5 hover:border-cyan-400/30 text-on-surface-variant hover:text-white transition-all font-body-md text-xs"
-                        href="https://github.com/alihrhera" rel="noopener noreferrer" target="_blank">
-                        <span class="material-symbols-outlined text-[16px] text-cyan-400">code</span>
-                        <span class="">github.com/alihrhera</span>
+                    <a class="flex items-center gap-2 px-3 py-2 rounded-xl bg-surface-container-high/80 border border-white/5 hover:border-cyan-400/30 text-on-surface-variant hover:text-white transition-all font-mono text-xs cursor-pointer" href="https://github.com/alihrhera" target="_blank" rel="noopener noreferrer">
+                        <svg class="w-3.5 h-3.5 fill-current text-cyan-400" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.929.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                        github.com/alihrhera
                     </a>
-                    <a class="flex items-center gap-2 px-3 py-2 rounded-xl bg-surface-container-high/80 border border-white/5 hover:border-secondary/30 text-on-surface-variant hover:text-white transition-all font-body-md text-xs"
-                        href="https://www.linkedin.com/in/alihrhera/" rel="noopener noreferrer" target="_blank">
-                        <span class="material-symbols-outlined text-[16px] text-secondary">link</span>
-                        <span class="">in/alihrhera</span>
+                    <a class="flex items-center gap-2 px-3 py-2 rounded-xl bg-surface-container-high/80 border border-white/5 hover:border-secondary/30 text-on-surface-variant hover:text-white transition-all font-mono text-xs cursor-pointer" href="https://www.linkedin.com/in/alihrhera/" target="_blank" rel="noopener noreferrer">
+                        <svg class="w-3.5 h-3.5 fill-current text-secondary" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V8.98h3.42v1.57h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.37 4.28 5.46v6.29zM5.34 7.41a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM3.56 20.45h3.56V8.98H3.56v11.47zM22.22 0H1.78C.8 0 0 .8 0 1.78v20.44C0 23.2.8 24 1.78 24h20.44c.98 0 1.78-.8 1.78-1.78V1.78C24 .8 23.2 0 22.22 0z"/></svg>
+                        in/alihrhera
                     </a>
-                    <a class="flex items-center gap-2 px-3 py-2 rounded-xl bg-surface-container-high/80 border border-white/5 hover:border-cyan-400/30 text-on-surface-variant hover:text-white transition-all font-body-md text-xs"
-                        href="#contact">
+                    <a class="flex items-center gap-2 px-3 py-2 rounded-xl bg-surface-container-high/80 border border-white/5 hover:border-cyan-400/30 text-on-surface-variant hover:text-white transition-all font-mono text-xs cursor-pointer" href="#contact">
                         <span class="material-symbols-outlined text-[16px] text-primary-container">mail</span>
-                        <span class="">Direct Pipeline</span>
+                        Direct Pipeline
                     </a>
                 </div>
             </div>
-            <div
-                class="pt-space-md flex flex-col sm:flex-row sm:items-center justify-between gap-2 font-label-sm text-xs text-on-surface-variant">
-                <div class="flex items-center gap-2">
-                    <span class="">© 2025 Ali Tarek Hrhera. Crafted for high-performance edge
-                        architectures.</span>
-                </div>
+            <div class="pt-5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 font-mono text-xs text-on-surface-variant">
+                <span>© 2026 Ali Tarek Hrhera. Crafted for high-performance edge architectures.</span>
                 <div class="flex items-center gap-4 text-[11px]">
                     <span class="text-secondary flex items-center gap-1.5">
                         <span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
                         SYS_STATUS: OPTIMIZED
                     </span>
-                    <span class="text-cyan-400 font-mono">LATENCY: &lt; 14ms UTC</span>
+                    <span class="text-cyan-400">LATENCY: &lt; 14ms UTC</span>
                 </div>
             </div>
         </div>
     </footer>
-    <!-- Interactivity Script for Code Snippet Switcher -->
+
     <script>
+        // ─── Code Tab Switcher ───────────────────────────────
         function switchSnippet(type, btn) {
             document.querySelectorAll('.code-tab-content').forEach(el => el.classList.add('hidden'));
             document.querySelectorAll('.tab-btn').forEach(el => {
                 el.classList.remove('bg-cyan-950/80', 'text-primary', 'border-cyan-500/40');
                 el.classList.add('bg-surface-container-high/60', 'text-on-surface-variant', 'border-transparent');
             });
-
             const target = document.getElementById('snippet-' + type);
-            if (target) {
-                target.classList.remove('hidden');
-            }
-
+            if (target) target.classList.remove('hidden');
             btn.classList.remove('bg-surface-container-high/60', 'text-on-surface-variant', 'border-transparent');
             btn.classList.add('bg-cyan-950/80', 'text-primary', 'border-cyan-500/40');
         }
+
+        // ─── Mobile Menu ─────────────────────────────────────
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const bar1 = document.getElementById('bar1');
+        const bar2 = document.getElementById('bar2');
+        const bar3 = document.getElementById('bar3');
+        let menuOpen = false;
+
+        menuToggle.addEventListener('click', () => {
+            menuOpen = !menuOpen;
+            mobileMenu.classList.toggle('open', menuOpen);
+            bar1.style.transform = menuOpen ? 'translateY(6px) rotate(45deg)' : '';
+            bar2.style.opacity = menuOpen ? '0' : '1';
+            bar3.style.transform = menuOpen ? 'translateY(-6px) rotate(-45deg)' : '';
+            bar3.style.width = menuOpen ? '20px' : '';
+        });
+
+        function closeMenu() {
+            menuOpen = false;
+            mobileMenu.classList.remove('open');
+            bar1.style.transform = '';
+            bar2.style.opacity = '1';
+            bar3.style.transform = '';
+            bar3.style.width = '';
+        }
+
+        // ─── Scroll Reveal ───────────────────────────────────
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // ─── Active Nav on Scroll ────────────────────────────
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        const navObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === '#' + id) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, { threshold: 0.35 });
+
+        sections.forEach(section => navObserver.observe(section));
+
+        // ─── prefers-reduced-motion ──────────────────────────
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            document.querySelectorAll('.reveal').forEach(el => {
+                el.style.opacity = '1';
+                el.style.transform = 'none';
+                el.style.transition = 'none';
+            });
+        }
     </script>
 
-
 </body>
-
 </html>
