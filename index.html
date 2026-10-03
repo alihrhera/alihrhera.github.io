@@ -5,9 +5,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Ali Hrhera — Senior Android Architect & Edge AI Engineer with 8+ years building offline-first, high-performance mobile systems.">
-    <meta name="theme-color" content="#0a0e16">
-    <title>Ali Hrhera // Senior Android Architect & AI Engineer</title>
+        content="Ali Hrhera — Senior Software Engineer specializing in Android, Mobile & Backend development, with 8+ years of experience building offline-first, high-performance mobile systems, scalable backend services, and on-device AI solutions.">
+    <meta name="theme-color" content="#0b0d12">
+    <title>Ali Hrhera // Senior Software Engineer specializing in Android, Mobile & Backend development</title>
+    <script>
+        try {
+            var t = localStorage.getItem('theme') || 'dark';
+            document.documentElement.dataset.theme = t;
+        } catch (e) { }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -54,6 +60,10 @@
             <button class="lang-btn" type="button" onclick="window.toggleLang()" aria-label="Switch language">
                 <span class="material-symbols-outlined">translate</span><span class="lang-label">AR</span>
             </button>
+            <button class="theme-btn" type="button" onclick="window.toggleTheme()" aria-label="Toggle light/dark theme">
+                <span class="material-symbols-outlined i-light" aria-hidden="true">light_mode</span><span
+                    class="material-symbols-outlined i-dark" aria-hidden="true">dark_mode</span>
+            </button>
             <a href="#contact" class="nav-btn" data-i18n="nav-talk">Let's Talk</a>
         </div>
         <button class="ham" id="ham" type="button" aria-label="Toggle menu" aria-expanded="false"
@@ -96,8 +106,9 @@
                 <h1 class="reveal d1" data-i18n="hero-h1">I'm <span class="accent">Ali Hrhera</span></h1>
                 <h2 class="hero-title reveal d2"><span data-i18n="hero-iam">I am a</span> <span class="typed"
                         id="typed"></span><span class="caret" aria-hidden="true"></span></h2>
-                <p class="hero-sub reveal d2" data-i18n="hero-sub">Senior Android Engineer with 8+ years building
-                    offline-first, high-performance mobile systems and on-device AI.</p>
+                <p class="hero-sub reveal d2" data-i18n="hero-sub">Senior Software Engineer specializing in Android,
+                    Mobile & Backend development, with 8+ years of experience building offline-first, high-performance
+                    mobile systems, scalable backend services, and on-device AI solutions.</p>
                 <div class="btn-grp reveal d3">
                     <a class="btn primary" href="#work"><span class="material-symbols-outlined">work</span><span
                             data-i18n="hero-cta-work">View My Work</span></a>
@@ -188,11 +199,13 @@
                 <div class="about-brief reveal">
                     <span class="section-label" data-i18n="about-lbl">01 // About</span>
                     <h2 class="section-title" data-i18n="about-h2">About Me</h2>
-                    <p data-i18n="about-p">I'm <b>Ali Hrhera</b>, a Senior Android Engineer &amp; Systems
-                        Architect. I design mission-critical, offline-first mobile infrastructures across
-                        construction-tech, digital healthcare, and commerce using 100% Jetpack Compose, modular
-                        Kotlin coroutines, and on-device NPU inference. Outside work I contribute to open source and
-                        mentor Android engineers through VADT.</p>
+                    <p data-i18n="about-p">I'm <b>Ali Hrhera</b>,A Senior Software Engineer & Systems Architect
+                        specializing in Android, Mobile, and Backend systems. I design and build mission-critical,
+                        offline-first software across construction-tech, digital healthcare, and commerce, spanning
+                        high-performance mobile applications, scalable APIs, and backend services with Kotlin, Jetpack
+                        Compose, PHP, and Laravel. I also work on on-device AI and NPU-accelerated inference. Outside
+                        work, I contribute to open source and mentor Android engineers through VADT.
+                    </p>
                 </div>
 
                 <div class="about-tabs reveal d1">
@@ -206,274 +219,277 @@
                         <button class="tab" type="button" role="tab" aria-selected="false" data-tab="impact"
                             data-i18n="tab-impact">Impact</button>
                     </div>
-
-                    <!-- Experience -->
-                    <div class="tab-panel active" id="panel-exp" role="tabpanel">
-                        <details class="job" open>
-                            <summary>
-                                <div>
-                                    <h3>PlanRadar <span class="chip" data-i18n="pr-badge-scale">500k+ Active Field
-                                            Units</span></h3>
-                                    <p class="meta"><span data-i18n="pr-role">Senior Android Developer</span> | <span
-                                            class="yrs">2025 — 2026</span> · <span data-i18n="pr-location">Austria /
-                                            Remote</span></p>
-                                </div>
-                                <span class="material-symbols-outlined chev">expand_more</span>
-                            </summary>
-                            <div class="job-body">
-                                <p data-i18n="pr-desc">Scaled the core Android platform for construction documentation,
-                                    BIM model rendering, and task inspection management. Pioneered high-throughput
-                                    background sync strategies handling multi-gigabyte architectural blueprints and
-                                    offline inspection reports with zero data loss. Modernized legacy components into
-                                    modular Kotlin Clean Architecture.</p>
-                                <div class="metrics">
-                                    <div class="metric"><small data-i18n="pr-m1-lbl">Blueprint Load</small><b
-                                            data-i18n="pr-m1-val">60% Faster BIM Render</b></div>
-                                    <div class="metric"><small data-i18n="pr-m2-lbl">Sync Integrity</small><b
-                                            data-i18n="pr-m2-val">Zero-Loss 2G Replay</b></div>
-                                    <div class="metric"><small data-i18n="pr-m3-lbl">Codebase</small><b
-                                            data-i18n="pr-m3-val">100% Jetpack Compose</b></div>
-                                </div>
-                                <div class="chips-row">
-                                    <span class="chip">BIM / Plan Viewer</span>
-                                    <span class="chip green">Offline Synchronization</span>
-                                    <span class="chip plain">Multi-Module Gradle</span>
-                                </div>
-                            </div>
-                        </details>
-
-                        <details class="job">
-                            <summary>
-                                <div>
-                                    <h3>HealloCare <span class="chip green" data-i18n="hc-badge-cert">HIPAA &amp; GDPR
-                                            Certified</span></h3>
-                                    <p class="meta"><span data-i18n="hc-role">Senior Android Developer</span> | <span
-                                            class="yrs">2023 — 2025</span> · <span data-i18n="hc-location">Health
-                                            Tech</span></p>
-                                </div>
-                                <span class="material-symbols-outlined chev">expand_more</span>
-                            </summary>
-                            <div class="job-body">
-                                <p data-i18n="hc-desc">Engineered patient-vital telemetry systems and low-latency
-                                    telemedicine consultation pipelines. Enforced strict HIPAA data security protocols
-                                    via SQLCipher database encryption and hardware-backed biometric keystore
-                                    management. Maintained 99.98% crash-free sessions across intensive medical
-                                    real-time video consults.</p>
-                                <div class="metrics">
-                                    <div class="metric"><small data-i18n="hc-m1-lbl">Reliability SLA</small><b
-                                            data-i18n="hc-m1-val">99.98% Crash-Free</b></div>
-                                    <div class="metric"><small data-i18n="hc-m2-lbl">Streaming Latency</small><b
-                                            data-i18n="hc-m2-val">&lt; 180ms WebRTC</b></div>
-                                    <div class="metric"><small data-i18n="hc-m3-lbl">Security Layer</small><b
-                                            data-i18n="hc-m3-val">Hardware Keystore Enclave</b></div>
-                                </div>
-                                <div class="chips-row">
-                                    <span class="chip">WebRTC Video</span>
-                                    <span class="chip green">Encrypted SQLCipher</span>
-                                    <span class="chip plain">Coroutines &amp; StateFlow</span>
-                                </div>
-                            </div>
-                        </details>
-
-                        <details class="job">
-                            <summary>
-                                <div>
-                                    <h3>WNDO <span class="chip" data-i18n="wn-badge-scale">Millions of
-                                            Transactions</span></h3>
-                                    <p class="meta"><span data-i18n="wn-role">Senior Android Developer</span> | <span
-                                            class="yrs">2021 — 2023</span> · <span data-i18n="wn-location">Scale-Up
-                                            Commerce</span></p>
-                                </div>
-                                <span class="material-symbols-outlined chev">expand_more</span>
-                            </summary>
-                            <div class="job-body">
-                                <p data-i18n="wn-desc">Architected the checkout, catalog, and high-concurrency order
-                                    processing modules. Reduced cold application startup latency by 42% through
-                                    baseline profile generation, lazy component initializers, and dependency graph
-                                    pruning. Co-led the engineering transition from XML layouts to 100% Jetpack
-                                    Compose.</p>
-                                <div class="metrics">
-                                    <div class="metric"><small data-i18n="wn-m1-lbl">Startup Latency</small><b
-                                            data-i18n="wn-m1-val">42% Faster Cold Boot</b></div>
-                                    <div class="metric"><small data-i18n="wn-m2-lbl">Checkout Concurrency</small><b
-                                            data-i18n="wn-m2-val">Zero-Lock Queuing</b></div>
-                                    <div class="metric"><small data-i18n="wn-m3-lbl">App Size</small><b
-                                            data-i18n="wn-m3-val">Dynamic Modules (-28%)</b></div>
-                                </div>
-                                <div class="chips-row">
-                                    <span class="chip">Baseline Profiles</span>
-                                    <span class="chip green">Dynamic Feature Modules</span>
-                                    <span class="chip plain">Payment SDKs</span>
-                                </div>
-                            </div>
-                        </details>
-
-                        <details class="job">
-                            <summary>
-                                <div>
-                                    <h3>Elmeya Soft</h3>
-                                    <p class="meta"><span data-i18n="em-role">M.S Android Developer</span> | <span
-                                            class="yrs">2019 — 2021</span></p>
-                                </div>
-                                <span class="material-symbols-outlined chev">expand_more</span>
-                            </summary>
-                            <div class="job-body">
-                                <p data-i18n="em-desc">Led architectural refactoring from RxJava2 to Kotlin Coroutines,
-                                    MVVM adoption, and multi-tier enterprise client software.</p>
-                            </div>
-                        </details>
-
-                        <details class="job">
-                            <summary>
-                                <div>
-                                    <h3>ITBuziness</h3>
-                                    <p class="meta"><span data-i18n="it-role">Android Developer</span> | <span
-                                            class="yrs">2017 — 2019</span></p>
-                                </div>
-                                <span class="material-symbols-outlined chev">expand_more</span>
-                            </summary>
-                            <div class="job-body">
-                                <p data-i18n="it-desc">High-throughput REST client integrations, disk-caching
-                                    mechanisms, and reactive client-server communication channels.</p>
-                            </div>
-                        </details>
-
-                        <details class="job">
-                            <summary>
-                                <div>
-                                    <h3>Tech Engines</h3>
-                                    <p class="meta"><span data-i18n="te-role">Android Developer</span> | <span
-                                            class="yrs">2016 — 2017</span></p>
-                                </div>
-                                <span class="material-symbols-outlined chev">expand_more</span>
-                            </summary>
-                            <div class="job-body">
-                                <p data-i18n="te-desc">Native Android foundations, Java-to-Kotlin transition, layout
-                                    rendering optimizations, and strict memory leak diagnostics.</p>
-                            </div>
-                        </details>
-                    </div>
-
-                    <!-- Skills -->
-                    <div class="tab-panel" id="panel-skills" role="tabpanel">
-                        <div class="skill-grid">
-                            <div class="skill-group">
-                                <h4><span class="material-symbols-outlined">code</span><span data-i18n="sk1-title">Core
-                                        &amp; Kotlin</span></h4>
-                                <ul>
-                                    <li>Kotlin</li>
-                                    <li>Coroutines &amp; StateFlow</li>
-                                    <li>Java</li>
-                                    <li>Kotlin Multiplatform</li>
-                                </ul>
-                            </div>
-                            <div class="skill-group">
-                                <h4><span class="material-symbols-outlined">schema</span><span
-                                        data-i18n="sk2-title">Architecture</span></h4>
-                                <ul>
-                                    <li>Clean Architecture</li>
-                                    <li>Multi-Module Gradle</li>
-                                    <li>Offline-First</li>
-                                    <li>MVI / UDF</li>
-                                </ul>
-                            </div>
-                            <div class="skill-group">
-                                <h4><span class="material-symbols-outlined">layers</span><span
-                                        data-i18n="sk3-title">Jetpack &amp; Libs</span></h4>
-                                <ul>
-                                    <li>Jetpack Compose</li>
-                                    <li>Hilt / Koin</li>
-                                    <li>Room &amp; SQLCipher</li>
-                                    <li>Ktor &amp; Retrofit</li>
-                                </ul>
-                            </div>
-                            <div class="skill-group">
-                                <h4><span class="material-symbols-outlined">neurology</span><span
-                                        data-i18n="sk4-title">AI on Android</span></h4>
-                                <ul>
-                                    <li>Gemini Nano</li>
-                                    <li>TensorFlow Lite INT8</li>
-                                    <li>MediaPipe</li>
-                                    <li>SQLite-VSS RAG</li>
-                                </ul>
-                            </div>
-                            <div class="skill-group">
-                                <h4><span class="material-symbols-outlined">verified</span><span
-                                        data-i18n="sk5-title">Testing &amp; CI/CD</span></h4>
-                                <ul>
-                                    <li>JUnit5 &amp; MockK</li>
-                                    <li>Turbine</li>
-                                    <li>Baseline Profiles</li>
-                                    <li>GitHub Actions &amp; Fastlane</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Principles -->
-                    <div class="tab-panel" id="panel-principles" role="tabpanel">
-                        <div class="pillar">
-                            <span class="pillar-ico material-symbols-outlined">cloud_off</span>
+                </div>
+                <!-- Experience -->
+                <div class="tab-panel active" id="panel-exp" role="tabpanel">
+                    <details class="job" open>
+                        <summary>
                             <div>
-                                <h4 data-i18n="p1-h3">Offline-First &amp; Resilient Sync</h4>
-                                <p data-i18n="p1-p">Encrypted SQLCipher databases, CRDT-inspired reconciliation, and
-                                    durable WorkManager queues that recover from arbitrary network drops without data
-                                    corruption.</p>
+                                <h3>PlanRadar <span class="chip" data-i18n="pr-badge-scale">500k+ Active Field
+                                        Units</span></h3>
+                                <p class="meta"><span data-i18n="pr-role">Senior Android Developer</span> | <span
+                                        class="yrs">2025 — 2026</span> · <span data-i18n="pr-location">Austria /
+                                        Remote</span></p>
+                            </div>
+                            <span class="material-symbols-outlined chev">expand_more</span>
+                        </summary>
+                        <div class="job-body">
+                            <p data-i18n="pr-desc">Scaled the core Android platform for construction documentation,
+                                BIM model rendering, task inspection management, and AI-powered workflows. Designed
+                                high-throughput background synchronization for multi-gigabyte architectural
+                                blueprints and offline inspection reports with zero data loss. Modernized legacy
+                                components into a modular Kotlin Clean Architecture and integrated AI across the
+                                application, including on-device inference, intelligent document and inspection
+                                processing, and AI-assisted field workflows.
+                            </p>
+                            <div class="metrics">
+                                <div class="metric"><small data-i18n="pr-m1-lbl">Blueprint Load</small><b
+                                        data-i18n="pr-m1-val">60% Faster BIM Render</b></div>
+                                <div class="metric"><small data-i18n="pr-m3-lbl">Codebase</small><b
+                                        data-i18n="pr-m3-val">Jetpack Compose</b></div>
+                                <div class="metric"><small data-i18n="pr-m3-lbl">Codebase</small><b
+                                        data-i18n="pr-m3-val">Modular Kotlin</b></div>
+                            </div>
+                            <div class="chips-row">
+                                <span class="chip">BIM / Plan Viewer</span>
+                                <span class="chip green">Offline Synchronization</span>
+                                <span class="chip plain">Multi-Module Gradle</span>
                             </div>
                         </div>
-                        <div class="pillar">
-                            <span class="pillar-ico material-symbols-outlined">layers</span>
-                            <div>
-                                <h4 data-i18n="p2-h3">100% Declarative Compose UI</h4>
-                                <p data-i18n="p2-p">Enterprise design token architectures, custom LayoutModifiers,
-                                    accessibility semantics, and strict recomposition auditing for smooth 120Hz
-                                    interactions.</p>
-                            </div>
-                        </div>
-                        <div class="pillar">
-                            <span class="pillar-ico material-symbols-outlined">neurology</span>
-                            <div>
-                                <h4 data-i18n="p3-h3">On-Device AI &amp; Edge Agents</h4>
-                                <p data-i18n="p3-p">Local INT8 quantization with MediaPipe and Gemini Nano. Edge
-                                    document embeddings (Local Vector RAG) and real-time computer vision with zero
-                                    server overhead.</p>
-                            </div>
-                        </div>
-                        <div class="pillar">
-                            <span class="pillar-ico material-symbols-outlined">schema</span>
-                            <div>
-                                <h4 data-i18n="p4-h3">Modular Clean Architecture</h4>
-                                <p data-i18n="p4-p">Separation into :feature, :core, and :domain modules. Fast compile
-                                    times via build-cache, Dagger-Hilt dependency injection, and comprehensive unit
-                                    tests with Turbine.</p>
-                            </div>
-                        </div>
-                    </div>
+                    </details>
 
-                    <!-- Impact -->
-                    <div class="tab-panel" id="panel-impact" role="tabpanel">
-                        <div class="stats">
-                            <div class="stat gold"><b>12.8k</b><small data-i18n="st-lt-stars">⭐ LibreTube Stars</small>
+                    <details class="job">
+                        <summary>
+                            <div>
+                                <h3>HealloCare <span class="chip green" data-i18n="hc-badge-cert">HIPAA &amp; GDPR
+                                        Certified</span></h3>
+                                <p class="meta"><span data-i18n="hc-role">Senior Android Developer</span> | <span
+                                        class="yrs">2023 — 2025</span> · <span data-i18n="hc-location">Health
+                                        Tech</span></p>
                             </div>
-                            <div class="stat gold"><b>6.4k</b><small data-i18n="st-amaze-stars">⭐ AmazeFileManager
-                                    Stars</small></div>
-                            <div class="stat"><b>680+</b><small data-i18n="st-forks">Forks on LibreTube</small></div>
-                            <div class="stat green"><b>150+</b><small data-i18n="st-mentored">Engineers
-                                    Mentored</small></div>
-                            <div class="stat green"><b>99.98%</b><small data-i18n="st-crash">Crash-Free
-                                    Sessions</small></div>
-                            <div class="stat"><b>500k+</b><small data-i18n="st-devices">Active Devices</small></div>
-                            <div class="stat"><b>&lt; 42ms</b><small data-i18n="st-npu">NPU Latency</small></div>
-                            <div class="stat green"><b>42%</b><small data-i18n="st-boot">Faster Cold Boot</small></div>
+                            <span class="material-symbols-outlined chev">expand_more</span>
+                        </summary>
+                        <div class="job-body">
+                            <p data-i18n="hc-desc">Engineered patient-vital telemetry systems and low-latency
+                                telemedicine consultation pipelines. Enforced strict HIPAA data security protocols
+                                via SQLCipher database encryption and hardware-backed biometric keystore
+                                management. Maintained 99.98% crash-free sessions across intensive medical
+                                real-time video consults.</p>
+                            <div class="metrics">
+                                <div class="metric"><small data-i18n="hc-m1-lbl">Reliability SLA</small><b
+                                        data-i18n="hc-m1-val">99.98% Crash-Free</b></div>
+                                <div class="metric"><small data-i18n="hc-m2-lbl">Streaming Latency</small><b
+                                        data-i18n="hc-m2-val">&lt; 180ms WebRTC</b></div>
+                                <div class="metric"><small data-i18n="hc-m3-lbl">Security Layer</small><b
+                                        data-i18n="hc-m3-val">Hardware Keystore Enclave</b></div>
+                            </div>
+                            <div class="chips-row">
+                                <span class="chip">WebRTC Video</span>
+                                <span class="chip green">Encrypted SQLCipher</span>
+                                <span class="chip plain">Coroutines &amp; StateFlow</span>
+                            </div>
                         </div>
-                        <div class="impact-chips">
-                            <span class="chip">🦈 Pull Shark ×3</span>
-                            <span class="chip">🌍 Arctic Code Vault</span>
-                            <span class="chip">⚡ Quickdraw</span>
-                            <span class="chip">👥 Pair Extraordinaire</span>
+                    </details>
+
+                    <details class="job">
+                        <summary>
+                            <div>
+                                <h3>WNDO <span class="chip" data-i18n="wn-badge-scale">Millions of
+                                        Transactions</span></h3>
+                                <p class="meta"><span data-i18n="wn-role">Senior Android Developer</span> | <span
+                                        class="yrs">2021 — 2023</span> · <span data-i18n="wn-location">Scale-Up
+                                        Commerce</span></p>
+                            </div>
+                            <span class="material-symbols-outlined chev">expand_more</span>
+                        </summary>
+                        <div class="job-body">
+                            <p data-i18n="wn-desc">Architected the checkout, catalog, and high-concurrency order
+                                processing modules. Reduced cold application startup latency by 42% through
+                                baseline profile generation, lazy component initializers, and dependency graph
+                                pruning. Co-led the engineering transition from XML layouts to 100% Jetpack
+                                Compose.</p>
+                            <div class="metrics">
+                                <div class="metric"><small data-i18n="wn-m1-lbl">Startup Latency</small><b
+                                        data-i18n="wn-m1-val">42% Faster Cold Boot</b></div>
+                                <div class="metric"><small data-i18n="wn-m2-lbl">Checkout Concurrency</small><b
+                                        data-i18n="wn-m2-val">Zero-Lock Queuing</b></div>
+                                <div class="metric"><small data-i18n="wn-m3-lbl">App Size</small><b
+                                        data-i18n="wn-m3-val">Dynamic Modules (-28%)</b></div>
+                            </div>
+                            <div class="chips-row">
+                                <span class="chip">Baseline Profiles</span>
+                                <span class="chip green">Dynamic Feature Modules</span>
+                                <span class="chip plain">Payment SDKs</span>
+                            </div>
+                        </div>
+                    </details>
+
+                    <details class="job">
+                        <summary>
+                            <div>
+                                <h3>Elmeya Soft</h3>
+                                <p class="meta"><span data-i18n="em-role">M.S Android Developer</span> | <span
+                                        class="yrs">2019 — 2021</span></p>
+                            </div>
+                            <span class="material-symbols-outlined chev">expand_more</span>
+                        </summary>
+                        <div class="job-body">
+                            <p data-i18n="em-desc">Led architectural refactoring from RxJava2 to Kotlin Coroutines,
+                                MVVM adoption, and multi-tier enterprise client software.</p>
+                        </div>
+                    </details>
+
+                    <details class="job">
+                        <summary>
+                            <div>
+                                <h3>ITBuziness</h3>
+                                <p class="meta"><span data-i18n="it-role">Android Developer</span> | <span
+                                        class="yrs">2017 — 2019</span></p>
+                            </div>
+                            <span class="material-symbols-outlined chev">expand_more</span>
+                        </summary>
+                        <div class="job-body">
+                            <p data-i18n="it-desc">High-throughput REST client integrations, disk-caching
+                                mechanisms, and reactive client-server communication channels.</p>
+                        </div>
+                    </details>
+
+                    <details class="job">
+                        <summary>
+                            <div>
+                                <h3>Tech Engines</h3>
+                                <p class="meta"><span data-i18n="te-role">Android Developer</span> | <span
+                                        class="yrs">2016 — 2017</span></p>
+                            </div>
+                            <span class="material-symbols-outlined chev">expand_more</span>
+                        </summary>
+                        <div class="job-body">
+                            <p data-i18n="te-desc">Native Android foundations, Java-to-Kotlin transition, layout
+                                rendering optimizations, and strict memory leak diagnostics.</p>
+                        </div>
+                    </details>
+                </div>
+
+                <!-- Skills -->
+                <div class="tab-panel" id="panel-skills" role="tabpanel">
+                    <div class="skill-grid">
+                        <div class="skill-group">
+                            <h4><span class="material-symbols-outlined">code</span><span data-i18n="sk1-title">Core
+                                    &amp; Kotlin</span></h4>
+                            <ul>
+                                <li>Kotlin</li>
+                                <li>Coroutines &amp; StateFlow</li>
+                                <li>Java</li>
+                                <li>Kotlin Multiplatform</li>
+                            </ul>
+                        </div>
+                        <div class="skill-group">
+                            <h4><span class="material-symbols-outlined">schema</span><span
+                                    data-i18n="sk2-title">Architecture</span></h4>
+                            <ul>
+                                <li>Clean Architecture</li>
+                                <li>Multi-Module Gradle</li>
+                                <li>Offline-First</li>
+                                <li>MVI / UDF</li>
+                            </ul>
+                        </div>
+                        <div class="skill-group">
+                            <h4><span class="material-symbols-outlined">layers</span><span data-i18n="sk3-title">Jetpack
+                                    &amp; Libs</span></h4>
+                            <ul>
+                                <li>Jetpack Compose</li>
+                                <li>Hilt / Koin</li>
+                                <li>Room &amp; SQLCipher</li>
+                                <li>Ktor &amp; Retrofit</li>
+                            </ul>
+                        </div>
+                        <div class="skill-group">
+                            <h4><span class="material-symbols-outlined">neurology</span><span data-i18n="sk4-title">AI
+                                    on Android</span></h4>
+                            <ul>
+                                <li>Gemini Nano</li>
+                                <li>TensorFlow Lite INT8</li>
+                                <li>MediaPipe</li>
+                                <li>SQLite-VSS RAG</li>
+                            </ul>
+                        </div>
+                        <div class="skill-group">
+                            <h4><span class="material-symbols-outlined">verified</span><span
+                                    data-i18n="sk5-title">Testing &amp; CI/CD</span></h4>
+                            <ul>
+                                <li>JUnit5 &amp; MockK</li>
+                                <li>Turbine</li>
+                                <li>Baseline Profiles</li>
+                                <li>GitHub Actions &amp; Fastlane</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
+
+                <!-- Principles -->
+                <div class="tab-panel" id="panel-principles" role="tabpanel">
+                    <div class="pillar">
+                        <span class="pillar-ico material-symbols-outlined">cloud_off</span>
+                        <div>
+                            <h4 data-i18n="p1-h3">Offline-First &amp; Resilient Sync</h4>
+                            <p data-i18n="p1-p">Encrypted SQLCipher databases, CRDT-inspired reconciliation, and
+                                durable WorkManager queues that recover from arbitrary network drops without data
+                                corruption.</p>
+                        </div>
+                    </div>
+                    <div class="pillar">
+                        <span class="pillar-ico material-symbols-outlined">layers</span>
+                        <div>
+                            <h4 data-i18n="p2-h3">100% Declarative Compose UI</h4>
+                            <p data-i18n="p2-p">Enterprise design token architectures, custom LayoutModifiers,
+                                accessibility semantics, and strict recomposition auditing for smooth 120Hz
+                                interactions.</p>
+                        </div>
+                    </div>
+                    <div class="pillar">
+                        <span class="pillar-ico material-symbols-outlined">neurology</span>
+                        <div>
+                            <h4 data-i18n="p3-h3">On-Device AI &amp; Edge Agents</h4>
+                            <p data-i18n="p3-p">Local INT8 quantization with MediaPipe and Gemini Nano. Edge
+                                document embeddings (Local Vector RAG) and real-time computer vision with zero
+                                server overhead.</p>
+                        </div>
+                    </div>
+                    <div class="pillar">
+                        <span class="pillar-ico material-symbols-outlined">schema</span>
+                        <div>
+                            <h4 data-i18n="p4-h3">Modular Clean Architecture</h4>
+                            <p data-i18n="p4-p">Separation into :feature, :core, and :domain modules. Fast compile
+                                times via build-cache, Dagger-Hilt dependency injection, and comprehensive unit
+                                tests with Turbine.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Impact -->
+                <div class="tab-panel" id="panel-impact" role="tabpanel">
+                    <div class="stats">
+                        <div class="stat gold"><b>12.8k</b><small data-i18n="st-lt-stars">⭐ LibreTube Stars</small>
+                        </div>
+                        <div class="stat gold"><b>6.4k</b><small data-i18n="st-amaze-stars">⭐ AmazeFileManager
+                                Stars</small></div>
+                        <div class="stat"><b>680+</b><small data-i18n="st-forks">Forks on LibreTube</small></div>
+                        <div class="stat green"><b>150+</b><small data-i18n="st-mentored">Engineers
+                                Mentored</small></div>
+                        <div class="stat green"><b>99.98%</b><small data-i18n="st-crash">Crash-Free
+                                Sessions</small></div>
+                        <div class="stat"><b>500k+</b><small data-i18n="st-devices">Active Devices</small></div>
+                        <div class="stat"><b>&lt; 42ms</b><small data-i18n="st-npu">NPU Latency</small></div>
+                        <div class="stat green"><b>42%</b><small data-i18n="st-boot">Faster Cold Boot</small></div>
+                    </div>
+                    <div class="impact-chips">
+                        <span class="chip">🦈 Pull Shark ×3</span>
+                        <span class="chip">🌍 Arctic Code Vault</span>
+                        <span class="chip">⚡ Quickdraw</span>
+                        <span class="chip">👥 Pair Extraordinaire</span>
+                    </div>
+                </div>
+            </div>
             </div>
         </section>
 
@@ -669,8 +685,11 @@
                         <h4 data-i18n="oss-af1-h">AmazeFileManager AsyncTask Refactor</h4>
                         <h5><span class="material-symbols-outlined">code</span><span data-i18n="cat-oss">Open
                                 Source</span></h5>
-                        <p data-i18n="oss-af1-p">Modernized file list loading in MainFragment by replacing AsyncTask with RxJava Single. Implemented lifecycle-aware cancellation via Disposable tracking and enhanced error handling to fix the "new tab doubles file count" issue.</p>
-                        <p class="tech"><strong data-i18n="tech-used">Technologies Used:</strong> Kotlin, RxJava, Android Architecture</p>
+                        <p data-i18n="oss-af1-p">Modernized file list loading in MainFragment by replacing AsyncTask
+                            with RxJava Single. Implemented lifecycle-aware cancellation via Disposable tracking and
+                            enhanced error handling to fix the "new tab doubles file count" issue.</p>
+                        <p class="tech"><strong data-i18n="tech-used">Technologies Used:</strong> Kotlin, RxJava,
+                            Android Architecture</p>
                         <div class="card-icons">
                             <a class="card-icon" href="https://github.com/TeamAmaze/AmazeFileManager/pull/4690"
                                 target="_blank" rel="noopener noreferrer" aria-label="View pull request #4690"><svg
@@ -692,8 +711,11 @@
                         <h4 data-i18n="oss-af2-h">AmazeFileManager Bookmark Validation</h4>
                         <h5><span class="material-symbols-outlined">code</span><span data-i18n="cat-oss">Open
                                 Source</span></h5>
-                        <p data-i18n="oss-af2-p">Enhanced bookmark management UI with real-time input validation through BookmarkPrefsViewModel. Implemented WarnableTextInputValidator and BookmarkData data class for cleaner architecture and better error feedback in settings.</p>
-                        <p class="tech"><strong data-i18n="tech-used">Technologies Used:</strong> Kotlin, MVVM, Android DataBinding</p>
+                        <p data-i18n="oss-af2-p">Enhanced bookmark management UI with real-time input validation through
+                            BookmarkPrefsViewModel. Implemented WarnableTextInputValidator and BookmarkData data class
+                            for cleaner architecture and better error feedback in settings.</p>
+                        <p class="tech"><strong data-i18n="tech-used">Technologies Used:</strong> Kotlin, MVVM, Android
+                            DataBinding</p>
                         <div class="card-icons">
                             <a class="card-icon" href="https://github.com/TeamAmaze/AmazeFileManager/pull/4687"
                                 target="_blank" rel="noopener noreferrer" aria-label="View pull request #4687"><svg
@@ -717,7 +739,8 @@
                                 Full Stack</span></h5>
                         <p data-i18n="pj-kn-p">Full-stack Laravel platform for KN Libya, an all-in-one Libyan service
                             hub covering money transfers, jobs, rides, a marketplace and messaging.</p>
-                        <p class="tech"><strong data-i18n="tech-used">Technologies Used:</strong> PHP, Laravel, HTML, CSS</p>
+                        <p class="tech"><strong data-i18n="tech-used">Technologies Used:</strong> PHP, Laravel, HTML,
+                            CSS</p>
                         <div class="card-icons">
                             <a class="card-icon" href="https://libyakn.com/" target="_blank" rel="noopener noreferrer"
                                 aria-label="Visit KN Libya"><span class="material-symbols-outlined">language</span></a>
@@ -738,7 +761,8 @@
                                 Full Stack</span></h5>
                         <p data-i18n="pj-corc-p">Full-stack Laravel website for the Creators' Open Championship, a
                             robotics, programming and AI competition, with team registration, events and gallery.</p>
-                        <p class="tech"><strong data-i18n="tech-used">Technologies Used:</strong> PHP, Laravel, HTML, CSS</p>
+                        <p class="tech"><strong data-i18n="tech-used">Technologies Used:</strong> PHP, Laravel, HTML,
+                            CSS</p>
                         <div class="card-icons">
                             <a class="card-icon" href="https://www.corchampionship.org/" target="_blank"
                                 rel="noopener noreferrer" aria-label="Visit CORC Championship"><span
@@ -760,7 +784,8 @@
                                 Full Stack</span></h5>
                         <p data-i18n="pj-wa-p">Full-stack Laravel SaaS for bulk WhatsApp messaging, with subscription
                             plans, API access, delivery tracking and real-time analytics.</p>
-                        <p class="tech"><strong data-i18n="tech-used">Technologies Used:</strong> PHP, Laravel, HTML, CSS</p>
+                        <p class="tech"><strong data-i18n="tech-used">Technologies Used:</strong> PHP, Laravel, HTML,
+                            CSS</p>
                         <div class="card-icons">
                             <a class="card-icon" href="https://whappg.pollenbyte.com/" target="_blank"
                                 rel="noopener noreferrer" aria-label="Visit WhatsApp Message Gateway"><span
@@ -782,7 +807,8 @@
                                 Full Stack</span></h5>
                         <p data-i18n="pj-disha-p">Full-stack Laravel web platform for Disha Market, a grocery delivery
                             service in Egypt with fast home delivery and secure payments.</p>
-                        <p class="tech"><strong data-i18n="tech-used">Technologies Used:</strong> PHP, Laravel, HTML, CSS</p>
+                        <p class="tech"><strong data-i18n="tech-used">Technologies Used:</strong> PHP, Laravel, HTML,
+                            CSS</p>
                         <div class="card-icons">
                             <a class="card-icon" href="http://dishamarket.com/" target="_blank"
                                 rel="noopener noreferrer" aria-label="Visit Disha Market"><span
@@ -804,7 +830,8 @@
                                 Full Stack</span></h5>
                         <p data-i18n="pj-govo-p">Full-stack Laravel web platform for Govo, an on-demand delivery service
                             in Saudi Arabia.</p>
-                        <p class="tech"><strong data-i18n="tech-used">Technologies Used:</strong> PHP, Laravel, HTML, CSS</p>
+                        <p class="tech"><strong data-i18n="tech-used">Technologies Used:</strong> PHP, Laravel, HTML,
+                            CSS</p>
                         <div class="card-icons">
                             <a class="card-icon" href="https://www.govoksa.com/" target="_blank"
                                 rel="noopener noreferrer" aria-label="Visit Govo"><span
@@ -826,7 +853,8 @@
                                 Full Stack</span></h5>
                         <p data-i18n="pj-zajil-p">Full-stack Laravel web platform for Zajil, a multi-vendor ordering and
                             delivery service in Egypt connecting customers, stores and couriers.</p>
-                        <p class="tech"><strong data-i18n="tech-used">Technologies Used:</strong> PHP, Laravel, HTML, CSS</p>
+                        <p class="tech"><strong data-i18n="tech-used">Technologies Used:</strong> PHP, Laravel, HTML,
+                            CSS</p>
                         <div class="card-icons">
                             <a class="card-icon" href="https://mzajil.com/" target="_blank" rel="noopener noreferrer"
                                 aria-label="Visit Zajil"><span class="material-symbols-outlined">language</span></a>
@@ -847,7 +875,8 @@
                                 Full Stack</span></h5>
                         <p data-i18n="pj-hadreen-p">Full-stack Laravel web platform for Hadreen, a Saudi food delivery
                             service connecting customers with restaurants, merchants and drivers.</p>
-                        <p class="tech"><strong data-i18n="tech-used">Technologies Used:</strong> PHP, Laravel, HTML, CSS</p>
+                        <p class="tech"><strong data-i18n="tech-used">Technologies Used:</strong> PHP, Laravel, HTML,
+                            CSS</p>
                         <div class="card-icons">
                             <a class="card-icon" href="https://hadreenksa.com/" target="_blank"
                                 rel="noopener noreferrer" aria-label="Visit Hadreen"><span

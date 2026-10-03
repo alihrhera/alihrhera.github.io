@@ -8,7 +8,7 @@ const translations = {
         'hero-eyebrow': 'Hi There,',
         'hero-h1': 'I\'m <span class="accent">Ali Hrhera</span>',
         'hero-iam': 'I am a',
-        'hero-sub': 'Senior Android Engineer with 8+ years building offline-first, high-performance mobile systems and on-device AI.',
+        'hero-sub': 'A Senior Software Engineer & Systems Architect specializing in Android, Mobile, and Backend systems. I design and build mission-critical, offline-first software across construction-tech, digital healthcare, and commerce, spanning high-performance mobile applications, scalable APIs, and backend services with Kotlin, Jetpack Compose, PHP, and Laravel. I also work on on-device AI and NPU-accelerated inference. Outside work, I contribute to open source and mentor Android engineers through VADT.',
         'hero-cta-work': 'View My Work', 'hero-cta-contact': 'Contact Me',
         'terminal-thread': 'Main Thread: 1.2ms (Zero Jank)',
         'tag-remote': 'Global Remote', 'tag-since': 'Android since 2016',
@@ -104,7 +104,7 @@ const translations = {
         'copy': 'Copy', 'copied': 'Copied!',
         'ft-copyright': '© 2026 Ali Tarek Hrhera. Crafted for high-performance edge architectures.',
         'ft-role': 'Senior Android Engineer &amp; Edge AI Systems Architect · Android Developer since 2016',
-        roles: ['Android Architect', 'Edge AI Engineer', 'Kotlin & Compose Expert', 'Open Source Contributor'],
+        roles: ['Android  Engineer', 'Backend Developer', 'Kotlin & Compose Expert', 'Open Source Contributor'],
     },
     ar: {
         'nav-home': 'الرئيسية', 'nav-about': 'عني', 'nav-work': 'أعمالي', 'nav-contact': 'تواصل',
@@ -120,7 +120,7 @@ const translations = {
         'about-lbl': '01 // عني', 'about-h2': 'نبذة عني',
         'about-p': 'أنا <b>علي حرحيره</b>، مهندس برمجيات متخصص في تطوير تطبيقات الموبايل والأنظمة الخلفية (Backend)، أعمل على تصميم وبناء حلول برمجية قابلة للتوسع وموثوقة، من واجهات وتجارب المستخدم على Android إلى الخدمات والـ APIs والبنية الخلفية. أمتلك خبرة في Kotlin وJetpack Compose وPHP وLaravel، مع خبرة في تطوير أنظمة تعمل بكفاءة في بيئات الاتصال المحدود أو دون اتصال بالإنترنت. خارج العمل، أساهم في مشاريع المصدر المفتوح وأشارك في تدريب وتطوير مطوري Android من خلال مبادرة VADT.',
         'tab-exp': 'الخبرة', 'tab-skills': 'المهارات', 'tab-principles': 'المبادئ', 'tab-impact': 'الأثر',
-        'pr-badge-scale': '500k+ وحدة ميدانية نشطة', 'pr-role': 'مطور أندرويد أول',
+        'pr-badge-scale': '+1m تحميل ', 'pr-role': 'مطور أندرويد أول',
         'pr-location': 'النمسا / عن بُعد',
         'pr-desc': 'توسيع نطاق منصة أندرويد الأساسية لتوثيق البناء وعرض نماذج BIM وإدارة مهام التفتيش. ريادة استراتيجيات المزامنة في الخلفية عالية الإنتاجية للتعامل مع المخططات المعمارية متعددة الجيجابايت وتقارير التفتيش دون إنترنت. تحديث المكونات القديمة إلى بنية Kotlin النظيفة المعيارية.',
         'pr-m1-lbl': 'تحميل المخطط', 'pr-m1-val': 'عرض BIM أسرع بـ 60%',
@@ -183,8 +183,8 @@ const translations = {
         'pj-hc-p': 'قياس مؤشرات المرضى واستشارات فيديو WebRTC متوافقة مع HIPAA بزمن أقل من 180ms وجلسات خالية من الأعطال بنسبة 99.98%.',
         'pj-wn-h': 'WNDO للتجارة الاجتماعية',
         'pj-wn-p': 'وحدات الدفع والكتالوج والطلبات لملايين المعاملات. إقلاع أسرع بـ 42% وتطبيق أصغر بـ 28% عبر الوحدات الديناميكية.',
-        'pj-kn-h': 'كن ليبيا',
-        'pj-kn-p': 'منصة Laravel متكاملة (Full Stack) لـ "كن ليبيا"، مركز خدمات ليبي شامل يضم تحويل الأموال والوظائف والتوصيل والسوق والمراسلات.',
+        'pj-kn-h': 'KN ليبيا',
+        'pj-kn-p': 'منصة Laravel متكاملة (Full Stack) لـ "KN ليبيا"، مركز خدمات ليبي شامل يضم تحويل الأموال والوظائف والتوصيل والسوق والمراسلات.',
         'pj-corc-h': 'بطولة المبدعين المفتوحة',
         'pj-corc-p': 'موقع Laravel متكامل لبطولة المبدعين المفتوحة في الروبوتات والبرمجة والذكاء الاصطناعي، يشمل تسجيل الفرق والفعاليات ومعرض الصور.',
         'pj-wa-h': 'بوابة رسائل واتساب',
@@ -209,7 +209,7 @@ const translations = {
         'copy': 'نسخ', 'copied': 'تم النسخ!',
         'ft-copyright': '© 2026 علي حرحيره. مُصمَّم لبنيات الحافة عالية الأداء.',
         'ft-role': 'مهندس أندرويد أول ومهندس بنية أنظمة الذكاء الاصطناعي على الحافة · مطور أندرويد منذ 2016',
-        roles: ['مهندس برمجيات لأنظمة أندرويد', 'خبير Kotlin و Compose', 'مساهم في المصدر المفتوح'],
+        roles: ['مهندس برمجيات لأنظمة أندرويد', 'خبير Kotlin و Compose', 'مساهم في المصدر المفتوح', 'مطور full stack laravel'],
     }
 };
 
@@ -387,3 +387,15 @@ function toggleLang() { applyLang(currentLang === 'en' ? 'ar' : 'en'); }
 window.toggleLang = toggleLang;
 
 applyLang(currentLang);
+// ─── Theme ───────────────────────────────────────────
+function toggleTheme() {
+    const next = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+    document.documentElement.dataset.theme = next;
+    document.querySelector('meta[name="theme-color"]').content = next === 'light' ? '#fdf8f3' : '#0b0d12';
+    try { localStorage.setItem('theme', next); } catch (e) { /* storage blocked */ }
+}
+
+window.toggleTheme = toggleTheme;
+if (document.documentElement.dataset.theme === 'dark') {
+    document.querySelector('meta[name="theme-color"]').content = '#0b0d12';
+}
