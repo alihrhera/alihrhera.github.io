@@ -338,4 +338,6 @@ function applyLang(lang) {
 
 function toggleLang() { applyLang(currentLang === 'en' ? 'ar' : 'en'); }
 
+window.toggleLang = toggleLang;
+
 applyLang(currentLang);
