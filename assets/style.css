@@ -1405,6 +1405,20 @@
             border: 1px solid rgba(251, 191, 36, 0.35);
         }
 
+        .cover-tech {
+            position: absolute;
+            top: 36px;
+            inset-inline-start: 16px;
+            font-family: var(--mono);
+            font-size: 0.6rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.7);
+            padding: 2px 8px;
+            border-radius: 4px;
+            background: rgba(10, 14, 22, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
         .project-card:hover .cover,
         .project-card.expanded .cover {
             transform: scale(1.07);
