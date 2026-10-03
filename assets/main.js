@@ -296,15 +296,7 @@ function startTyping() {
     tick();
 }
 
-// ─── Contact form → mail client ──────────────────────
-document.getElementById('contact-form').addEventListener('submit', e => {
-    e.preventDefault();
-    const f = e.target;
-    const subject = f.subject.value.trim() || `Hello from ${f.name.value.trim()}`;
-    const body = `${f.message.value.trim()}\n\n— ${f.name.value.trim()} (${f.email.value.trim()})`;
-    window.location.href = `mailto:alihrhera1@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-});
-
+// ─── Copy email to clipboard ────────────────────────
 const copyBtn = document.getElementById('copy-email');
 copyBtn.addEventListener('click', () => {
     navigator.clipboard.writeText('alihrhera1@gmail.com').then(() => {
