@@ -314,7 +314,7 @@ copyBtn.addEventListener('click', () => {
 });
 
 // ─── i18n ────────────────────────────────────────────
-let currentLang = 'en';
+let currentLang = 'ar';
 try {
     currentLang = localStorage.getItem('lang') || (navigator.language.startsWith('ar') ? 'ar' : 'en');
 } catch (e) { /* storage blocked */ }
