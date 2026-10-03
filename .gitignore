@@ -1,0 +1,25 @@
+# IDE & Editor
+.vscode/
+.cursorrules
+.codebuddy/
+.kiro/
+.mcp.json
+.windsurfrules
+
+# Claude Code
+.claude/
+.qoder/
+.gemini/
+
+# GitHub
+.github/
+
+# Config
+opencode.jsonc
+
+# Docs
+AGENTS.md
+CLAUDE.md
+CODEBUDDY.md
+GEMINI.md
+QODER.md
