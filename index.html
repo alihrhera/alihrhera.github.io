@@ -1,1695 +1,731 @@
 <!DOCTYPE html>
-<html class="dark scroll-smooth" lang="en" dir="ltr">
+<html lang="en" dir="ltr">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Ali Tarek Hrhera — Senior Android Architect & Edge AI Engineer with 8+ years building offline-first, high-performance mobile systems.">
-    <title>Ali Tarek Hrhera // Senior Android Architect & AI Engineer</title>
+        content="Ali Hrhera — Senior Android Architect & Edge AI Engineer with 8+ years building offline-first, high-performance mobile systems.">
+    <meta name="theme-color" content="#0a0e16">
+    <title>Ali Hrhera // Senior Android Architect & AI Engineer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Cairo:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
         rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <style>
-        :root {
-            --cyan: #00f0ff;
-            --green: #4edea3;
-            --bg: #0a0e16;
-        }
+    <link href="assets/style.css?ver=2024-06-19T12:00:00Z" rel="stylesheet">
 
-        ::-webkit-scrollbar {
-            width: 5px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #0a0e16;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #1c2028;
-            border-radius: 3px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: rgba(0, 240, 255, 0.3);
-        }
-
-        @keyframes pulseGlow {
-
-            0%,
-            100% {
-                opacity: 0.35;
-                transform: scale(1);
-            }
-
-            50% {
-                opacity: 0.65;
-                transform: scale(1.04);
-            }
-        }
-
-        @keyframes flowArrow {
-            0% {
-                transform: translateX(0);
-                opacity: 0.3;
-            }
-
-            50% {
-                opacity: 1;
-            }
-
-            100% {
-                transform: translateX(6px);
-                opacity: 0.3;
-            }
-        }
-
-        @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(24px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes typewriter {
-            from {
-                width: 0;
-            }
-
-            to {
-                width: 100%;
-            }
-        }
-
-        @keyframes blink {
-
-            0%,
-            100% {
-                opacity: 1;
-            }
-
-            50% {
-                opacity: 0;
-            }
-        }
-
-        @keyframes scanline {
-            0% {
-                transform: translateY(-100%);
-            }
-
-            100% {
-                transform: translateY(100vh);
-            }
-        }
-
-        .animate-glow {
-            animation: pulseGlow 8s ease-in-out infinite;
-        }
-
-        .animate-flow-arrow {
-            animation: flowArrow 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-        }
-
-        /* Scroll-reveal */
-        .reveal {
-            opacity: 0;
-            transform: translateY(28px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .reveal-delay-1 {
-            transition-delay: 0.1s;
-        }
-
-        .reveal-delay-2 {
-            transition-delay: 0.2s;
-        }
-
-        .reveal-delay-3 {
-            transition-delay: 0.3s;
-        }
-
-        .reveal-delay-4 {
-            transition-delay: 0.4s;
-        }
-
-        /* Active nav link */
-        .nav-link.active {
-            color: #dbfcff;
-            background: rgba(0, 240, 255, 0.08);
-            border-color: rgba(0, 240, 255, 0.3);
-        }
-
-        /* Terminal cursor */
-        .cursor::after {
-            content: '|';
-            animation: blink 1s step-end infinite;
-            color: #00f0ff;
-        }
-
-        /* Mobile menu */
-        #mobile-menu {
-            transition: max-height 0.35s ease, opacity 0.35s ease;
-            max-height: 0;
-            opacity: 0;
-            overflow: hidden;
-        }
-
-        #mobile-menu.open {
-            max-height: 400px;
-            opacity: 1;
-        }
-
-        /* Gradient text */
-        .gradient-text {
-            background: linear-gradient(135deg, #00f0ff, #7df4ff 40%, #4edea3);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* Glow border on hover */
-        .glow-card {
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .glow-card:hover {
-            box-shadow: 0 0 28px rgba(0, 240, 255, 0.12);
-        }
-
-        .glow-card-green:hover {
-            border-color: rgba(78, 222, 163, 0.5) !important;
-            box-shadow: 0 0 28px rgba(78, 222, 163, 0.12);
-        }
-
-        /* Section label line */
-        .section-label::before {
-            content: '';
-            display: inline-block;
-            width: 24px;
-            height: 1px;
-            background: rgba(0, 240, 255, 0.4);
-            vertical-align: middle;
-            margin-right: 8px;
-        }
-
-        /* Achievement chip */
-        .achievement {
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-            padding: 3px 10px;
-            border-radius: 999px;
-            font-size: 10px;
-            font-family: 'JetBrains Mono', monospace;
-            font-weight: 600;
-            letter-spacing: 0.05em;
-            border: 1px solid rgba(0, 240, 255, 0.25);
-            background: rgba(0, 240, 255, 0.06);
-            color: #7df4ff;
-        }
-
-        /* Timeline connector */
-        .timeline-line {
-            position: absolute;
-            left: 19px;
-            top: 40px;
-            bottom: -16px;
-            width: 2px;
-            background: linear-gradient(to bottom, rgba(0, 240, 255, 0.3), transparent);
-        }
-
-        /* ── RTL / Arabic ──────────────────────── */
-        [dir="rtl"] body { font-family: 'Cairo', sans-serif; }
-        [dir="rtl"] .font-mono { font-family: 'Cairo', monospace; }
-        [dir="rtl"] .section-label::before { margin-right: 0; margin-left: 8px; }
-        [dir="rtl"] .timeline-line { left: auto; right: 19px; }
-        /* Keep code blocks LTR */
-        [dir="rtl"] .code-tab-content,
-        [dir="rtl"] [id^="snippet-"] { direction: ltr; text-align: left; }
-
-        /* Star badge */
-        .star-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-            padding: 2px 8px;
-            border-radius: 999px;
-            font-size: 10px;
-            font-family: 'JetBrains Mono', monospace;
-            font-weight: 700;
-            background: rgba(251, 191, 36, 0.1);
-            border: 1px solid rgba(251, 191, 36, 0.3);
-            color: #fbbf24;
-        }
-    </style>
-    <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "surface-dim": "#0f131c",
-                        "surface": "#0f131c",
-                        "surface-bright": "#353942",
-                        "surface-container-lowest": "#0a0e16",
-                        "surface-container-low": "#131720",
-                        "surface-container": "#181d27",
-                        "surface-container-high": "#222734",
-                        "surface-container-highest": "#2e3444",
-                        "surface-variant": "#31353e",
-                        "primary": "#dbfcff",
-                        "primary-container": "#00f0ff",
-                        "primary-fixed": "#7df4ff",
-                        "primary-fixed-dim": "#00dbe9",
-                        "secondary": "#4edea3",
-                        "secondary-container": "#00a572",
-                        "secondary-fixed": "#6ffbbe",
-                        "tertiary": "#f8f4ff",
-                        "tertiary-container": "#d7d6ff",
-                        "tertiary-fixed-dim": "#c0c1ff",
-                        "outline": "#849495",
-                        "outline-variant": "#3b494b",
-                        "on-surface": "#dfe2ee",
-                        "on-surface-variant": "#9ca3af",
-                        "on-primary": "#00363a",
-                        "on-primary-fixed-variant": "#002b2e"
-                    },
-                    fontFamily: {
-                        "sans": ["Inter", "sans-serif"],
-                        "mono": ["JetBrains Mono", "monospace"]
-                    }
-                }
-            }
-        };
-    </script>
 </head>
 
-<body class="bg-surface-container-lowest font-sans text-on-surface antialiased min-h-screen overflow-x-hidden">
+<body>
 
-    <!-- Ambient Background -->
-    <div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
-        <div
-            class="absolute inset-0 bg-[linear-gradient(to_right,#141923_1px,transparent_1px),linear-gradient(to_bottom,#141923_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-30">
-        </div>
-        <div
-            class="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-gradient-to-tr from-cyan-600/15 via-cyan-400/8 to-secondary/8 blur-[130px] rounded-full animate-glow">
-        </div>
-        <div class="absolute top-[45%] -right-48 w-[600px] h-[600px] bg-secondary/6 blur-[150px] rounded-full"></div>
-        <div class="absolute bottom-20 -left-48 w-[600px] h-[600px] bg-cyan-500/6 blur-[160px] rounded-full"></div>
+    <!-- Icon sprite -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <symbol id="i-gh" viewBox="0 0 24 24">
+            <path
+                d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.929.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+        </symbol>
+        <symbol id="i-li" viewBox="0 0 24 24">
+            <path
+                d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V8.98h3.42v1.57h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.37 4.28 5.46v6.29zM5.34 7.41a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM3.56 20.45h3.56V8.98H3.56v11.47zM22.22 0H1.78C.8 0 0 .8 0 1.78v20.44C0 23.2.8 24 1.78 24h20.44c.98 0 1.78-.8 1.78-1.78V1.78C24 .8 23.2 0 22.22 0z" />
+        </symbol>
+    </svg>
+
+    <!-- Loader -->
+    <div class="loader-body" id="loader" aria-hidden="true">
+        <div class="loader"></div>
     </div>
 
     <!-- ═══════════════════════════════════════
          NAVIGATION
     ═══════════════════════════════════════ -->
-    <header class="fixed top-4 inset-x-0 z-50 px-4 sm:px-6 pointer-events-none flex justify-center">
-        <div
-            class="pointer-events-auto w-full max-w-[1360px] rounded-2xl bg-surface-container-lowest/85 backdrop-blur-xl border border-white/8 shadow-[0_8px_32px_rgba(0,0,0,0.5)] px-4 py-2.5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 transition-all duration-300">
-            <!-- Brand -->
-            <div class="flex items-center justify-between">
-                <a href="#hero" class="flex items-center gap-2.5 group">
-                    <div
-                        class="w-8 h-8 rounded-lg bg-cyan-950/60 border border-cyan-500/30 flex items-center justify-center text-primary-container font-mono text-xs font-bold group-hover:border-cyan-400/60 transition-colors">
-                        ATH</div>
-                    <div class="flex flex-col">
-                        <span class="font-sans text-sm text-primary font-bold tracking-tight leading-none">Ali
-                            Hrhera</span>
-                    </div>
-                </a>
-                <!-- Mobile menu button -->
-                <button id="menu-toggle"
-                    class="sm:hidden w-8 h-8 flex flex-col items-center justify-center gap-1.5 cursor-pointer"
-                    aria-label="Toggle menu">
-                    <span class="w-5 h-0.5 bg-on-surface-variant transition-all duration-300" id="bar1"></span>
-                    <span class="w-5 h-0.5 bg-on-surface-variant transition-all duration-300" id="bar2"></span>
-                    <span class="w-4 h-0.5 bg-on-surface-variant transition-all duration-300" id="bar3"></span>
-                </button>
+    <nav class="nav-bar" id="navbar">
+        <a href="#home" class="logo" aria-label="Ali Hrhera — home">&lt;<span>Ali</span> /&gt;</a>
+        <div class="nav-elements" id="nav-elements">
+            <ul class="nav-links">
+                <li><a class="nav-link" href="#home" data-i18n="nav-home">Home</a></li>
+                <li><a class="nav-link" href="#about" data-i18n="nav-about">About</a></li>
+                <li><a class="nav-link" href="#work" data-i18n="nav-work">Portfolio</a></li>
+                <li><a class="nav-link" href="#contact" data-i18n="nav-contact">Contact</a></li>
+            </ul>
+            <button class="lang-btn" type="button" onclick="toggleLang()" aria-label="Switch language">
+                <span class="material-symbols-outlined">translate</span><span class="lang-label">AR</span>
+            </button>
+            <a href="#contact" class="nav-btn" data-i18n="nav-talk">Let's Talk</a>
+        </div>
+        <button class="ham" id="ham" type="button" aria-label="Toggle menu" aria-expanded="false"
+            aria-controls="nav-elements"><span></span><span></span><span></span></button>
+    </nav>
+
+    <!-- Side rails -->
+    <div class="rail rail-social">
+        <a href="https://github.com/alihrhera" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg
+                class="ico">
+                <use href="#i-gh" />
+            </svg></a>
+        <a href="https://www.linkedin.com/in/alihrhera/" target="_blank" rel="noopener noreferrer"
+            aria-label="LinkedIn"><svg class="ico">
+                <use href="#i-li" />
+            </svg></a>
+        <a href="https://github.com/VolunteerAndroidDevelopersTraining-VADT" target="_blank" rel="noopener noreferrer"
+            aria-label="VADT"><span class="material-symbols-outlined">groups</span></a>
+        <div class="rail-line"></div>
+    </div>
+    <div class="rail rail-mail">
+        <a href="mailto:alihrhera1@gmail.com" class="mail">alihrhera1@gmail.com</a>
+        <div class="rail-line"></div>
+    </div>
+
+    <main>
+
+        <!-- ═══════════════════════════════════════
+             HERO
+        ═══════════════════════════════════════ -->
+        <section id="home" class="section hero">
+            <div class="hero-bg" aria-hidden="true"></div>
+            <div class="hero-glow g1" aria-hidden="true"></div>
+            <div class="hero-glow g2" aria-hidden="true"></div>
+
+            <div class="hero-content">
+                <span class="status-pill reveal"><span class="dot"></span><span data-i18n="hero-status">Available ·
+                        Lead Roles</span></span>
+                <span class="eyebrow reveal d1" data-i18n="hero-eyebrow">Hi There,</span>
+                <h1 class="reveal d1" data-i18n="hero-h1">I'm <span class="accent">Ali Hrhera</span></h1>
+                <h2 class="hero-title reveal d2"><span data-i18n="hero-iam">I am a</span> <span class="typed"
+                        id="typed"></span><span class="caret" aria-hidden="true"></span></h2>
+                <p class="hero-sub reveal d2" data-i18n="hero-sub">Senior Android Engineer with 8+ years building
+                    offline-first, high-performance mobile systems and on-device AI.</p>
+                <div class="btn-grp reveal d3">
+                    <a class="btn primary" href="#work"><span class="material-symbols-outlined">work</span><span
+                            data-i18n="hero-cta-work">View My Work</span></a>
+                    <a class="btn secondary" href="#contact"><span class="material-symbols-outlined">mail</span><span
+                            data-i18n="hero-cta-contact">Contact Me</span></a>
+                </div>
             </div>
-            <!-- Desktop Nav -->
-            <nav
-                class="hidden sm:flex items-center gap-1 p-1 rounded-xl bg-surface-container-high/50 border border-white/5 text-xs font-mono">
-                <a class="nav-link px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-white/5 border border-transparent transition-all"
-                    href="#hero" data-i18n="nav-about">About</a>
-                <a class="nav-link px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-white/5 border border-transparent transition-all"
-                    href="#experience" data-i18n="nav-exp">Experience</a>
-                <a class="nav-link px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-white/5 border border-transparent transition-all"
-                    href="#opensource" data-i18n="nav-oss">Open Source</a>
-                <a class="nav-link px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-white/5 border border-transparent transition-all"
-                    href="#skills" data-i18n="nav-skills">Skills</a>
-                <a class="nav-link px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-white/5 border border-transparent transition-all"
-                    href="#contact" data-i18n="nav-contact">Contact</a>
-            </nav>
-            <!-- Right Actions -->
-            <div class="hidden sm:flex items-center gap-2">
-                <button onclick="toggleLang()" id="lang-toggle" class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-surface-container-high/70 border border-white/8 hover:border-cyan-400/35 text-on-surface-variant hover:text-primary transition-all text-xs font-mono cursor-pointer" aria-label="Switch language">
-                    <span class="material-symbols-outlined text-[14px]">translate</span>
-                    <span id="lang-label">AR</span>
-                </button>
-                <div
-                    class="hidden lg:flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-surface-container-high/70 border border-secondary/20">
-                    <span class="relative flex h-1.5 w-1.5"><span
-                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span><span
-                            class="relative inline-flex rounded-full h-1.5 w-1.5 bg-secondary shadow-[0_0_6px_#4edea3]"></span></span>
-                    <span data-i18n="nav-available"
-                        class="font-mono text-[10px] text-secondary-fixed uppercase tracking-wider font-semibold">Available
-                        · Lead Roles</span>
+
+            <!-- Code console -->
+            <div class="hero-visual reveal d2">
+                <div class="console">
+                    <div class="console-head">
+                        <div class="lights"><i></i><i></i><i></i>edge_orchestrator.kt</div>
+                        <span class="state">STATE_ACTIVE</span>
+                    </div>
+                    <div class="console-tabs" role="tablist">
+                        <button class="console-tab active" type="button" data-snippet="npu">[Edge NPU]</button>
+                        <button class="console-tab" type="button" data-snippet="sync">[Offline Sync]</button>
+                        <button class="console-tab" type="button" data-snippet="compose">[Compose]</button>
+                    </div>
+                    <pre class="code" id="snippet-npu"><span class="kw">package</span> com.ath.edge.inference
+<span class="cm">// MediaPipe &amp; TFLite NPU Hardware Delegate</span>
+<span class="kw">class</span> <span class="fn">EdgeNpuPipeline</span> <span class="kw">@Inject constructor</span>(
+    <span class="kw">private val</span> model: <span class="ty">GeminiNanoOrchestrator</span>,
+    <span class="kw">private val</span> dispatcher: <span class="ty">CoroutineDispatcher</span>
+) {
+    <span class="kw">val</span> edgeOutput: StateFlow&lt;<span class="ty">InferenceState</span>&gt; =
+        cameraImageProxy.<span class="fn">asFlow</span>()
+            .<span class="fn">flowOn</span>(dispatcher)
+            .<span class="fn">map</span> { frame -&gt; model.inferZeroCopy(frame) }
+            .<span class="fn">stateIn</span>(scope, SharingStarted.Lazily, Idle)
+}</pre>
+                    <pre class="code" id="snippet-sync" hidden><span class="kw">package</span> com.ath.offline.sync
+<span class="cm">// Conflict-Free Replicated Offline Store</span>
+<span class="kw">suspend fun</span> <span class="fn">reconcileDirtyQueue</span>() =
+    <span class="fn">withContext</span>(Dispatchers.IO) {
+        <span class="kw">val</span> pending = encryptedRoom.queryUnsynced()
+        pending.<span class="fn">chunked</span>(<span class="st">50</span>).forEach { batch -&gt;
+            <span class="kw">val</span> ack = remoteGateway.syncBatch(batch)
+            encryptedRoom.markCommitted(ack.committedIds)
+        }
+        telemetry.logEvent(<span class="st">"SYNC_ZERO_DATA_LOSS"</span>)
+    }</pre>
+                    <pre class="code" id="snippet-compose" hidden><span class="kw">package</span> com.ath.ui.dashboard
+<span class="cm">// 120Hz Zero-Recomposition Consumer</span>
+<span class="kw">@Composable</span>
+<span class="kw">fun</span> <span class="fn">TelemetryDashboard</span>(vm: <span class="ty">DashboardViewModel</span>) {
+    <span class="kw">val</span> state <span class="kw">by</span> vm.uiState.<span class="fn">collectAsStateWithLifecycle</span>()
+    <span class="fn">LazyColumn</span>(modifier = Modifier.fillMaxSize()) {
+        items(state.streams, key = { it.sensorId }) { stream -&gt;
+            <span class="fn">SensorMetricCard</span>(stream = stream)
+        }
+    }
+}</pre>
+                    <div class="console-foot">
+                        <span><span class="dot"></span><span data-i18n="terminal-thread">Main Thread: 1.2ms (Zero
+                                Jank)</span></span>
+                        <svg fill="none" viewBox="0 0 100 20" aria-hidden="true">
+                            <path d="M0 16 L15 13 L30 16 L45 6 L60 11 L75 3 L90 7 L100 2" stroke="currentColor"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                        </svg>
+                    </div>
                 </div>
-                <a href="https://github.com/alihrhera" target="_blank" rel="noopener noreferrer"
-                    class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-surface-container-high/70 border border-white/8 hover:border-cyan-400/35 text-on-surface-variant hover:text-primary transition-all text-xs font-mono cursor-pointer">
-                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                        <path
-                            d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.929.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
-                    </svg>
-                    <span>GitHub</span>
-                </a>
-                <a href="#contact"
-                    class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gradient-to-r from-primary-container to-cyan-400 text-black font-mono text-xs font-bold uppercase tracking-wider hover:brightness-110 hover:shadow-[0_0_18px_rgba(0,240,255,0.35)] transition-all cursor-pointer">&gt;_
-                    Connect</a>
             </div>
-        </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu"
-            class="sm:hidden absolute top-full left-0 right-0 mt-2 mx-4 rounded-2xl bg-surface-container-lowest/95 backdrop-blur-xl border border-white/8 overflow-hidden">
-            <nav class="flex flex-col p-3 gap-1 font-mono text-sm">
-                <a class="px-4 py-2.5 rounded-xl text-on-surface-variant hover:text-primary hover:bg-white/5 transition-colors"
-                    href="#hero" onclick="closeMenu()" data-i18n="nav-about">About</a>
-                <a class="px-4 py-2.5 rounded-xl text-on-surface-variant hover:text-primary hover:bg-white/5 transition-colors"
-                    href="#experience" onclick="closeMenu()" data-i18n="nav-exp">Experience</a>
-                <a class="px-4 py-2.5 rounded-xl text-on-surface-variant hover:text-primary hover:bg-white/5 transition-colors"
-                    href="#opensource" onclick="closeMenu()" data-i18n="nav-oss">Open Source</a>
-                <a class="px-4 py-2.5 rounded-xl text-on-surface-variant hover:text-primary hover:bg-white/5 transition-colors"
-                    href="#skills" onclick="closeMenu()" data-i18n="nav-skills">Skills</a>
-                <a class="px-4 py-2.5 rounded-xl text-on-surface-variant hover:text-primary hover:bg-white/5 transition-colors"
-                    href="#contact" onclick="closeMenu()" data-i18n="nav-contact">Contact</a>
-                <div class="border-t border-white/5 mt-1 pt-2 flex gap-2">
-                    <a href="https://github.com/alihrhera" target="_blank" rel="noopener"
-                        class="flex-1 py-2 rounded-xl bg-surface-container-high/60 border border-white/5 text-center text-on-surface-variant text-xs hover:text-primary transition-colors">GitHub</a>
-                    <a href="#contact" onclick="closeMenu()"
-                        class="flex-1 py-2 rounded-xl bg-gradient-to-r from-primary-container to-cyan-400 text-black text-center text-xs font-bold" data-i18n="nav-connect-mobile">Connect</a>
-                </div>
-                <button onclick="toggleLang(); closeMenu();" class="mt-1 flex items-center justify-center gap-1.5 py-2 rounded-xl bg-surface-container-high/60 border border-white/5 text-on-surface-variant text-xs hover:text-primary transition-colors">
-                    <span class="material-symbols-outlined text-[14px]">translate</span>
-                    <span id="lang-label-mobile">AR</span>
-                </button>
-            </nav>
-        </div>
-    </header>
+        </section>
 
-    <main class="w-full pt-28 pb-16">
-        <div class="flex flex-col w-full gap-0">
-
-            <!-- ═══════════════════════════════════════
-                 SECTION 1: HERO
-            ═══════════════════════════════════════ -->
-            <section id="hero" class="relative w-full py-16 lg:py-24">
-                <div class="max-w-[1440px] mx-auto px-6">
-                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-
-                        <!-- Left: Identity + Headline -->
-                        <div class="lg:col-span-7 flex flex-col gap-6">
-                            <!-- Status badges -->
-                            <div class="flex flex-wrap items-center gap-2 reveal">
-                                <span
-                                    class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-950/50 border border-cyan-500/30 font-mono text-xs text-primary shadow-[0_0_12px_rgba(0,240,255,0.12)]">
-                                    <span
-                                        class="w-1.5 h-1.5 rounded-full bg-primary-container shadow-[0_0_8px_#00f0ff]"></span>
-                                    <span data-i18n="hero-badge-role">Senior Android Engineer & Systems Architect</span>
-                                </span>
-                                <span
-                                    class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container/10 border border-secondary/30 font-mono text-xs text-secondary">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
-                                    <span data-i18n="hero-badge-exp">8+ Years Production Experience</span>
-                                </span>
-                            </div>
-
-                            <!-- Main heading -->
-                            <h1 data-i18n="hero-h1"
-                                class="font-sans text-4xl sm:text-5xl lg:text-[56px] text-white font-extrabold tracking-tight leading-[1.1] reveal reveal-delay-1">
-                                Engineering High-Performance Android Systems &amp;
-                                <span class="gradient-text"> On-Device AI.</span>
-                            </h1>
-
-                            <!-- Bio -->
-                            <p data-i18n="hero-bio"
-                                class="font-sans text-base sm:text-lg text-on-surface-variant leading-relaxed max-w-2xl reveal reveal-delay-2">
-                                Hi there, I'm <span class="text-white font-semibold">Ali Tarek Hrhera</span>.
-                                Architecting mission-critical, offline-first mobile infrastructures across
-                                construction-tech, digital healthcare, and commerce using 100% Jetpack Compose, modular
-                                Kotlin coroutines, and cutting-edge on-device NPU inference.
-                            </p>
-
-                            <!-- GitHub Achievements -->
-                            <div class="flex flex-wrap gap-2 reveal reveal-delay-2">
-                                <span class="achievement">🦈 Pull Shark ×3</span>
-                                <span class="achievement">🌍 Arctic Code Vault</span>
-                                <span class="achievement">⚡ Quickdraw</span>
-                                <span class="achievement">👥 Pair Extraordinaire</span>
-                            </div>
-
-                            <!-- CTAs -->
-                            <div class="flex flex-wrap items-center gap-3 reveal reveal-delay-3">
-                                <a href="https://github.com/alihrhera" target="_blank" rel="noopener noreferrer"
-                                    class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-surface-container-high/80 border border-white/8 hover:border-cyan-400/40 text-on-surface hover:text-primary transition-all font-mono text-xs cursor-pointer">
-                                    <svg class="w-4 h-4 fill-current text-cyan-400" viewBox="0 0 24 24">
-                                        <path
-                                            d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.929.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
-                                    </svg>
-                                    github.com/alihrhera
-                                </a>
-                                <a href="https://www.linkedin.com/in/alihrhera/" target="_blank"
-                                    rel="noopener noreferrer"
-                                    class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-surface-container-high/80 border border-white/8 hover:border-secondary/40 text-on-surface hover:text-secondary transition-all font-mono text-xs cursor-pointer">
-                                    <svg class="w-4 h-4 fill-current text-secondary" viewBox="0 0 24 24">
-                                        <path
-                                            d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V8.98h3.42v1.57h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.37 4.28 5.46v6.29zM5.34 7.41a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM3.56 20.45h3.56V8.98H3.56v11.47zM22.22 0H1.78C.8 0 0 .8 0 1.78v20.44C0 23.2.8 24 1.78 24h20.44c.98 0 1.78-.8 1.78-1.78V1.78C24 .8 23.2 0 22.22 0z" />
-                                    </svg>
-                                    in/alihrhera
-                                </a>
-                                <a href="mailto:alihrhera1@gmail.com"
-                                    class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-primary-container/90 to-cyan-400/90 text-black font-mono text-xs font-bold uppercase tracking-wider hover:brightness-110 hover:shadow-[0_0_20px_rgba(0,240,255,0.35)] transition-all cursor-pointer">
-                                    <span class="material-symbols-outlined text-[15px]">mail</span>
-                                    <span data-i18n="hero-cta-talk">Let's Talk</span>
-                                </a>
-                            </div>
-
-                            <!-- Live Telemetry Stats -->
-                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-2 reveal reveal-delay-4">
-                                <div
-                                    class="p-3 rounded-xl bg-surface-container-low/80 border border-white/5 hover:border-cyan-400/25 transition-all flex flex-col gap-1 cursor-default">
-                                    <span data-i18n="stat-runtime-lbl" class="font-mono text-[10px] text-on-surface-variant uppercase tracking-wide">Runtime</span>
-                                    <span data-i18n="stat-runtime-val" class="font-sans text-base text-secondary font-bold">120 Hz Peak</span>
-                                    <span data-i18n="stat-runtime-sub" class="font-mono text-[10px] text-on-surface-variant">Compose 1.7 UI</span>
-                                </div>
-                                <div
-                                    class="p-3 rounded-xl bg-surface-container-low/80 border border-white/5 hover:border-cyan-400/25 transition-all flex flex-col gap-1 cursor-default">
-                                    <span data-i18n="stat-npu-lbl" class="font-mono text-[10px] text-on-surface-variant uppercase tracking-wide">NPU Latency</span>
-                                    <span data-i18n="stat-npu-val" class="font-sans text-base text-primary font-bold">&lt; 42ms</span>
-                                    <span data-i18n="stat-npu-sub" class="font-mono text-[10px] text-on-surface-variant">Quantized INT8</span>
-                                </div>
-                                <div
-                                    class="p-3 rounded-xl bg-surface-container-low/80 border border-white/5 hover:border-secondary/25 transition-all flex flex-col gap-1 cursor-default">
-                                    <span data-i18n="stat-crash-lbl" class="font-mono text-[10px] text-on-surface-variant uppercase tracking-wide">Crash-Free</span>
-                                    <span data-i18n="stat-crash-val" class="font-sans text-base text-secondary font-bold">99.98%</span>
-                                    <span data-i18n="stat-crash-sub" class="font-mono text-[10px] text-on-surface-variant">500k+ Devices</span>
-                                </div>
-                                <div
-                                    class="p-3 rounded-xl bg-surface-container-low/80 border border-white/5 hover:border-cyan-400/25 transition-all flex flex-col gap-1 cursor-default">
-                                    <span data-i18n="stat-sync-lbl" class="font-mono text-[10px] text-on-surface-variant uppercase tracking-wide">Field Sync</span>
-                                    <span data-i18n="stat-sync-val" class="font-sans text-base text-primary font-bold">Zero Loss</span>
-                                    <span data-i18n="stat-sync-sub" class="font-mono text-[10px] text-on-surface-variant">Offline-First</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Right: Interactive Code Console -->
-                        <div class="lg:col-span-5 relative reveal reveal-delay-2">
-                            <div
-                                class="absolute -inset-1 bg-gradient-to-r from-cyan-500/15 via-primary-container/8 to-secondary/15 rounded-2xl blur-xl opacity-70">
-                            </div>
-                            <div
-                                class="relative w-full rounded-2xl bg-surface-container-low/90 backdrop-blur-xl border border-cyan-500/20 p-5 shadow-2xl">
-                                <!-- Terminal Header -->
-                                <div class="flex flex-col gap-2 pb-4 border-b border-white/5">
-                                    <div class="flex items-center justify-between">
-                                        <div class="flex items-center gap-1.5">
-                                            <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
-                                            <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
-                                            <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
-                                            <span
-                                                class="ml-2 font-mono text-xs text-on-surface-variant">edge_orchestrator.kt</span>
-                                        </div>
-                                        <span
-                                            class="font-mono text-[10px] text-secondary bg-secondary-container/15 border border-secondary/25 px-2 py-0.5 rounded-full font-bold">STATE_ACTIVE</span>
-                                    </div>
-                                    <!-- Tabs -->
-                                    <div class="flex items-center gap-1 overflow-x-auto text-[11px] font-mono">
-                                        <button
-                                            class="px-2.5 py-1 rounded bg-cyan-950/80 text-primary border border-cyan-500/40 tab-btn active whitespace-nowrap cursor-pointer"
-                                            onclick="switchSnippet('npu', this)">[Edge NPU]</button>
-                                        <button
-                                            class="px-2.5 py-1 rounded bg-surface-container-high/60 text-on-surface-variant hover:text-white border border-transparent tab-btn whitespace-nowrap cursor-pointer"
-                                            onclick="switchSnippet('sync', this)">[Offline Sync]</button>
-                                        <button
-                                            class="px-2.5 py-1 rounded bg-surface-container-high/60 text-on-surface-variant hover:text-white border border-transparent tab-btn whitespace-nowrap cursor-pointer"
-                                            onclick="switchSnippet('compose', this)">[Compose]</button>
-                                    </div>
-                                </div>
-                                <!-- Code Area -->
-                                <div
-                                    class="font-mono text-xs bg-surface-container-lowest/90 p-4 rounded-xl border border-white/5 my-4 min-h-[200px] overflow-x-auto leading-relaxed">
-                                    <div class="code-tab-content space-y-1" id="snippet-npu">
-                                        <p class="text-on-surface-variant"><span
-                                                class="text-cyan-400 font-semibold">package</span>
-                                            com.ath.edge.inference</p>
-                                        <p class="text-on-surface-variant font-mono text-[11px] py-0.5">// MediaPipe
-                                            &amp; TFLite NPU Hardware Delegate</p>
-                                        <p><span class="text-cyan-400 font-bold">class</span> <span
-                                                class="text-secondary font-bold">EdgeNpuPipeline</span> <span
-                                                class="text-cyan-400">@Inject constructor</span>(</p>
-                                        <p class="pl-4 text-on-surface-variant">private val model: <span
-                                                class="text-primary font-semibold">GeminiNanoOrchestrator</span>,</p>
-                                        <p class="pl-4 text-on-surface-variant">private val dispatcher: <span
-                                                class="text-primary font-semibold">CoroutineDispatcher</span></p>
-                                        <p>) {</p>
-                                        <p class="pl-4"><span class="text-cyan-400 font-bold">val</span> edgeOutput:
-                                            StateFlow&lt;<span class="text-primary">InferenceState</span>&gt; =</p>
-                                        <p class="pl-8 text-secondary">cameraImageProxy.asFlow()</p>
-                                        <p class="pl-12">.flowOn(dispatcher)</p>
-                                        <p class="pl-12">.map { frame → model.inferZeroCopy(frame) }</p>
-                                        <p class="pl-12 text-primary-fixed-dim">.stateIn(scope, SharingStarted.Lazily,
-                                            Idle)</p>
-                                        <p>}</p>
-                                    </div>
-                                    <div class="code-tab-content hidden space-y-1" id="snippet-sync">
-                                        <p class="text-on-surface-variant"><span
-                                                class="text-cyan-400 font-semibold">package</span> com.ath.offline.sync
-                                        </p>
-                                        <p class="text-on-surface-variant font-mono text-[11px] py-0.5">// Conflict-Free
-                                            Replicated Offline Store</p>
-                                        <p><span class="text-cyan-400 font-bold">suspend fun</span> <span
-                                                class="text-secondary font-bold">reconcileDirtyQueue</span>() =</p>
-                                        <p class="pl-4">withContext(Dispatchers.IO) {</p>
-                                        <p class="pl-8 text-on-surface-variant">val pending =
-                                            encryptedRoom.queryUnsynced()</p>
-                                        <p class="pl-8 text-primary">pending.chunked(50).forEach { batch →</p>
-                                        <p class="pl-12">val ack = remoteGateway.syncBatch(batch)</p>
-                                        <p class="pl-12 text-secondary">encryptedRoom.markCommitted(ack.committedIds)
-                                        </p>
-                                        <p class="pl-8 text-primary">}</p>
-                                        <p class="pl-8 text-on-surface-variant">
-                                            telemetry.logEvent("SYNC_ZERO_DATA_LOSS")</p>
-                                        <p>}</p>
-                                    </div>
-                                    <div class="code-tab-content hidden space-y-1" id="snippet-compose">
-                                        <p class="text-on-surface-variant"><span
-                                                class="text-cyan-400 font-semibold">package</span> com.ath.ui.dashboard
-                                        </p>
-                                        <p class="text-on-surface-variant font-mono text-[11px] py-0.5">// 120Hz
-                                            Zero-Recomposition Consumer</p>
-                                        <p><span class="text-cyan-400 font-bold">@Composable</span></p>
-                                        <p><span class="text-cyan-400 font-bold">fun</span> <span
-                                                class="text-secondary font-bold">TelemetryDashboard</span>(vm:
-                                            DashboardViewModel) {</p>
-                                        <p class="pl-4">val state by vm.uiState.<span
-                                                class="text-cyan-400">collectAsStateWithLifecycle</span>()</p>
-                                        <p class="pl-4 text-primary">LazyColumn(modifier = Modifier.fillMaxSize()) {</p>
-                                        <p class="pl-8">items(state.streams, key = { it.sensorId }) { stream →</p>
-                                        <p class="pl-12 text-secondary">SensorMetricCard(stream = stream)</p>
-                                        <p class="pl-8">}</p>
-                                        <p class="pl-4 text-primary">}</p>
-                                        <p>}</p>
-                                    </div>
-                                </div>
-                                <!-- Footer Modules -->
-                                <div class="grid grid-cols-3 gap-2 mb-3">
-                                    <div
-                                        class="p-2 rounded-lg bg-surface-container-high/60 border border-white/5 text-center">
-                                        <span class="font-mono text-xs text-primary font-bold block">:feature:npu</span>
-                                        <span class="font-mono text-[10px] text-on-surface-variant">FP16 Hardware</span>
-                                    </div>
-                                    <div
-                                        class="p-2 rounded-lg bg-surface-container-high/60 border border-white/5 text-center">
-                                        <span
-                                            class="font-mono text-xs text-secondary font-bold block">:core:database</span>
-                                        <span class="font-mono text-[10px] text-on-surface-variant">SQLCipher VSS</span>
-                                    </div>
-                                    <div
-                                        class="p-2 rounded-lg bg-surface-container-high/60 border border-white/5 text-center">
-                                        <span
-                                            class="font-mono text-xs text-primary-fixed-dim font-bold block">:ui:compose</span>
-                                        <span class="font-mono text-[10px] text-on-surface-variant">Clean Tokens</span>
-                                    </div>
-                                </div>
-                                <!-- Latency Bar -->
-                                <div
-                                    class="flex items-center justify-between bg-surface-container-lowest/80 px-3 py-2 rounded-lg border border-white/5">
-                                    <div class="flex items-center gap-2">
-                                        <span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
-                                        <span data-i18n="terminal-thread" class="font-mono text-[11px]">Main Thread: 1.2ms (Zero Jank)</span>
-                                    </div>
-                                    <svg class="w-24 h-5 text-primary-container" fill="none" viewBox="0 0 100 20">
-                                        <path d="M0 16 L15 13 L30 16 L45 6 L60 11 L75 3 L90 7 L100 2"
-                                            stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2" />
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
+        <!-- ═══════════════════════════════════════
+             ABOUT
+        ═══════════════════════════════════════ -->
+        <section id="about" class="section about alt">
+            <div class="about-img reveal">
+                <div class="photo-wrap">
+                    <div class="photo-frame">
+                        <span class="monogram" aria-hidden="true">ATH</span>
+                        <img src="https://github.com/alihrhera.png?size=600" alt="Ali Hrhera" loading="lazy"
+                            decoding="async" onerror="this.remove()">
                     </div>
                 </div>
-            </section>
-
-            <!-- ═══════════════════════════════════════
-                 SECTION 2: ARCHITECTURAL PILLARS
-            ═══════════════════════════════════════ -->
-            <section class="w-full bg-surface-container-lowest/70 py-16 border-y border-white/5">
-                <div class="max-w-[1440px] mx-auto px-6">
-                    <div class="flex flex-col gap-1 mb-10 reveal">
-                        <span data-i18n="pillars-lbl"
-                            class="section-label font-mono text-xs text-secondary uppercase tracking-widest font-bold">01 // Philosophy &amp; Core Pillars</span>
-                        <h2 data-i18n="pillars-h2" class="font-sans text-2xl sm:text-3xl text-primary font-bold mt-2">Principled Engineering for Mission-Critical Mobile Systems.</h2>
-                        <p data-i18n="pillars-p"
-                            class="font-sans text-sm sm:text-base text-on-surface-variant max-w-3xl leading-relaxed mt-1">
-                            Mobile environments present unique stresses: offline tunnels, restricted memory, thermal throttling. My designs focus on determinism, maintainability, and client autonomy.</p>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                        <div
-                            class="p-6 rounded-2xl bg-surface-container-low/75 backdrop-blur-md border border-cyan-500/15 glow-card hover:border-cyan-400/45 flex flex-col justify-between gap-4 group reveal reveal-delay-1">
-                            <div class="space-y-3">
-                                <div
-                                    class="w-11 h-11 rounded-xl bg-cyan-950/40 border border-cyan-500/30 flex items-center justify-center text-primary-container group-hover:scale-110 transition-transform">
-                                    <span class="material-symbols-outlined text-2xl">cloud_off</span>
-                                </div>
-                                <h3 data-i18n="p1-h3" class="font-sans text-base text-white font-semibold">Offline-First &amp; Resilient Sync</h3>
-                                <p data-i18n="p1-p" class="font-mono text-xs text-on-surface-variant leading-relaxed">Encrypted SQLCipher databases, CRDT-inspired reconciliation, and durable WorkManager queues that recover from arbitrary network drops without data corruption.</p>
-                            </div>
-                            <div class="flex flex-wrap gap-1.5">
-                                <span
-                                    class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-mono text-[11px] border border-cyan-500/20">Room</span>
-                                <span
-                                    class="px-2 py-0.5 rounded bg-surface-container-high text-secondary font-mono text-[11px] border border-secondary/20">SQLCipher</span>
-                                <span
-                                    class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-mono text-[11px]">WorkManager</span>
-                            </div>
-                        </div>
-                        <div
-                            class="p-6 rounded-2xl bg-surface-container-low/75 backdrop-blur-md border border-secondary/15 glow-card glow-card-green flex flex-col justify-between gap-4 group reveal reveal-delay-2">
-                            <div class="space-y-3">
-                                <div
-                                    class="w-11 h-11 rounded-xl bg-emerald-950/40 border border-secondary/30 flex items-center justify-center text-secondary group-hover:scale-110 transition-transform">
-                                    <span class="material-symbols-outlined text-2xl">layers</span>
-                                </div>
-                                <h3 data-i18n="p2-h3" class="font-sans text-base text-white font-semibold">100% Declarative Compose UI</h3>
-                                <p data-i18n="p2-p" class="font-mono text-xs text-on-surface-variant leading-relaxed">Enterprise design token architectures, custom LayoutModifiers, accessibility semantics, and strict recomposition auditing for smooth 120Hz interactions.</p>
-                            </div>
-                            <div class="flex flex-wrap gap-1.5">
-                                <span
-                                    class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-mono text-[11px] border border-cyan-500/20">Jetpack
-                                    Compose</span>
-                                <span
-                                    class="px-2 py-0.5 rounded bg-surface-container-high text-secondary font-mono text-[11px] border border-secondary/20">Design
-                                    Tokens</span>
-                                <span
-                                    class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-mono text-[11px]">0
-                                    Recompose</span>
-                            </div>
-                        </div>
-                        <div
-                            class="p-6 rounded-2xl bg-surface-container-low/75 backdrop-blur-md border border-cyan-500/15 glow-card hover:border-cyan-400/45 flex flex-col justify-between gap-4 group reveal reveal-delay-3">
-                            <div class="space-y-3">
-                                <div
-                                    class="w-11 h-11 rounded-xl bg-cyan-950/40 border border-cyan-500/30 flex items-center justify-center text-primary-fixed-dim group-hover:scale-110 transition-transform">
-                                    <span class="material-symbols-outlined text-2xl">neurology</span>
-                                </div>
-                                <h3 data-i18n="p3-h3" class="font-sans text-base text-white font-semibold">On-Device AI &amp; Edge Agents</h3>
-                                <p data-i18n="p3-p" class="font-mono text-xs text-on-surface-variant leading-relaxed">Local INT8 quantization with MediaPipe and Gemini Nano. Edge document embeddings (Local Vector RAG) and real-time computer vision with zero server overhead.</p>
-                            </div>
-                            <div class="flex flex-wrap gap-1.5">
-                                <span
-                                    class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-mono text-[11px] border border-cyan-500/20">Gemini
-                                    Nano</span>
-                                <span
-                                    class="px-2 py-0.5 rounded bg-surface-container-high text-secondary font-mono text-[11px] border border-secondary/20">MediaPipe</span>
-                                <span
-                                    class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-mono text-[11px]">Mobile
-                                    RAG</span>
-                            </div>
-                        </div>
-                        <div
-                            class="p-6 rounded-2xl bg-surface-container-low/75 backdrop-blur-md border border-white/8 glow-card hover:border-cyan-400/45 flex flex-col justify-between gap-4 group reveal reveal-delay-4">
-                            <div class="space-y-3">
-                                <div
-                                    class="w-11 h-11 rounded-xl bg-surface-container-high border border-white/15 flex items-center justify-center text-tertiary-fixed-dim group-hover:scale-110 transition-transform">
-                                    <span class="material-symbols-outlined text-2xl">schema</span>
-                                </div>
-                                <h3 data-i18n="p4-h3" class="font-sans text-base text-white font-semibold">Modular Clean Architecture</h3>
-                                <p data-i18n="p4-p" class="font-mono text-xs text-on-surface-variant leading-relaxed">Separation into :feature, :core, and :domain modules. Fast compile times via build-cache, Dagger-Hilt dependency injection, and comprehensive unit tests with Turbine.</p>
-                            </div>
-                            <div class="flex flex-wrap gap-1.5">
-                                <span
-                                    class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-mono text-[11px] border border-cyan-500/20">Multi-Module</span>
-                                <span
-                                    class="px-2 py-0.5 rounded bg-surface-container-high text-secondary font-mono text-[11px] border border-secondary/20">Hilt
-                                    / Koin</span>
-                                <span
-                                    class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-mono text-[11px]">Turbine</span>
-                            </div>
-                        </div>
-                    </div>
+                <div class="photo-tags">
+                    <span class="chip green"><span class="material-symbols-outlined">location_on</span><span
+                            data-i18n="tag-remote">Global Remote</span></span>
+                    <span class="chip"><span class="material-symbols-outlined">android</span><span
+                            data-i18n="tag-since">Android since 2016</span></span>
                 </div>
-            </section>
+            </div>
 
-            <!-- ═══════════════════════════════════════
-                 SECTION 3: WORK EXPERIENCE
-            ═══════════════════════════════════════ -->
-            <section id="experience" class="w-full py-16 bg-surface-container-lowest/80 border-b border-white/5">
-                <div class="max-w-[1440px] mx-auto px-6">
-                    <div class="flex flex-col gap-1 mb-10 reveal">
-                        <span data-i18n="exp-lbl"
-                            class="section-label font-mono text-xs text-secondary uppercase tracking-widest font-bold">02 // Verified Work Experience</span>
-                        <h2 data-i18n="exp-h2" class="font-sans text-2xl sm:text-3xl text-primary font-bold mt-2">Proven Architectural Track Record in High-Stakes Production.</h2>
-                        <p data-i18n="exp-p"
-                            class="font-sans text-sm sm:text-base text-on-surface-variant max-w-3xl leading-relaxed mt-1">
-                            From zero-connectivity European construction sites to strict HIPAA healthcare streaming and high-volume e-commerce checkouts.</p>
+            <div class="about-content">
+                <div class="about-brief reveal">
+                    <span class="section-label" data-i18n="about-lbl">01 // About</span>
+                    <h2 class="section-title" data-i18n="about-h2">About Me</h2>
+                    <p data-i18n="about-p">I'm <b>Ali Hrhera</b>, a Senior Android Engineer &amp; Systems
+                        Architect. I design mission-critical, offline-first mobile infrastructures across
+                        construction-tech, digital healthcare, and commerce using 100% Jetpack Compose, modular
+                        Kotlin coroutines, and on-device NPU inference. Outside work I contribute to open source and
+                        mentor Android engineers through VADT.</p>
+                </div>
+
+                <div class="about-tabs reveal d1">
+                    <div class="tabs" role="tablist">
+                        <button class="tab active" type="button" role="tab" aria-selected="true" data-tab="exp"
+                            data-i18n="tab-exp">Experience</button>
+                        <button class="tab" type="button" role="tab" aria-selected="false" data-tab="skills"
+                            data-i18n="tab-skills">Main Skills</button>
+                        <button class="tab" type="button" role="tab" aria-selected="false" data-tab="principles"
+                            data-i18n="tab-principles">Principles</button>
+                        <button class="tab" type="button" role="tab" aria-selected="false" data-tab="impact"
+                            data-i18n="tab-impact">Impact</button>
                     </div>
 
-                    <div class="space-y-4">
-                        <!-- PlanRadar -->
-                        <div
-                            class="p-6 rounded-2xl bg-surface-container-low/80 backdrop-blur-md border border-cyan-500/20 glow-card hover:border-cyan-400/45 flex flex-col gap-4 reveal">
-                            <div
-                                class="flex flex-col lg:flex-row lg:items-center justify-between gap-3 border-b border-white/5 pb-4">
-                                <div class="flex items-center gap-3">
-                                    <div
-                                        class="w-10 h-10 rounded-xl bg-cyan-950/60 border border-cyan-500/30 flex items-center justify-center font-bold text-cyan-400 text-sm font-mono shrink-0">
-                                        PR</div>
-                                    <div>
-                                        <div class="flex flex-wrap items-center gap-2">
-                                            <span
-                                                class="font-mono text-xs text-primary uppercase font-bold tracking-wider">PlanRadar
-                                                · Global Enterprise ConTech</span>
-                                            <span data-i18n="pr-badge-scale"
-                                                class="px-2 py-0.5 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 text-[10px] font-mono">500k+ Active Field Units</span>
-                                        </div>
-                                        <h3 data-i18n="pr-role" class="font-sans text-xl text-white font-bold">Senior Android Developer</h3>
-                                    </div>
-                                </div>
-                                <div class="flex items-center gap-2 shrink-0">
-                                    <span class="px-3 py-1 rounded-lg bg-surface-container-high border border-white/5 font-mono text-xs text-secondary">2025 — 2026</span>
-                                    <span data-i18n="pr-location" class="px-3 py-1 rounded-lg bg-surface-container-high border border-white/5 font-mono text-xs text-on-surface-variant">Austria / Remote</span>
-                                </div>
-                            </div>
-                            <p data-i18n="pr-desc" class="font-sans text-sm text-on-surface-variant leading-relaxed">Scaled the core Android platform for construction documentation, BIM model rendering, and task inspection management. Pioneered high-throughput background sync strategies handling multi-gigabyte architectural blueprints and offline inspection reports with zero data loss. Modernized legacy components into modular Kotlin Clean Architecture.</p>
-                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
-                                <div class="p-2.5 rounded-lg bg-surface-container-high/60 border border-white/5">
-                                    <span data-i18n="pr-m1-lbl" class="font-mono text-[10px] text-cyan-300 uppercase block">Blueprint Load</span>
-                                    <span data-i18n="pr-m1-val" class="font-sans text-sm text-white font-bold">60% Faster BIM Render</span>
-                                </div>
-                                <div class="p-2.5 rounded-lg bg-surface-container-high/60 border border-white/5">
-                                    <span data-i18n="pr-m2-lbl" class="font-mono text-[10px] text-secondary uppercase block">Sync Integrity</span>
-                                    <span data-i18n="pr-m2-val" class="font-sans text-sm text-secondary font-bold">Zero-Loss 2G Replay</span>
-                                </div>
-                                <div class="p-2.5 rounded-lg bg-surface-container-high/60 border border-white/5">
-                                    <span data-i18n="pr-m3-lbl" class="font-mono text-[10px] text-primary uppercase block">Codebase</span>
-                                    <span data-i18n="pr-m3-val" class="font-sans text-sm text-primary font-bold">100% Jetpack Compose</span>
-                                </div>
-                            </div>
-                            <div class="flex flex-wrap gap-1.5">
-                                <span
-                                    class="px-2.5 py-1 rounded-lg bg-surface-container-high text-primary font-mono text-xs border border-cyan-500/20">BIM
-                                    / Plan Viewer</span>
-                                <span
-                                    class="px-2.5 py-1 rounded-lg bg-surface-container-high text-secondary font-mono text-xs border border-secondary/20">Offline
-                                    Synchronization</span>
-                                <span
-                                    class="px-2.5 py-1 rounded-lg bg-surface-container-high text-white font-mono text-xs">Compose
-                                    Modernization</span>
-                                <span
-                                    class="px-2.5 py-1 rounded-lg bg-surface-container-high text-on-surface-variant font-mono text-xs">Multi-Module
-                                    Gradle</span>
-                            </div>
-                        </div>
-
-                        <!-- HealloCare -->
-                        <div
-                            class="p-6 rounded-2xl bg-surface-container-low/80 backdrop-blur-md border border-secondary/20 glow-card glow-card-green flex flex-col gap-4 reveal">
-                            <div
-                                class="flex flex-col lg:flex-row lg:items-center justify-between gap-3 border-b border-white/5 pb-4">
-                                <div class="flex items-center gap-3">
-                                    <div
-                                        class="w-10 h-10 rounded-xl bg-emerald-950/60 border border-secondary/30 flex items-center justify-center font-bold text-secondary text-sm font-mono shrink-0">
-                                        HC</div>
-                                    <div>
-                                        <div class="flex flex-wrap items-center gap-2">
-                                            <span
-                                                class="font-mono text-xs text-secondary uppercase font-bold tracking-wider">HealloCare
-                                                · HealthTech & Telemedicine</span>
-                                            <span data-i18n="hc-badge-cert"
-                                                class="px-2 py-0.5 rounded-full bg-emerald-950/60 border border-secondary/30 text-secondary text-[10px] font-mono">HIPAA &amp; GDPR Certified</span>
-                                        </div>
-                                        <h3 data-i18n="hc-role" class="font-sans text-xl text-white font-bold">Senior Android Developer</h3>
-                                    </div>
-                                </div>
-                                <div class="flex items-center gap-2 shrink-0">
-                                    <span class="px-3 py-1 rounded-lg bg-surface-container-high border border-white/5 font-mono text-xs text-secondary">2023 — 2025</span>
-                                    <span data-i18n="hc-location" class="px-3 py-1 rounded-lg bg-surface-container-high border border-white/5 font-mono text-xs text-on-surface-variant">Health Tech</span>
-                                </div>
-                            </div>
-                            <p data-i18n="hc-desc" class="font-sans text-sm text-on-surface-variant leading-relaxed">Engineered patient-vital telemetry systems and low-latency telemedicine consultation pipelines. Enforced strict HIPAA data security protocols via SQLCipher database encryption and hardware-backed biometric keystore management. Maintained 99.98% crash-free sessions across intensive medical real-time video consults.</p>
-                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
-                                <div class="p-2.5 rounded-lg bg-surface-container-high/60 border border-white/5">
-                                    <span data-i18n="hc-m1-lbl" class="font-mono text-[10px] text-secondary uppercase block">Reliability SLA</span>
-                                    <span data-i18n="hc-m1-val" class="font-sans text-sm text-secondary font-bold">99.98% Crash-Free</span>
-                                </div>
-                                <div class="p-2.5 rounded-lg bg-surface-container-high/60 border border-white/5">
-                                    <span data-i18n="hc-m2-lbl" class="font-mono text-[10px] text-cyan-300 uppercase block">Streaming Latency</span>
-                                    <span data-i18n="hc-m2-val" class="font-sans text-sm text-cyan-300 font-bold">&lt; 180ms WebRTC</span>
-                                </div>
-                                <div class="p-2.5 rounded-lg bg-surface-container-high/60 border border-white/5">
-                                    <span class="font-mono text-[10px] text-primary uppercase block">Security
-                                        Layer</span>
-                                    <span class="font-sans text-sm text-white font-bold">Hardware Keystore
-                                        Enclave</span>
-                                </div>
-                            </div>
-                            <div class="flex flex-wrap gap-1.5">
-                                <span
-                                    class="px-2.5 py-1 rounded-lg bg-surface-container-high text-primary font-mono text-xs border border-cyan-500/20">HIPAA
-                                    Compliance</span>
-                                <span
-                                    class="px-2.5 py-1 rounded-lg bg-surface-container-high text-secondary font-mono text-xs border border-secondary/20">WebRTC
-                                    Video</span>
-                                <span
-                                    class="px-2.5 py-1 rounded-lg bg-surface-container-high text-white font-mono text-xs">Encrypted
-                                    SQLCipher</span>
-                                <span
-                                    class="px-2.5 py-1 rounded-lg bg-surface-container-high text-on-surface-variant font-mono text-xs">Coroutines
-                                    & StateFlow</span>
-                            </div>
-                        </div>
-
-                        <!-- WNDO -->
-                        <div
-                            class="p-6 rounded-2xl bg-surface-container-low/80 backdrop-blur-md border border-cyan-500/20 glow-card hover:border-cyan-400/45 flex flex-col gap-4 reveal">
-                            <div
-                                class="flex flex-col lg:flex-row lg:items-center justify-between gap-3 border-b border-white/5 pb-4">
-                                <div class="flex items-center gap-3">
-                                    <div
-                                        class="w-10 h-10 rounded-xl bg-cyan-950/60 border border-cyan-500/30 flex items-center justify-center font-bold text-cyan-300 text-sm font-mono shrink-0">
-                                        WN</div>
-                                    <div>
-                                        <div class="flex flex-wrap items-center gap-2">
-                                            <span
-                                                class="font-mono text-xs text-primary-fixed-dim uppercase font-bold tracking-wider">WNDO
-                                                · Hyper-Growth Social Commerce</span>
-                                            <span data-i18n="wn-badge-scale"
-                                                class="px-2 py-0.5 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 text-[10px] font-mono">Millions of Transactions</span>
-                                        </div>
-                                        <h3 data-i18n="wn-role" class="font-sans text-xl text-white font-bold">Senior Android Developer</h3>
-                                    </div>
-                                </div>
-                                <div class="flex items-center gap-2 shrink-0">
-                                    <span class="px-3 py-1 rounded-lg bg-surface-container-high border border-white/5 font-mono text-xs text-secondary">2021 — 2023</span>
-                                    <span data-i18n="wn-location" class="px-3 py-1 rounded-lg bg-surface-container-high border border-white/5 font-mono text-xs text-on-surface-variant">Scale-Up Commerce</span>
-                                </div>
-                            </div>
-                            <p data-i18n="wn-desc" class="font-sans text-sm text-on-surface-variant leading-relaxed">Architected the checkout, catalog, and high-concurrency order processing modules. Reduced cold application startup latency by 42% through baseline profile generation, lazy component initializers, and dependency graph pruning. Co-led the engineering transition from XML layouts to 100% Jetpack Compose.</p>
-                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
-                                <div class="p-2.5 rounded-lg bg-surface-container-high/60 border border-white/5">
-                                    <span data-i18n="wn-m1-lbl" class="font-mono text-[10px] text-cyan-300 uppercase block">Startup Latency</span>
-                                    <span data-i18n="wn-m1-val" class="font-sans text-sm text-primary font-bold">42% Faster Cold Boot</span>
-                                </div>
-                                <div class="p-2.5 rounded-lg bg-surface-container-high/60 border border-white/5">
-                                    <span data-i18n="wn-m2-lbl" class="font-mono text-[10px] text-secondary uppercase block">Checkout Concurrency</span>
-                                    <span data-i18n="wn-m2-val" class="font-sans text-sm text-secondary font-bold">Zero-Lock Queuing</span>
-                                </div>
-                                <div class="p-2.5 rounded-lg bg-surface-container-high/60 border border-white/5">
-                                    <span data-i18n="wn-m3-lbl" class="font-mono text-[10px] text-on-surface uppercase block">App Size</span>
-                                    <span data-i18n="wn-m3-val" class="font-sans text-sm text-white font-bold">Dynamic Modules (-28%)</span>
-                                </div>
-                            </div>
-                            <div class="flex flex-wrap gap-1.5">
-                                <span
-                                    class="px-2.5 py-1 rounded-lg bg-surface-container-high text-primary font-mono text-xs border border-cyan-500/20">Baseline
-                                    Profiles</span>
-                                <span
-                                    class="px-2.5 py-1 rounded-lg bg-surface-container-high text-secondary font-mono text-xs border border-secondary/20">Dynamic
-                                    Feature Modules</span>
-                                <span
-                                    class="px-2.5 py-1 rounded-lg bg-surface-container-high text-white font-mono text-xs">Payment
-                                    SDKs</span>
-                                <span
-                                    class="px-2.5 py-1 rounded-lg bg-surface-container-high text-on-surface-variant font-mono text-xs">Jetpack
-                                    Compose</span>
-                            </div>
-                        </div>
-
-                        <!-- Foundation Grid -->
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 reveal">
-                            <div
-                                class="p-5 rounded-2xl bg-surface-container-low/70 border border-white/5 hover:border-cyan-500/25 transition-all flex flex-col justify-between gap-3">
+                    <!-- Experience -->
+                    <div class="tab-panel active" id="panel-exp" role="tabpanel">
+                        <details class="job" open>
+                            <summary>
                                 <div>
-                                    <div class="flex items-center justify-between mb-1">
-                                        <span class="font-mono text-xs text-secondary">2019 — 2021</span>
-                                        <span class="font-mono text-[11px] text-on-surface-variant">Enterprise</span>
-                                    </div>
-                                    <h4 class="font-sans text-base text-white font-semibold">Elmeya Soft</h4>
-                                    <p data-i18n="em-role" class="font-mono text-xs text-primary mb-2">M.S Android Developer</p>
-                                    <p data-i18n="em-desc" class="font-mono text-xs text-on-surface-variant leading-relaxed">Led architectural refactoring from RxJava2 to Kotlin Coroutines, MVVM adoption, and multi-tier enterprise client software.</p>
+                                    <h3>PlanRadar <span class="chip" data-i18n="pr-badge-scale">500k+ Active Field
+                                            Units</span></h3>
+                                    <p class="meta"><span data-i18n="pr-role">Senior Android Developer</span> | <span
+                                            class="yrs">2025 — 2026</span> · <span data-i18n="pr-location">Austria /
+                                            Remote</span></p>
                                 </div>
-                                <div class="font-mono text-[11px] text-cyan-400/80">Kotlin · Coroutines · Multi-tier
+                                <span class="material-symbols-outlined chev">expand_more</span>
+                            </summary>
+                            <div class="job-body">
+                                <p data-i18n="pr-desc">Scaled the core Android platform for construction documentation,
+                                    BIM model rendering, and task inspection management. Pioneered high-throughput
+                                    background sync strategies handling multi-gigabyte architectural blueprints and
+                                    offline inspection reports with zero data loss. Modernized legacy components into
+                                    modular Kotlin Clean Architecture.</p>
+                                <div class="metrics">
+                                    <div class="metric"><small data-i18n="pr-m1-lbl">Blueprint Load</small><b
+                                            data-i18n="pr-m1-val">60% Faster BIM Render</b></div>
+                                    <div class="metric"><small data-i18n="pr-m2-lbl">Sync Integrity</small><b
+                                            data-i18n="pr-m2-val">Zero-Loss 2G Replay</b></div>
+                                    <div class="metric"><small data-i18n="pr-m3-lbl">Codebase</small><b
+                                            data-i18n="pr-m3-val">100% Jetpack Compose</b></div>
+                                </div>
+                                <div class="chips-row">
+                                    <span class="chip">BIM / Plan Viewer</span>
+                                    <span class="chip green">Offline Synchronization</span>
+                                    <span class="chip plain">Multi-Module Gradle</span>
                                 </div>
                             </div>
-                            <div
-                                class="p-5 rounded-2xl bg-surface-container-low/70 border border-white/5 hover:border-cyan-500/25 transition-all flex flex-col justify-between gap-3">
+                        </details>
+
+                        <details class="job">
+                            <summary>
                                 <div>
-                                    <div class="flex items-center justify-between mb-1">
-                                        <span class="font-mono text-xs text-secondary">2017 — 2019</span>
-                                        <span class="font-mono text-[11px] text-on-surface-variant">Native
-                                            Services</span>
-                                    </div>
-                                    <h4 class="font-sans text-base text-white font-semibold">ITBuziness</h4>
-                                    <p data-i18n="it-role" class="font-mono text-xs text-primary mb-2">Android Developer</p>
-                                    <p data-i18n="it-desc" class="font-mono text-xs text-on-surface-variant leading-relaxed">High-throughput REST client integrations, disk-caching mechanisms, and reactive client-server communication channels.</p>
+                                    <h3>HealloCare <span class="chip green" data-i18n="hc-badge-cert">HIPAA &amp; GDPR
+                                            Certified</span></h3>
+                                    <p class="meta"><span data-i18n="hc-role">Senior Android Developer</span> | <span
+                                            class="yrs">2023 — 2025</span> · <span data-i18n="hc-location">Health
+                                            Tech</span></p>
                                 </div>
-                                <div class="font-mono text-[11px] text-secondary/80">Room · Retrofit · OkHttp</div>
+                                <span class="material-symbols-outlined chev">expand_more</span>
+                            </summary>
+                            <div class="job-body">
+                                <p data-i18n="hc-desc">Engineered patient-vital telemetry systems and low-latency
+                                    telemedicine consultation pipelines. Enforced strict HIPAA data security protocols
+                                    via SQLCipher database encryption and hardware-backed biometric keystore
+                                    management. Maintained 99.98% crash-free sessions across intensive medical
+                                    real-time video consults.</p>
+                                <div class="metrics">
+                                    <div class="metric"><small data-i18n="hc-m1-lbl">Reliability SLA</small><b
+                                            data-i18n="hc-m1-val">99.98% Crash-Free</b></div>
+                                    <div class="metric"><small data-i18n="hc-m2-lbl">Streaming Latency</small><b
+                                            data-i18n="hc-m2-val">&lt; 180ms WebRTC</b></div>
+                                    <div class="metric"><small data-i18n="hc-m3-lbl">Security Layer</small><b
+                                            data-i18n="hc-m3-val">Hardware Keystore Enclave</b></div>
+                                </div>
+                                <div class="chips-row">
+                                    <span class="chip">WebRTC Video</span>
+                                    <span class="chip green">Encrypted SQLCipher</span>
+                                    <span class="chip plain">Coroutines &amp; StateFlow</span>
+                                </div>
                             </div>
-                            <div
-                                class="p-5 rounded-2xl bg-surface-container-low/70 border border-white/5 hover:border-cyan-500/25 transition-all flex flex-col justify-between gap-3">
+                        </details>
+
+                        <details class="job">
+                            <summary>
                                 <div>
-                                    <div class="flex items-center justify-between mb-1">
-                                        <span class="font-mono text-xs text-secondary">2016 — 2017</span>
-                                        <span class="font-mono text-[11px] text-on-surface-variant">Foundation</span>
-                                    </div>
-                                    <h4 class="font-sans text-base text-white font-semibold">Tech Engines</h4>
-                                    <p class="font-mono text-xs text-primary mb-2">Android Developer</p>
-                                    <p class="font-mono text-xs text-on-surface-variant leading-relaxed">Native Android
-                                        foundations, Java-to-Kotlin transition, layout rendering optimizations, and
-                                        strict memory leak diagnostics.</p>
+                                    <h3>WNDO <span class="chip" data-i18n="wn-badge-scale">Millions of
+                                            Transactions</span></h3>
+                                    <p class="meta"><span data-i18n="wn-role">Senior Android Developer</span> | <span
+                                            class="yrs">2021 — 2023</span> · <span data-i18n="wn-location">Scale-Up
+                                            Commerce</span></p>
                                 </div>
-                                <div class="font-mono text-[11px] text-cyan-300/80">Java / Kotlin · Profiling</div>
+                                <span class="material-symbols-outlined chev">expand_more</span>
+                            </summary>
+                            <div class="job-body">
+                                <p data-i18n="wn-desc">Architected the checkout, catalog, and high-concurrency order
+                                    processing modules. Reduced cold application startup latency by 42% through
+                                    baseline profile generation, lazy component initializers, and dependency graph
+                                    pruning. Co-led the engineering transition from XML layouts to 100% Jetpack
+                                    Compose.</p>
+                                <div class="metrics">
+                                    <div class="metric"><small data-i18n="wn-m1-lbl">Startup Latency</small><b
+                                            data-i18n="wn-m1-val">42% Faster Cold Boot</b></div>
+                                    <div class="metric"><small data-i18n="wn-m2-lbl">Checkout Concurrency</small><b
+                                            data-i18n="wn-m2-val">Zero-Lock Queuing</b></div>
+                                    <div class="metric"><small data-i18n="wn-m3-lbl">App Size</small><b
+                                            data-i18n="wn-m3-val">Dynamic Modules (-28%)</b></div>
+                                </div>
+                                <div class="chips-row">
+                                    <span class="chip">Baseline Profiles</span>
+                                    <span class="chip green">Dynamic Feature Modules</span>
+                                    <span class="chip plain">Payment SDKs</span>
+                                </div>
                             </div>
+                        </details>
+
+                        <details class="job">
+                            <summary>
+                                <div>
+                                    <h3>Elmeya Soft</h3>
+                                    <p class="meta"><span data-i18n="em-role">M.S Android Developer</span> | <span
+                                            class="yrs">2019 — 2021</span></p>
+                                </div>
+                                <span class="material-symbols-outlined chev">expand_more</span>
+                            </summary>
+                            <div class="job-body">
+                                <p data-i18n="em-desc">Led architectural refactoring from RxJava2 to Kotlin Coroutines,
+                                    MVVM adoption, and multi-tier enterprise client software.</p>
+                            </div>
+                        </details>
+
+                        <details class="job">
+                            <summary>
+                                <div>
+                                    <h3>ITBuziness</h3>
+                                    <p class="meta"><span data-i18n="it-role">Android Developer</span> | <span
+                                            class="yrs">2017 — 2019</span></p>
+                                </div>
+                                <span class="material-symbols-outlined chev">expand_more</span>
+                            </summary>
+                            <div class="job-body">
+                                <p data-i18n="it-desc">High-throughput REST client integrations, disk-caching
+                                    mechanisms, and reactive client-server communication channels.</p>
+                            </div>
+                        </details>
+
+                        <details class="job">
+                            <summary>
+                                <div>
+                                    <h3>Tech Engines</h3>
+                                    <p class="meta"><span data-i18n="te-role">Android Developer</span> | <span
+                                            class="yrs">2016 — 2017</span></p>
+                                </div>
+                                <span class="material-symbols-outlined chev">expand_more</span>
+                            </summary>
+                            <div class="job-body">
+                                <p data-i18n="te-desc">Native Android foundations, Java-to-Kotlin transition, layout
+                                    rendering optimizations, and strict memory leak diagnostics.</p>
+                            </div>
+                        </details>
+                    </div>
+
+                    <!-- Skills -->
+                    <div class="tab-panel" id="panel-skills" role="tabpanel">
+                        <div class="skill-grid">
+                            <div class="skill-group">
+                                <h4><span class="material-symbols-outlined">code</span><span data-i18n="sk1-title">Core
+                                        &amp; Kotlin</span></h4>
+                                <ul>
+                                    <li>Kotlin</li>
+                                    <li>Coroutines &amp; StateFlow</li>
+                                    <li>Java</li>
+                                    <li>Kotlin Multiplatform</li>
+                                </ul>
+                            </div>
+                            <div class="skill-group">
+                                <h4><span class="material-symbols-outlined">schema</span><span
+                                        data-i18n="sk2-title">Architecture</span></h4>
+                                <ul>
+                                    <li>Clean Architecture</li>
+                                    <li>Multi-Module Gradle</li>
+                                    <li>Offline-First</li>
+                                    <li>MVI / UDF</li>
+                                </ul>
+                            </div>
+                            <div class="skill-group">
+                                <h4><span class="material-symbols-outlined">layers</span><span
+                                        data-i18n="sk3-title">Jetpack &amp; Libs</span></h4>
+                                <ul>
+                                    <li>Jetpack Compose</li>
+                                    <li>Hilt / Koin</li>
+                                    <li>Room &amp; SQLCipher</li>
+                                    <li>Ktor &amp; Retrofit</li>
+                                </ul>
+                            </div>
+                            <div class="skill-group">
+                                <h4><span class="material-symbols-outlined">neurology</span><span
+                                        data-i18n="sk4-title">AI on Android</span></h4>
+                                <ul>
+                                    <li>Gemini Nano</li>
+                                    <li>TensorFlow Lite INT8</li>
+                                    <li>MediaPipe</li>
+                                    <li>SQLite-VSS RAG</li>
+                                </ul>
+                            </div>
+                            <div class="skill-group">
+                                <h4><span class="material-symbols-outlined">verified</span><span
+                                        data-i18n="sk5-title">Testing &amp; CI/CD</span></h4>
+                                <ul>
+                                    <li>JUnit5 &amp; MockK</li>
+                                    <li>Turbine</li>
+                                    <li>Baseline Profiles</li>
+                                    <li>GitHub Actions &amp; Fastlane</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Principles -->
+                    <div class="tab-panel" id="panel-principles" role="tabpanel">
+                        <div class="pillar">
+                            <span class="pillar-ico material-symbols-outlined">cloud_off</span>
+                            <div>
+                                <h4 data-i18n="p1-h3">Offline-First &amp; Resilient Sync</h4>
+                                <p data-i18n="p1-p">Encrypted SQLCipher databases, CRDT-inspired reconciliation, and
+                                    durable WorkManager queues that recover from arbitrary network drops without data
+                                    corruption.</p>
+                            </div>
+                        </div>
+                        <div class="pillar">
+                            <span class="pillar-ico material-symbols-outlined">layers</span>
+                            <div>
+                                <h4 data-i18n="p2-h3">100% Declarative Compose UI</h4>
+                                <p data-i18n="p2-p">Enterprise design token architectures, custom LayoutModifiers,
+                                    accessibility semantics, and strict recomposition auditing for smooth 120Hz
+                                    interactions.</p>
+                            </div>
+                        </div>
+                        <div class="pillar">
+                            <span class="pillar-ico material-symbols-outlined">neurology</span>
+                            <div>
+                                <h4 data-i18n="p3-h3">On-Device AI &amp; Edge Agents</h4>
+                                <p data-i18n="p3-p">Local INT8 quantization with MediaPipe and Gemini Nano. Edge
+                                    document embeddings (Local Vector RAG) and real-time computer vision with zero
+                                    server overhead.</p>
+                            </div>
+                        </div>
+                        <div class="pillar">
+                            <span class="pillar-ico material-symbols-outlined">schema</span>
+                            <div>
+                                <h4 data-i18n="p4-h3">Modular Clean Architecture</h4>
+                                <p data-i18n="p4-p">Separation into :feature, :core, and :domain modules. Fast compile
+                                    times via build-cache, Dagger-Hilt dependency injection, and comprehensive unit
+                                    tests with Turbine.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Impact -->
+                    <div class="tab-panel" id="panel-impact" role="tabpanel">
+                        <div class="stats">
+                            <div class="stat gold"><b>12.8k</b><small data-i18n="st-lt-stars">⭐ LibreTube Stars</small>
+                            </div>
+                            <div class="stat gold"><b>6.4k</b><small data-i18n="st-amaze-stars">⭐ AmazeFileManager
+                                    Stars</small></div>
+                            <div class="stat"><b>680+</b><small data-i18n="st-forks">Forks on LibreTube</small></div>
+                            <div class="stat green"><b>150+</b><small data-i18n="st-mentored">Engineers
+                                    Mentored</small></div>
+                            <div class="stat green"><b>99.98%</b><small data-i18n="st-crash">Crash-Free
+                                    Sessions</small></div>
+                            <div class="stat"><b>500k+</b><small data-i18n="st-devices">Active Devices</small></div>
+                            <div class="stat"><b>&lt; 42ms</b><small data-i18n="st-npu">NPU Latency</small></div>
+                            <div class="stat green"><b>42%</b><small data-i18n="st-boot">Faster Cold Boot</small></div>
+                        </div>
+                        <div class="impact-chips">
+                            <span class="chip">🦈 Pull Shark ×3</span>
+                            <span class="chip">🌍 Arctic Code Vault</span>
+                            <span class="chip">⚡ Quickdraw</span>
+                            <span class="chip">👥 Pair Extraordinaire</span>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- ═══════════════════════════════════════
-                 SECTION 4: OPEN SOURCE & GITHUB IMPACT
-            ═══════════════════════════════════════ -->
-            <section id="opensource" class="w-full py-16 relative">
-                <div class="max-w-[1440px] mx-auto px-6">
-                    <div class="flex flex-col gap-1 mb-10 reveal">
-                        <span data-i18n="oss-lbl"
-                            class="section-label font-mono text-xs text-primary uppercase tracking-widest font-bold">03 // Open Source &amp; GitHub Impact</span>
-                        <h2 data-i18n="oss-h2" class="font-sans text-2xl sm:text-3xl text-primary font-bold mt-2">Contributions to Global OSS Ecosystems.</h2>
-                        <p data-i18n="oss-p"
-                            class="font-sans text-sm sm:text-base text-on-surface-variant max-w-3xl leading-relaxed mt-1">
-                            Production contributions to widely-deployed open source codebases trusted by millions of users worldwide.</p>
+        <!-- ═══════════════════════════════════════
+             PORTFOLIO
+        ═══════════════════════════════════════ -->
+        <section id="work" class="section portfolio">
+            <div class="reveal">
+                <span class="section-label" data-i18n="work-lbl">02 // Portfolio</span>
+                <h2 class="section-title" data-i18n="work-h2">Portfolio</h2>
+                <p class="portfolio-sub" data-i18n="work-sub">Here are some of my recent works</p>
+            </div>
+
+            <div class="project-tabs reveal d1" role="tablist">
+                <button class="project-tab active" type="button" data-filter="all" data-i18n="f-all">All</button>
+                <button class="project-tab" type="button" data-filter="android" data-i18n="f-android">Android</button>
+                <button class="project-tab" type="button" data-filter="oss" data-i18n="f-oss">Open Source</button>
+                <button class="project-tab" type="button" data-filter="community"
+                    data-i18n="f-community">Community</button>
+            </div>
+
+            <div class="works" id="works">
+                <!-- LibreTube #7916 -->
+                <article class="project-card" data-cat="oss" tabindex="0" aria-expanded="false">
+                    <div class="cover">
+                        <span class="cover-tag">PR #7916 · MERGED</span>
+                        <span class="cover-stars">12.8k ⭐</span>
+                        <span class="cover-ico material-symbols-outlined">play_circle</span>
                     </div>
-
-                    <!-- GitHub Impact Stats Banner -->
-                    <div class="mb-6 p-5 rounded-2xl bg-surface-container-low/80 border border-cyan-500/20 reveal">
-                        <div class="flex flex-wrap items-center gap-2 mb-4">
-                            <svg class="w-5 h-5 fill-current text-cyan-400" viewBox="0 0 24 24">
-                                <path
-                                    d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.929.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
-                            </svg>
-                            <span data-i18n="oss-stats-title" class="font-mono text-sm text-primary font-bold">GitHub Contribution Scale</span>
-                        </div>
-                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                            <div
-                                class="p-3 rounded-xl bg-surface-container-lowest/80 border border-yellow-500/20 text-center">
-                                <div class="text-xl font-bold text-white font-sans">12.8k</div>
-                                <div class="text-[11px] text-yellow-400 font-mono">⭐ LibreTube Stars</div>
-                            </div>
-                            <div
-                                class="p-3 rounded-xl bg-surface-container-lowest/80 border border-yellow-500/20 text-center">
-                                <div class="text-xl font-bold text-white font-sans">6.4k</div>
-                                <div class="text-[11px] text-yellow-400 font-mono">⭐ AmazeFileManager Stars</div>
-                            </div>
-                            <div
-                                class="p-3 rounded-xl bg-surface-container-lowest/80 border border-cyan-500/20 text-center">
-                                <div class="text-xl font-bold text-white font-sans">680+</div>
-                                <div class="text-[11px] text-cyan-400 font-mono">Forks on LibreTube</div>
-                            </div>
-                            <div
-                                class="p-3 rounded-xl bg-surface-container-lowest/80 border border-secondary/20 text-center">
-                                <div class="text-xl font-bold text-white font-sans">150+</div>
-                                <div class="text-[11px] text-secondary font-mono">VADT Engineers Mentored</div>
-                            </div>
+                    <div class="card-content">
+                        <h4 data-i18n="oss-c1-h3">LibreTube Core Streaming Pipeline</h4>
+                        <h5><span class="material-symbols-outlined">code</span><span data-i18n="cat-oss">Open
+                                Source</span></h5>
+                        <p data-i18n="oss-c1-p">Critical media streaming stability updates for LibreTube, the
+                            privacy-respecting YouTube client. Optimized ExoPlayer / Media3 lifecycle handling and
+                            background buffer recovery under network latency.</p>
+                        <p class="tech"><strong data-i18n="tech-used">Technologies Used:</strong> Kotlin, ExoPlayer /
+                            Media3</p>
+                        <div class="card-icons">
+                            <a class="card-icon" href="https://github.com/libre-tube/LibreTube/pull/7916"
+                                target="_blank" rel="noopener noreferrer" aria-label="View pull request #7916"><svg
+                                    class="ico">
+                                    <use href="#i-gh" />
+                                </svg></a>
                         </div>
                     </div>
+                </article>
 
-                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
-                        <!-- LibreTube PR #7916 -->
-                        <div
-                            class="p-6 rounded-2xl bg-surface-container-low/80 backdrop-blur-md border border-cyan-500/20 glow-card hover:border-cyan-400 flex flex-col justify-between gap-4 group reveal reveal-delay-1">
-                            <div class="space-y-3">
-                                <div class="flex items-center justify-between">
-                                    <div class="flex items-center gap-2">
-                                        <span class="font-mono text-xs text-secondary">PULL REQUEST #7916</span>
-                                        <span class="star-badge">12.8k ⭐</span>
-                                    </div>
-                                    <span
-                                        class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-secondary-container/20 border border-secondary/30 text-secondary font-mono text-xs font-bold">
-                                        <span class="material-symbols-outlined text-[14px]">check_circle</span> MERGED
-                                    </span>
-                                </div>
-                                <h3 data-i18n="oss-c1-h3" class="font-sans text-base text-white font-bold">LibreTube Core Streaming Pipeline</h3>
-                                <p data-i18n="oss-c1-p" class="font-mono text-xs text-on-surface-variant leading-relaxed">Engineered critical media streaming stability updates within LibreTube, the popular privacy-respecting YouTube client. Optimized ExoPlayer / Media3 lifecycle handling and background buffer recovery under network latency.</p>
-                                <div
-                                    class="flex items-center gap-2 font-mono text-[10px] text-cyan-400 bg-cyan-950/50 px-2.5 py-1.5 rounded-lg border border-cyan-500/20">
-                                    <span>commit: 4a9d7f0</span><span>·</span><span>ExoPlayer / Media3</span>
-                                </div>
-                            </div>
-                            <div class="flex items-center justify-between border-t border-white/5 pt-4">
-                                <span class="font-mono text-xs text-on-surface-variant">libre-tube/LibreTube</span>
-                                <a class="text-primary hover:text-cyan-300 font-mono text-xs font-bold flex items-center gap-1 group-hover:translate-x-0.5 transition-transform cursor-pointer"
-                                    href="https://github.com/libre-tube/LibreTube/pull/7916" target="_blank"
-                                    rel="noopener noreferrer">
-                                    Inspect PR <span class="material-symbols-outlined text-[14px]">open_in_new</span>
-                                </a>
-                            </div>
-                        </div>
-
-                        <!-- LibreTube PR #8607 -->
-                        <div
-                            class="p-6 rounded-2xl bg-surface-container-low/80 backdrop-blur-md border border-cyan-500/20 glow-card hover:border-cyan-400 flex flex-col justify-between gap-4 group reveal reveal-delay-2">
-                            <div class="space-y-3">
-                                <div class="flex items-center justify-between">
-                                    <div class="flex items-center gap-2">
-                                        <span class="font-mono text-xs text-primary-fixed-dim">PULL REQUEST #8607</span>
-                                        <span class="star-badge">12.8k ⭐</span>
-                                    </div>
-                                    <span
-                                        class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-cyan-950/60 border border-cyan-500/40 text-primary font-mono text-xs font-bold">
-                                        <span class="material-symbols-outlined text-[14px]">pending</span> REVIEW
-                                    </span>
-                                </div>
-                                <h3 data-i18n="oss-c2-h3" class="font-sans text-base text-white font-bold">LibreTube Advanced Optimization</h3>
-                                <p data-i18n="oss-c2-p" class="font-mono text-xs text-on-surface-variant leading-relaxed">Architectural performance contribution addressing background audio playback, network reconnection state transitions, and memory footprint reduction during extended continuous media sessions.</p>
-                                <div
-                                    class="flex items-center gap-2 font-mono text-[10px] text-cyan-400 bg-cyan-950/50 px-2.5 py-1.5 rounded-lg border border-cyan-500/20">
-                                    <span>commit: e219b4c</span><span>·</span><span>Kotlin Flow Engine</span>
-                                </div>
-                            </div>
-                            <div class="flex items-center justify-between border-t border-white/5 pt-4">
-                                <span class="font-mono text-xs text-on-surface-variant">libre-tube/LibreTube</span>
-                                <a class="text-primary hover:text-cyan-300 font-mono text-xs font-bold flex items-center gap-1 group-hover:translate-x-0.5 transition-transform cursor-pointer"
-                                    href="https://github.com/libre-tube/LibreTube/pull/8607" target="_blank"
-                                    rel="noopener noreferrer">
-                                    Inspect PR <span class="material-symbols-outlined text-[14px]">open_in_new</span>
-                                </a>
-                            </div>
-                        </div>
-
-                        <!-- VADT -->
-                        <div
-                            class="p-6 rounded-2xl bg-surface-container-low/80 backdrop-blur-md border border-secondary/20 glow-card glow-card-green flex flex-col justify-between gap-4 group reveal reveal-delay-3">
-                            <div class="space-y-3">
-                                <div class="flex items-center justify-between">
-                                    <span class="font-mono text-xs text-tertiary-fixed-dim">INITIATIVE &
-                                        MENTORSHIP</span>
-                                    <span
-                                        class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-950/60 border border-secondary/30 text-secondary font-mono text-xs font-bold">FOUNDER</span>
-                                </div>
-                                <h3 data-i18n="oss-c3-h3" class="font-sans text-base text-white font-bold">Volunteer Android Devs Training (VADT)</h3>
-                                <p data-i18n="oss-c3-p" class="font-mono text-xs text-on-surface-variant leading-relaxed">Founder &amp; Lead Technical Mentor. Empowering software engineers across multiple cohorts with deep-dive training in Kotlin Coroutines, Jetpack Compose, multi-module architecture, and production testing rigor.</p>
-                                <div
-                                    class="flex items-center gap-2 font-mono text-[10px] text-secondary bg-emerald-950/50 px-2.5 py-1.5 rounded-lg border border-secondary/20">
-                                    <span>community: 150+ Engineers</span><span>·</span><span>Open Curriculums</span>
-                                </div>
-                            </div>
-                            <div class="flex items-center justify-between border-t border-white/5 pt-4">
-                                <span class="font-mono text-xs text-on-surface-variant">Mentorship · Community</span>
-                                <a class="text-secondary hover:text-secondary-fixed font-mono text-xs font-bold flex items-center gap-1 group-hover:translate-x-0.5 transition-transform cursor-pointer"
-                                    href="https://github.com/VolunteerAndroidDevelopersTraining-VADT" target="_blank"
-                                    rel="noopener noreferrer">
-                                    Visit Org <span class="material-symbols-outlined text-[14px]">open_in_new</span>
-                                </a>
-                            </div>
+                <!-- PlanRadar -->
+                <article class="project-card" data-cat="android" tabindex="0" aria-expanded="false">
+                    <div class="cover green">
+                        <span class="cover-tag">PLANRADAR · 2025</span>
+                        <span class="cover-ico material-symbols-outlined">architecture</span>
+                    </div>
+                    <div class="card-content">
+                        <h4 data-i18n="pj-pr-h">PlanRadar Field Platform</h4>
+                        <h5><span class="material-symbols-outlined">android</span><span data-i18n="cat-android">Android
+                                App</span></h5>
+                        <p data-i18n="pj-pr-p">Offline-first construction documentation and BIM plan viewer used by
+                            500k+ field units. 60% faster blueprint rendering with zero-loss background sync.</p>
+                        <p class="tech"><strong data-i18n="tech-used">Technologies Used:</strong> Compose, Room,
+                            WorkManager, Multi-Module</p>
+                        <div class="card-icons">
+                            <a class="card-icon" href="https://www.planradar.com" target="_blank"
+                                rel="noopener noreferrer" aria-label="Visit PlanRadar"><span
+                                    class="material-symbols-outlined">language</span></a>
                         </div>
                     </div>
-                </div>
-            </section>
+                </article>
 
-            <!-- ═══════════════════════════════════════
-                 SECTION 5: SKILLS MATRIX
-            ═══════════════════════════════════════ -->
-            <section id="skills" class="w-full bg-surface-container-lowest/80 py-16 border-y border-white/5">
-                <div class="max-w-[1440px] mx-auto px-6">
-                    <div class="flex flex-col gap-1 mb-10 reveal">
-                        <span data-i18n="skills-lbl"
-                            class="section-label font-mono text-xs text-secondary uppercase tracking-widest font-bold">04 // Technical Competency Matrix</span>
-                        <h2 data-i18n="skills-h2" class="font-sans text-2xl sm:text-3xl text-primary font-bold mt-2">Calibrated Tech Stack &amp; Architectural Arsenal.</h2>
+                <!-- VADT -->
+                <article class="project-card" data-cat="community" tabindex="0" aria-expanded="false">
+                    <div class="cover gold">
+                        <span class="cover-tag">FOUNDER</span>
+                        <span class="cover-ico material-symbols-outlined">school</span>
                     </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-                        <div
-                            class="p-5 rounded-2xl bg-surface-container-low/80 backdrop-blur-md border border-cyan-500/20 hover:border-cyan-400/45 transition-all flex flex-col gap-3 reveal reveal-delay-1">
-                            <span data-i18n="sk1-title" class="font-mono text-xs text-primary uppercase font-bold flex items-center gap-1.5">
-                                <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>Core &amp; Kotlin
-                            </span>
-                            <ul class="space-y-2 font-mono text-xs text-on-surface-variant">
-                                <li class="flex items-center gap-2"><span
-                                        class="w-1.5 h-1.5 rounded-full bg-secondary shrink-0"></span>Kotlin (Expert /
-                                    Idiomatic)</li>
-                                <li class="flex items-center gap-2"><span
-                                        class="w-1.5 h-1.5 rounded-full bg-secondary shrink-0"></span>Coroutines &amp;
-                                    StateFlow</li>
-                                <li class="flex items-center gap-2"><span
-                                        class="w-1.5 h-1.5 rounded-full bg-secondary shrink-0"></span>Java (Native Core
-                                    Runtime)</li>
-                                <li class="flex items-center gap-2"><span
-                                        class="w-1.5 h-1.5 rounded-full bg-secondary shrink-0"></span>Kotlin
-                                    Multiplatform (KMP)</li>
-                            </ul>
+                    <div class="card-content">
+                        <h4 data-i18n="oss-c3-h3">Volunteer Android Devs Training (VADT)</h4>
+                        <h5><span class="material-symbols-outlined">groups</span><span
+                                data-i18n="cat-community">Community</span></h5>
+                        <p data-i18n="oss-c3-p">Founder &amp; lead mentor. 150+ engineers trained across cohorts in
+                            Kotlin Coroutines, Jetpack Compose, multi-module architecture, and production testing.</p>
+                        <p class="tech"><strong data-i18n="tech-used">Technologies Used:</strong> Kotlin, Compose,
+                            Open Curriculums</p>
+                        <div class="card-icons">
+                            <a class="card-icon" href="https://github.com/VolunteerAndroidDevelopersTraining-VADT"
+                                target="_blank" rel="noopener noreferrer" aria-label="Visit VADT on GitHub"><svg
+                                    class="ico">
+                                    <use href="#i-gh" />
+                                </svg></a>
                         </div>
-                        <div
-                            class="p-5 rounded-2xl bg-surface-container-low/80 backdrop-blur-md border border-secondary/20 hover:border-secondary/45 transition-all flex flex-col gap-3 reveal reveal-delay-2">
-                            <span
-                                class="font-mono text-xs text-secondary uppercase font-bold flex items-center gap-1.5">
-                                <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span><span data-i18n="sk2-title">Architecture</span>
-                            </span>
-                            <ul class="space-y-2 font-mono text-xs text-on-surface-variant">
-                                <li class="flex items-center gap-2"><span
-                                        class="w-1.5 h-1.5 rounded-full bg-primary shrink-0"></span>Clean Architecture
-                                </li>
-                                <li class="flex items-center gap-2"><span
-                                        class="w-1.5 h-1.5 rounded-full bg-primary shrink-0"></span>Multi-Module Gradle
-                                </li>
-                                <li class="flex items-center gap-2"><span
-                                        class="w-1.5 h-1.5 rounded-full bg-primary shrink-0"></span>Offline-First Design
-                                </li>
-                                <li class="flex items-center gap-2"><span
-                                        class="w-1.5 h-1.5 rounded-full bg-primary shrink-0"></span>MVI &amp;
-                                    Unidirectional Flow</li>
-                            </ul>
+                    </div>
+                </article>
+
+                <!-- LibreTube #8607 -->
+                <article class="project-card" data-cat="oss" tabindex="0" aria-expanded="false">
+                    <div class="cover violet">
+                        <span class="cover-tag">PR #8607 · REVIEW</span>
+                        <span class="cover-stars">12.8k ⭐</span>
+                        <span class="cover-ico material-symbols-outlined">graphic_eq</span>
+                    </div>
+                    <div class="card-content">
+                        <h4 data-i18n="oss-c2-h3">LibreTube Advanced Optimization</h4>
+                        <h5><span class="material-symbols-outlined">code</span><span data-i18n="cat-oss">Open
+                                Source</span></h5>
+                        <p data-i18n="oss-c2-p">Performance work on background audio playback, network reconnection
+                            state transitions, and memory footprint during long media sessions.</p>
+                        <p class="tech"><strong data-i18n="tech-used">Technologies Used:</strong> Kotlin Flow,
+                            Media3</p>
+                        <div class="card-icons">
+                            <a class="card-icon" href="https://github.com/libre-tube/LibreTube/pull/8607"
+                                target="_blank" rel="noopener noreferrer" aria-label="View pull request #8607"><svg
+                                    class="ico">
+                                    <use href="#i-gh" />
+                                </svg></a>
                         </div>
-                        <div
-                            class="p-5 rounded-2xl bg-surface-container-low/80 backdrop-blur-md border border-white/8 hover:border-cyan-400/45 transition-all flex flex-col gap-3 reveal reveal-delay-3">
-                            <span
-                                class="font-mono text-xs text-tertiary-fixed-dim uppercase font-bold flex items-center gap-1.5">
-                                <span class="w-1.5 h-1.5 rounded-full bg-cyan-300"></span><span data-i18n="sk3-title">Jetpack &amp; Libs</span>
-                            </span>
-                            <ul class="space-y-2 font-mono text-xs text-on-surface-variant">
-                                <li class="flex items-center gap-2"><span
-                                        class="w-1.5 h-1.5 rounded-full bg-secondary shrink-0"></span>Jetpack Compose UI
-                                </li>
-                                <li class="flex items-center gap-2"><span
-                                        class="w-1.5 h-1.5 rounded-full bg-secondary shrink-0"></span>Dagger / Hilt
-                                    &amp; Koin</li>
-                                <li class="flex items-center gap-2"><span
-                                        class="w-1.5 h-1.5 rounded-full bg-secondary shrink-0"></span>Room &amp;
-                                    SQLCipher</li>
-                                <li class="flex items-center gap-2"><span
-                                        class="w-1.5 h-1.5 rounded-full bg-secondary shrink-0"></span>Ktor &amp;
-                                    Retrofit2</li>
-                            </ul>
-                        </div>
-                        <div
-                            class="p-5 rounded-2xl bg-surface-container-low/80 backdrop-blur-md border border-cyan-500/20 hover:border-cyan-400/45 transition-all flex flex-col gap-3 reveal reveal-delay-4">
-                            <span class="font-mono text-xs text-primary uppercase font-bold flex items-center gap-1.5">
-                                <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span><span data-i18n="sk4-title">AI on Android</span>
-                            </span>
-                            <ul class="space-y-2 font-mono text-xs text-on-surface-variant">
-                                <li class="flex items-center gap-2"><span
-                                        class="w-1.5 h-1.5 rounded-full bg-primary shrink-0"></span>Gemini Nano Local
-                                    LLM</li>
-                                <li class="flex items-center gap-2"><span
-                                        class="w-1.5 h-1.5 rounded-full bg-primary shrink-0"></span>TensorFlow Lite INT8
-                                </li>
-                                <li class="flex items-center gap-2"><span
-                                        class="w-1.5 h-1.5 rounded-full bg-primary shrink-0"></span>MediaPipe Solutions
-                                </li>
-                                <li class="flex items-center gap-2"><span
-                                        class="w-1.5 h-1.5 rounded-full bg-primary shrink-0"></span>Local Vector
-                                    SQLite-VSS</li>
-                            </ul>
-                        </div>
-                        <div
-                            class="p-5 rounded-2xl bg-surface-container-low/80 backdrop-blur-md border border-secondary/20 hover:border-secondary/45 transition-all flex flex-col gap-3 reveal reveal-delay-4">
-                            <span
-                                class="font-mono text-xs text-secondary uppercase font-bold flex items-center gap-1.5">
-                                <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span><span data-i18n="sk5-title">Testing &amp; CI/CD</span>
-                            </span>
-                            <ul class="space-y-2 font-mono text-xs text-on-surface-variant">
-                                <li class="flex items-center gap-2"><span
-                                        class="w-1.5 h-1.5 rounded-full bg-secondary shrink-0"></span>JUnit5 &amp; MockK
-                                </li>
-                                <li class="flex items-center gap-2"><span
-                                        class="w-1.5 h-1.5 rounded-full bg-secondary shrink-0"></span>Turbine Flow
-                                    Testing</li>
-                                <li class="flex items-center gap-2"><span
-                                        class="w-1.5 h-1.5 rounded-full bg-secondary shrink-0"></span>Baseline Profiling
-                                </li>
-                                <li class="flex items-center gap-2"><span
-                                        class="w-1.5 h-1.5 rounded-full bg-secondary shrink-0"></span>GitHub Actions
-                                    &amp; Fastlane</li>
-                            </ul>
+                    </div>
+                </article>
+
+                <!-- HealloCare -->
+                <article class="project-card" data-cat="android" tabindex="0" aria-expanded="false">
+                    <div class="cover green">
+                        <span class="cover-tag">HEALLOCARE · 2023</span>
+                        <span class="cover-ico material-symbols-outlined">ecg_heart</span>
+                    </div>
+                    <div class="card-content">
+                        <h4 data-i18n="pj-hc-h">HealloCare Telemedicine</h4>
+                        <h5><span class="material-symbols-outlined">android</span><span data-i18n="cat-android">Android
+                                App</span></h5>
+                        <p data-i18n="pj-hc-p">HIPAA-compliant patient telemetry and WebRTC video consults with
+                            &lt; 180ms latency and 99.98% crash-free sessions.</p>
+                        <p class="tech"><strong data-i18n="tech-used">Technologies Used:</strong> WebRTC, SQLCipher,
+                            Keystore, StateFlow</p>
+                        <div class="card-icons"><span class="private"><span
+                                    class="material-symbols-outlined">lock</span><span data-i18n="private">Private
+                                    codebase</span></span></div>
+                    </div>
+                </article>
+
+                <!-- WNDO -->
+                <article class="project-card" data-cat="android" tabindex="0" aria-expanded="false">
+                    <div class="cover">
+                        <span class="cover-tag">WNDO · 2021</span>
+                        <span class="cover-ico material-symbols-outlined">shopping_bag</span>
+                    </div>
+                    <div class="card-content">
+                        <h4 data-i18n="pj-wn-h">WNDO Social Commerce</h4>
+                        <h5><span class="material-symbols-outlined">android</span><span data-i18n="cat-android">Android
+                                App</span></h5>
+                        <p data-i18n="pj-wn-p">Checkout, catalog and order modules handling millions of transactions.
+                            42% faster cold start and a 28% smaller app via dynamic feature modules.</p>
+                        <p class="tech"><strong data-i18n="tech-used">Technologies Used:</strong> Compose, Baseline
+                            Profiles, Payment SDKs</p>
+                        <div class="card-icons"><span class="private"><span
+                                    class="material-symbols-outlined">lock</span><span data-i18n="private">Private
+                                    codebase</span></span></div>
+                    </div>
+                </article>
+            </div>
+
+            <button class="btn primary view-more" type="button" id="view-more" data-i18n="view-more">View
+                More</button>
+        </section>
+
+        <!-- ═══════════════════════════════════════
+             CONTACT
+        ═══════════════════════════════════════ -->
+        <section id="contact" class="section contact alt">
+            <div class="reveal">
+                <span class="section-label" data-i18n="ct-lbl">03 // Contact</span>
+                <h2 class="section-title" data-i18n="ct-h2">Contact Me</h2>
+            </div>
+            <div class="contact-wrapper">
+                <form class="contact-form reveal d1" id="contact-form">
+                    <h3 data-i18n="ct-form-h">Send Me A Note</h3>
+                    <input class="input" type="text" name="name" required autocomplete="name" placeholder="Name"
+                        data-i18n-ph="ph-name" aria-label="Name">
+                    <input class="input" type="email" name="email" required autocomplete="email"
+                        placeholder="Email Address" data-i18n-ph="ph-email" aria-label="Email address">
+                    <input class="input" type="text" name="subject" placeholder="Subject" data-i18n-ph="ph-subject"
+                        aria-label="Subject">
+                    <textarea class="input" name="message" required placeholder="Your Message" data-i18n-ph="ph-message"
+                        aria-label="Message"></textarea>
+                    <button class="btn primary submit" type="submit"><span
+                            class="material-symbols-outlined">send</span><span data-i18n="ct-send">Send
+                            Mail</span></button>
+                    <p class="form-note" data-i18n="ct-note">Opens your mail app with the message pre-filled.</p>
+                </form>
+
+                <div class="contact-details reveal d2">
+                    <a class="contact-container" href="https://www.linkedin.com/in/alihrhera/" target="_blank"
+                        rel="noopener noreferrer">
+                        <span class="contact-icon"><svg class="ico">
+                                <use href="#i-li" />
+                            </svg></span>
+                        <span class="contact-data" data-i18n="ct-li">View LinkedIn Profile</span>
+                    </a>
+                    <div class="contact-container">
+                        <span class="contact-icon"><span class="material-symbols-outlined">mail</span></span>
+                        <a class="contact-data" href="mailto:alihrhera1@gmail.com">alihrhera1@gmail.com</a>
+                        <button class="copy-btn" type="button" id="copy-email" data-i18n="copy">Copy</button>
+                    </div>
+                    <div class="s-medias">
+                        <h3 class="s-head" data-i18n="ct-catch">Catch Me On</h3>
+                        <div class="social-pack">
+                            <a href="https://github.com/alihrhera" target="_blank" rel="noopener noreferrer"
+                                aria-label="GitHub"><svg class="ico">
+                                    <use href="#i-gh" />
+                                </svg></a>
+                            <a class="green" href="https://www.linkedin.com/in/alihrhera/" target="_blank"
+                                rel="noopener noreferrer" aria-label="LinkedIn"><svg class="ico">
+                                    <use href="#i-li" />
+                                </svg></a>
+                            <a href="mailto:alihrhera1@gmail.com" aria-label="Email"><span
+                                    class="material-symbols-outlined">mail</span></a>
+                            <a class="green" href="https://github.com/VolunteerAndroidDevelopersTraining-VADT"
+                                target="_blank" rel="noopener noreferrer" aria-label="VADT"><span
+                                    class="material-symbols-outlined">groups</span></a>
                         </div>
                     </div>
                 </div>
-            </section>
-
-            <!-- ═══════════════════════════════════════
-                 SECTION 6: CONTACT
-            ═══════════════════════════════════════ -->
-            <section id="contact" class="w-full py-16">
-                <div class="max-w-[1440px] mx-auto px-6">
-                    <div
-                        class="rounded-3xl bg-surface-container-low/90 backdrop-blur-xl border border-cyan-500/20 p-8 lg:p-12 shadow-2xl relative overflow-hidden reveal">
-                        <div
-                            class="absolute -right-24 -bottom-24 w-96 h-96 rounded-full bg-cyan-500/8 blur-[120px] pointer-events-none">
-                        </div>
-                        <div
-                            class="absolute -left-24 -top-24 w-96 h-96 rounded-full bg-secondary/8 blur-[120px] pointer-events-none">
-                        </div>
-                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative">
-                            <!-- Left: Hook -->
-                            <div class="lg:col-span-7 flex flex-col gap-5">
-                                <div class="flex items-center gap-2">
-                                    <span
-                                        class="w-2.5 h-2.5 rounded-full bg-primary-container shadow-[0_0_8px_#00f0ff]"></span>
-                                    <span data-i18n="ct-sublbl"
-                                        class="font-mono text-xs text-primary uppercase font-bold tracking-wider">Collaboration &amp; Leadership Pipeline</span>
-                                </div>
-                                <h2 data-i18n="ct-h2" class="font-sans text-2xl sm:text-4xl text-white font-bold leading-tight">Let's Build Resilient Android Systems Together.</h2>
-                                <p data-i18n="ct-p" class="font-sans text-sm sm:text-base text-on-surface-variant leading-relaxed">
-                                    Whether you're scaling high-throughput offline-first enterprise applications, transitioning to 100% Jetpack Compose design systems, or integrating low-latency on-device AI pipelines — my engineering terminal is open.</p>
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                                    <div
-                                        class="flex items-center gap-2.5 p-3 rounded-xl bg-surface-container-high/60 border border-white/5">
-                                        <span class="material-symbols-outlined text-secondary text-[20px]">location_on</span>
-                                        <span data-i18n="ct-location" class="font-mono text-xs">Global Remote · Open to Relocation</span>
-                                    </div>
-                                    <div
-                                        class="flex items-center gap-2.5 p-3 rounded-xl bg-surface-container-high/60 border border-white/5">
-                                        <span class="material-symbols-outlined text-cyan-400 text-[20px]">check_circle</span>
-                                        <span data-i18n="ct-available" class="font-mono text-xs">Available: Sr Android / AI Lead</span>
-                                    </div>
-                                </div>
-                                <div class="flex flex-wrap items-center gap-3">
-                                    <a class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-primary-container to-cyan-400 text-black font-mono text-xs uppercase tracking-wider font-extrabold shadow-[0_0_20px_rgba(0,240,255,0.25)] hover:brightness-110 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
-                                        href="https://www.linkedin.com/in/alihrhera/" target="_blank"
-                                        rel="noopener noreferrer">
-                                        <span class="material-symbols-outlined text-[18px]">send</span>
-                                        <span data-i18n="ct-btn-li">Message on LinkedIn</span>
-                                    </a>
-                                    <a class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-surface-container-high/80 border border-white/8 hover:border-cyan-400/40 hover:text-primary transition-all font-mono text-xs cursor-pointer"
-                                        href="mailto:alihrhera1@gmail.com">
-                                        <span class="material-symbols-outlined text-[18px] text-cyan-400">mail</span>
-                                        alihrhera1@gmail.com
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- Right: Terminal -->
-                            <div class="lg:col-span-5">
-                                <div
-                                    class="p-5 rounded-2xl bg-surface-container-lowest/90 backdrop-blur-xl border border-cyan-500/20 flex flex-col gap-4 shadow-xl">
-                                    <div class="flex items-center justify-between pb-1 border-b border-white/5">
-                                        <div class="flex items-center gap-1.5">
-                                            <span class="w-2.5 h-2.5 rounded-full bg-cyan-400"></span>
-                                            <span
-                                                class="font-mono text-xs text-on-surface-variant">sys://handshake.sh</span>
-                                        </div>
-                                        <span
-                                            class="font-mono text-[10px] text-secondary font-bold">SSL_ENCRYPTED</span>
-                                    </div>
-                                    <div class="font-mono text-xs space-y-3">
-                                        <div>
-                                            <p data-i18n="terminal-email-lbl" class="text-[11px] text-on-surface-variant mb-1"># Primary Email</p>
-                                            <div
-                                                class="p-2.5 rounded-lg bg-surface-container flex items-center justify-between gap-2 border border-white/5">
-                                                <span
-                                                    class="text-primary font-bold select-all">alihrhera1@gmail.com</span>
-                                                <button
-                                                    class="px-2 py-1 rounded bg-surface-container-high hover:bg-emerald-950 text-secondary border border-secondary/30 text-[10px] font-bold uppercase shrink-0 transition-colors cursor-pointer"
-                                                    onclick="navigator.clipboard.writeText('alihrhera1@gmail.com'); this.innerText='COPIED!'; setTimeout(()=>this.innerText='COPY', 2000);">Copy</button>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <p data-i18n="terminal-gh-lbl" class="text-[11px] text-on-surface-variant mb-1"># GitHub</p>
-                                            <div
-                                                class="p-2.5 rounded-lg bg-surface-container flex items-center justify-between gap-2 border border-white/5">
-                                                <span class="text-cyan-300 select-all">github.com/alihrhera</span>
-                                                <a href="https://github.com/alihrhera" target="_blank" rel="noopener"
-                                                    class="px-2 py-1 rounded bg-surface-container-high hover:bg-cyan-950 text-cyan-400 border border-cyan-500/30 text-[10px] font-bold uppercase shrink-0 transition-colors cursor-pointer">Open</a>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <p data-i18n="terminal-li-lbl" class="text-[11px] text-on-surface-variant mb-1"># LinkedIn</p>
-                                            <div
-                                                class="p-2.5 rounded-lg bg-surface-container flex items-center justify-between gap-2 border border-white/5">
-                                                <span class="text-secondary select-all">in/alihrhera</span>
-                                                <a href="https://www.linkedin.com/in/alihrhera/" target="_blank"
-                                                    rel="noopener"
-                                                    class="px-2 py-1 rounded bg-surface-container-high hover:bg-emerald-950 text-secondary border border-secondary/30 text-[10px] font-bold uppercase shrink-0 transition-colors cursor-pointer">Open</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <a class="w-full py-2.5 rounded-xl bg-surface-container-high/90 hover:bg-surface-container text-center font-mono text-xs text-on-surface hover:text-cyan-300 border border-white/5 hover:border-cyan-500/30 transition-all font-bold cursor-pointer block"
-                                        href="mailto:alihrhera1@gmail.com">
-                                        <span data-i18n="ct-mail-btn">Open Native Mail Client &gt;_</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-        </div>
+            </div>
+        </section>
     </main>
 
     <!-- ═══════════════════════════════════════
          FOOTER
     ═══════════════════════════════════════ -->
-    <footer class="w-full bg-surface-container-lowest/95 border-t border-white/5 py-10">
-        <div class="max-w-[1440px] mx-auto px-6">
-            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-white/5">
-                <div class="space-y-1.5">
-                    <div class="flex items-center gap-2.5">
-                        <div
-                            class="w-7 h-7 rounded-lg bg-cyan-950/60 border border-cyan-500/30 flex items-center justify-center font-mono text-xs font-bold text-primary-container">
-                            ATH</div>
-                        <span class="font-sans text-lg text-primary font-bold">Ali Tarek Hrhera</span>
-                    </div>
-                    <p data-i18n="ft-role" class="font-mono text-xs text-on-surface-variant">Senior Android Engineer &amp; Edge AI Systems Architect · Android Developer since 2016</p>
-                </div>
-                <div class="flex flex-wrap items-center gap-2.5">
-                    <a class="flex items-center gap-2 px-3 py-2 rounded-xl bg-surface-container-high/80 border border-white/5 hover:border-cyan-400/30 text-on-surface-variant hover:text-white transition-all font-mono text-xs cursor-pointer"
-                        href="https://github.com/alihrhera" target="_blank" rel="noopener noreferrer">
-                        <svg class="w-3.5 h-3.5 fill-current text-cyan-400" viewBox="0 0 24 24">
-                            <path
-                                d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.929.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
-                        </svg>
-                        github.com/alihrhera
-                    </a>
-                    <a class="flex items-center gap-2 px-3 py-2 rounded-xl bg-surface-container-high/80 border border-white/5 hover:border-secondary/30 text-on-surface-variant hover:text-white transition-all font-mono text-xs cursor-pointer"
-                        href="https://www.linkedin.com/in/alihrhera/" target="_blank" rel="noopener noreferrer">
-                        <svg class="w-3.5 h-3.5 fill-current text-secondary" viewBox="0 0 24 24">
-                            <path
-                                d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V8.98h3.42v1.57h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.37 4.28 5.46v6.29zM5.34 7.41a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM3.56 20.45h3.56V8.98H3.56v11.47zM22.22 0H1.78C.8 0 0 .8 0 1.78v20.44C0 23.2.8 24 1.78 24h20.44c.98 0 1.78-.8 1.78-1.78V1.78C24 .8 23.2 0 22.22 0z" />
-                        </svg>
-                        in/alihrhera
-                    </a>
-                    <a class="flex items-center gap-2 px-3 py-2 rounded-xl bg-surface-container-high/80 border border-white/5 hover:border-cyan-400/30 text-on-surface-variant hover:text-white transition-all font-mono text-xs cursor-pointer"
-                        href="#contact">
-                        <span class="material-symbols-outlined text-[16px] text-primary-container">mail</span>
-                        Direct Pipeline
-                    </a>
-                </div>
-            </div>
-            <div
-                class="pt-5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 font-mono text-xs text-on-surface-variant">
-                <span data-i18n="ft-copyright">© 2026 Ali Tarek Hrhera. Crafted for high-performance edge architectures.</span>
-                <div class="flex items-center gap-4 text-[11px]">
-                    <span class="text-secondary flex items-center gap-1.5">
-                        <span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
-                        SYS_STATUS: OPTIMIZED
-                    </span>
-                    <span class="text-cyan-400">LATENCY: &lt; 14ms UTC</span>
-                </div>
-            </div>
+    <footer class="footer">
+        <a href="#home" class="up-btn" aria-label="Back to top"><span
+                class="material-symbols-outlined">arrow_upward</span></a>
+        <div class="footer-icons">
+            <a href="https://github.com/alihrhera" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg
+                    class="ico">
+                    <use href="#i-gh" />
+                </svg></a>
+            <a href="https://www.linkedin.com/in/alihrhera/" target="_blank" rel="noopener noreferrer"
+                aria-label="LinkedIn"><svg class="ico">
+                    <use href="#i-li" />
+                </svg></a>
+            <a href="mailto:alihrhera1@gmail.com" aria-label="Email"><span
+                    class="material-symbols-outlined">mail</span></a>
         </div>
+        <hr>
+        <p class="copyright" data-i18n="ft-copyright">© 2026 Ali Hrhera. Crafted for high-performance edge
+            architectures.</p>
+        <p class="footer-role" data-i18n="ft-role">Senior Android Engineer &amp; Edge AI Systems Architect · Android
+            Developer since 2016</p>
     </footer>
 
-    <script>
-        // ─── Code Tab Switcher ───────────────────────────────
-        function switchSnippet(type, btn) {
-            document.querySelectorAll('.code-tab-content').forEach(el => el.classList.add('hidden'));
-            document.querySelectorAll('.tab-btn').forEach(el => {
-                el.classList.remove('bg-cyan-950/80', 'text-primary', 'border-cyan-500/40');
-                el.classList.add('bg-surface-container-high/60', 'text-on-surface-variant', 'border-transparent');
-            });
-            const target = document.getElementById('snippet-' + type);
-            if (target) target.classList.remove('hidden');
-            btn.classList.remove('bg-surface-container-high/60', 'text-on-surface-variant', 'border-transparent');
-            btn.classList.add('bg-cyan-950/80', 'text-primary', 'border-cyan-500/40');
-        }
+    <script src="assets/main.js?v=1.0" type="module"></script>
 
-        // ─── Mobile Menu ─────────────────────────────────────
-        const menuToggle = document.getElementById('menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const bar1 = document.getElementById('bar1');
-        const bar2 = document.getElementById('bar2');
-        const bar3 = document.getElementById('bar3');
-        let menuOpen = false;
-
-        menuToggle.addEventListener('click', () => {
-            menuOpen = !menuOpen;
-            mobileMenu.classList.toggle('open', menuOpen);
-            bar1.style.transform = menuOpen ? 'translateY(6px) rotate(45deg)' : '';
-            bar2.style.opacity = menuOpen ? '0' : '1';
-            bar3.style.transform = menuOpen ? 'translateY(-6px) rotate(-45deg)' : '';
-            bar3.style.width = menuOpen ? '20px' : '';
-        });
-
-        function closeMenu() {
-            menuOpen = false;
-            mobileMenu.classList.remove('open');
-            bar1.style.transform = '';
-            bar2.style.opacity = '1';
-            bar3.style.transform = '';
-            bar3.style.width = '';
-        }
-
-        // ─── Scroll Reveal ───────────────────────────────────
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    revealObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
-        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
-        // ─── Active Nav on Scroll ────────────────────────────
-        const sections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('.nav-link');
-
-        const navObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const id = entry.target.getAttribute('id');
-                    navLinks.forEach(link => {
-                        link.classList.remove('active');
-                        if (link.getAttribute('href') === '#' + id) {
-                            link.classList.add('active');
-                        }
-                    });
-                }
-            });
-        }, { threshold: 0.35 });
-
-        sections.forEach(section => navObserver.observe(section));
-
-        // ─── prefers-reduced-motion ──────────────────────────
-        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-            document.querySelectorAll('.reveal').forEach(el => {
-                el.style.opacity = '1';
-                el.style.transform = 'none';
-                el.style.transition = 'none';
-            });
-        }
-
-        // ─── i18n ────────────────────────────────────────────
-        const translations = {
-            en: {
-                'nav-about': 'About', 'nav-exp': 'Experience', 'nav-oss': 'Open Source',
-                'nav-skills': 'Skills', 'nav-contact': 'Contact',
-                'nav-available': 'Available · Lead Roles', 'nav-connect': '&gt;_ Connect',
-                'nav-connect-mobile': 'Connect',
-                'hero-badge-role': 'Senior Android Engineer &amp; Systems Architect',
-                'hero-badge-exp': '8+ Years Production Experience',
-                'hero-h1': 'Engineering High-Performance Android Systems &amp;<span class="gradient-text"> On-Device AI.</span>',
-                'hero-bio': 'Hi there, I\'m <span class="text-white font-semibold">Ali Tarek Hrhera</span>. Architecting mission-critical, offline-first mobile infrastructures across construction-tech, digital healthcare, and commerce using 100% Jetpack Compose, modular Kotlin coroutines, and cutting-edge on-device NPU inference.',
-                'hero-cta-talk': "Let's Talk",
-                'stat-runtime-lbl': 'Runtime', 'stat-runtime-val': '120 Hz Peak', 'stat-runtime-sub': 'Compose 1.7 UI',
-                'stat-npu-lbl': 'NPU Latency', 'stat-npu-val': '&lt; 42ms', 'stat-npu-sub': 'Quantized INT8',
-                'stat-crash-lbl': 'Crash-Free', 'stat-crash-val': '99.98%', 'stat-crash-sub': '500k+ Devices',
-                'stat-sync-lbl': 'Field Sync', 'stat-sync-val': 'Zero Loss', 'stat-sync-sub': 'Offline-First',
-                'terminal-thread': 'Main Thread: 1.2ms (Zero Jank)',
-                'pillars-lbl': '01 // Philosophy &amp; Core Pillars',
-                'pillars-h2': 'Principled Engineering for Mission-Critical Mobile Systems.',
-                'pillars-p': 'Mobile environments present unique stresses: offline tunnels, restricted memory, thermal throttling. My designs focus on determinism, maintainability, and client autonomy.',
-                'p1-h3': 'Offline-First &amp; Resilient Sync',
-                'p1-p': 'Encrypted SQLCipher databases, CRDT-inspired reconciliation, and durable WorkManager queues that recover from arbitrary network drops without data corruption.',
-                'p2-h3': '100% Declarative Compose UI',
-                'p2-p': 'Enterprise design token architectures, custom LayoutModifiers, accessibility semantics, and strict recomposition auditing for smooth 120Hz interactions.',
-                'p3-h3': 'On-Device AI &amp; Edge Agents',
-                'p3-p': 'Local INT8 quantization with MediaPipe and Gemini Nano. Edge document embeddings (Local Vector RAG) and real-time computer vision with zero server overhead.',
-                'p4-h3': 'Modular Clean Architecture',
-                'p4-p': 'Separation into :feature, :core, and :domain modules. Fast compile times via build-cache, Dagger-Hilt dependency injection, and comprehensive unit tests with Turbine.',
-                'exp-lbl': '02 // Verified Work Experience',
-                'exp-h2': 'Proven Architectural Track Record in High-Stakes Production.',
-                'exp-p': 'From zero-connectivity European construction sites to strict HIPAA healthcare streaming and high-volume e-commerce checkouts.',
-                'pr-badge-scale': '500k+ Active Field Units', 'pr-role': 'Senior Android Developer',
-                'pr-location': 'Austria / Remote',
-                'pr-desc': 'Scaled the core Android platform for construction documentation, BIM model rendering, and task inspection management. Pioneered high-throughput background sync strategies handling multi-gigabyte architectural blueprints and offline inspection reports with zero data loss. Modernized legacy components into modular Kotlin Clean Architecture.',
-                'pr-m1-lbl': 'Blueprint Load', 'pr-m1-val': '60% Faster BIM Render',
-                'pr-m2-lbl': 'Sync Integrity', 'pr-m2-val': 'Zero-Loss 2G Replay',
-                'pr-m3-lbl': 'Codebase', 'pr-m3-val': '100% Jetpack Compose',
-                'hc-badge-cert': 'HIPAA &amp; GDPR Certified', 'hc-role': 'Senior Android Developer',
-                'hc-location': 'Health Tech',
-                'hc-desc': 'Engineered patient-vital telemetry systems and low-latency telemedicine consultation pipelines. Enforced strict HIPAA data security protocols via SQLCipher database encryption and hardware-backed biometric keystore management. Maintained 99.98% crash-free sessions across intensive medical real-time video consults.',
-                'hc-m1-lbl': 'Reliability SLA', 'hc-m1-val': '99.98% Crash-Free',
-                'hc-m2-lbl': 'Streaming Latency', 'hc-m2-val': '&lt; 180ms WebRTC',
-                'hc-m3-lbl': 'Security Layer', 'hc-m3-val': 'Hardware Keystore Enclave',
-                'wn-badge-scale': 'Millions of Transactions', 'wn-role': 'Senior Android Developer',
-                'wn-location': 'Scale-Up Commerce',
-                'wn-desc': 'Architected the checkout, catalog, and high-concurrency order processing modules. Reduced cold application startup latency by 42% through baseline profile generation, lazy component initializers, and dependency graph pruning. Co-led the engineering transition from XML layouts to 100% Jetpack Compose.',
-                'wn-m1-lbl': 'Startup Latency', 'wn-m1-val': '42% Faster Cold Boot',
-                'wn-m2-lbl': 'Checkout Concurrency', 'wn-m2-val': 'Zero-Lock Queuing',
-                'wn-m3-lbl': 'App Size', 'wn-m3-val': 'Dynamic Modules (-28%)',
-                'em-role': 'M.S Android Developer',
-                'em-desc': 'Led architectural refactoring from RxJava2 to Kotlin Coroutines, MVVM adoption, and multi-tier enterprise client software.',
-                'it-role': 'Android Developer',
-                'it-desc': 'High-throughput REST client integrations, disk-caching mechanisms, and reactive client-server communication channels.',
-                'te-role': 'Android Developer',
-                'te-desc': 'Native Android foundations, Java-to-Kotlin transition, layout rendering optimizations, and strict memory leak diagnostics.',
-                'oss-lbl': '03 // Open Source &amp; GitHub Impact',
-                'oss-h2': 'Contributions to Global OSS Ecosystems.',
-                'oss-p': 'Production contributions to widely-deployed open source codebases trusted by millions of users worldwide.',
-                'oss-stats-title': 'GitHub Contribution Scale',
-                'oss-c1-h3': 'LibreTube Core Streaming Pipeline',
-                'oss-c1-p': 'Engineered critical media streaming stability updates within LibreTube, the popular privacy-respecting YouTube client. Optimized ExoPlayer / Media3 lifecycle handling and background buffer recovery under network latency.',
-                'oss-c2-h3': 'LibreTube Advanced Optimization',
-                'oss-c2-p': 'Architectural performance contribution addressing background audio playback, network reconnection state transitions, and memory footprint reduction during extended continuous media sessions.',
-                'oss-c3-h3': 'Volunteer Android Devs Training (VADT)',
-                'oss-c3-p': 'Founder &amp; Lead Technical Mentor. Empowering software engineers across multiple cohorts with deep-dive training in Kotlin Coroutines, Jetpack Compose, multi-module architecture, and production testing rigor.',
-                'skills-lbl': '04 // Technical Competency Matrix',
-                'skills-h2': 'Calibrated Tech Stack &amp; Architectural Arsenal.',
-                'sk1-title': '<span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>Core &amp; Kotlin',
-                'sk2-title': 'Architecture', 'sk3-title': 'Jetpack &amp; Libs',
-                'sk4-title': 'AI on Android', 'sk5-title': 'Testing &amp; CI/CD',
-                'ct-sublbl': 'Collaboration &amp; Leadership Pipeline',
-                'ct-h2': "Let's Build Resilient Android Systems Together.",
-                'ct-p': "Whether you're scaling high-throughput offline-first enterprise applications, transitioning to 100% Jetpack Compose design systems, or integrating low-latency on-device AI pipelines — my engineering terminal is open.",
-                'ct-location': 'Global Remote · Open to Relocation',
-                'ct-available': 'Available: Sr Android / AI Lead',
-                'ct-btn-li': 'Message on LinkedIn',
-                'terminal-email-lbl': '# Primary Email', 'terminal-gh-lbl': '# GitHub', 'terminal-li-lbl': '# LinkedIn',
-                'ct-mail-btn': 'Open Native Mail Client &gt;_',
-                'ft-role': 'Senior Android Engineer &amp; Edge AI Systems Architect · Android Developer since 2016',
-                'ft-copyright': '© 2026 Ali Tarek Hrhera. Crafted for high-performance edge architectures.',
-            },
-            ar: {
-                'nav-about': 'عني', 'nav-exp': 'الخبرة', 'nav-oss': 'المصدر المفتوح',
-                'nav-skills': 'المهارات', 'nav-contact': 'التواصل',
-                'nav-available': 'متاح · مناصب قيادية', 'nav-connect': '&gt;_ تواصل',
-                'nav-connect-mobile': 'تواصل',
-                'hero-badge-role': 'مهندس أندرويد أول ومهندس بنية الأنظمة',
-                'hero-badge-exp': 'خبرة إنتاجية تزيد عن 8 سنوات',
-                'hero-h1': 'بناء أنظمة أندرويد عالية الأداء<br><span class="gradient-text"> والذكاء الاصطناعي على الجهاز.</span>',
-                'hero-bio': 'مرحباً، أنا <span class="text-white font-semibold">علي طارق هرهرة</span>. أصمم بنيات تحتية حيوية للهواتف المحمولة تعمل دون إنترنت في قطاعات تقنية البناء والرعاية الصحية الرقمية والتجارة، باستخدام Jetpack Compose بالكامل وكوروتينات Kotlin المعيارية وتقنيات الاستدلال على المعالج العصبي.',
-                'hero-cta-talk': 'لنتحدث',
-                'stat-runtime-lbl': 'وقت التشغيل', 'stat-runtime-val': '120 هرتز ذروة', 'stat-runtime-sub': 'واجهة Compose 1.7',
-                'stat-npu-lbl': 'زمن المعالج', 'stat-npu-val': '&lt; 42ms', 'stat-npu-sub': 'مضغوط INT8',
-                'stat-crash-lbl': 'خالٍ من الأعطال', 'stat-crash-val': '99.98%', 'stat-crash-sub': '500k+ جهاز',
-                'stat-sync-lbl': 'مزامنة ميدانية', 'stat-sync-val': 'بلا خسارة', 'stat-sync-sub': 'أولوية دون إنترنت',
-                'terminal-thread': 'الخيط الرئيسي: 1.2ms (بلا تلعثم)',
-                'pillars-lbl': '01 // الفلسفة والركائز الأساسية',
-                'pillars-h2': 'هندسة مبدئية لأنظمة الهاتف المحمول الحيوية.',
-                'pillars-p': 'تفرض بيئات الهاتف المحمول ضغوطاً فريدة: انقطاع الشبكة، وقيود الذاكرة، وتقليص الأداء الحراري. تركّز تصاميمي على الحتمية وسهولة الصيانة واستقلالية العميل.',
-                'p1-h3': 'أولوية دون إنترنت والمزامنة المرنة',
-                'p1-p': 'قواعد بيانات SQLCipher مشفرة، ومصالحة مستوحاة من CRDT، وقوائم انتظار WorkManager دائمة تتعافى من انقطاع الشبكة دون فساد البيانات.',
-                'p2-h3': 'واجهة Compose التصريحية بالكامل',
-                'p2-p': 'بنيات رموز التصميم للمؤسسات، ومعدّلات التخطيط المخصصة، ودلالات إمكانية الوصول، ومراجعة صارمة لإعادة التركيب لتفاعلات سلسة بـ 120 هرتز.',
-                'p3-h3': 'الذكاء الاصطناعي على الجهاز وعوامل الحافة',
-                'p3-p': 'ضغط INT8 محلي مع MediaPipe وGemini Nano. تضمينات المستندات على الحافة (Local Vector RAG) ورؤية الحاسوب في الوقت الفعلي بدون تكاليف خادم.',
-                'p4-h3': 'بنية نظيفة معيارية',
-                'p4-p': 'تقسيم إلى وحدات :feature و:core و:domain. أوقات تجميع سريعة عبر ذاكرة التخزين المؤقت، وحقن التبعيات عبر Dagger-Hilt، واختبارات وحدة شاملة مع Turbine.',
-                'exp-lbl': '02 // الخبرة العملية الموثقة',
-                'exp-h2': 'سجل هندسي مثبت في بيئات الإنتاج عالية المخاطر.',
-                'exp-p': 'من مواقع البناء الأوروبية المنقطعة عن الإنترنت إلى تدفقات الرعاية الصحية الخاضعة لمعايير HIPAA الصارمة ومعالجات الدفع عالية الحجم.',
-                'pr-badge-scale': '500k+ وحدة ميدانية نشطة', 'pr-role': 'مطور أندرويد أول',
-                'pr-location': 'النمسا / عن بُعد',
-                'pr-desc': 'توسيع نطاق منصة أندرويد الأساسية لتوثيق البناء وعرض نماذج BIM وإدارة مهام التفتيش. ريادة استراتيجيات المزامنة في الخلفية عالية الإنتاجية للتعامل مع المخططات المعمارية متعددة الجيجابايت وتقارير التفتيش دون إنترنت. تحديث المكونات القديمة إلى بنية Kotlin النظيفة المعيارية.',
-                'pr-m1-lbl': 'تحميل المخطط', 'pr-m1-val': 'عرض BIM أسرع بـ 60%',
-                'pr-m2-lbl': 'سلامة المزامنة', 'pr-m2-val': 'إعادة 2G بلا خسارة',
-                'pr-m3-lbl': 'قاعدة الكود', 'pr-m3-val': '100% Jetpack Compose',
-                'hc-badge-cert': 'معتمد HIPAA وGDPR', 'hc-role': 'مطور أندرويد أول',
-                'hc-location': 'تقنية الصحة',
-                'hc-desc': 'تصميم أنظمة قياس عن بُعد لمؤشرات المريض وخطوط الاستشارة الطبية عن بُعد منخفضة الزمن. تطبيق بروتوكولات أمان HIPAA الصارمة عبر تشفير SQLCipher وإدارة خزينة المفاتيح البيومترية. الحفاظ على معدل 99.98% من الجلسات الخالية من الأعطال.',
-                'hc-m1-lbl': 'مستوى الخدمة', 'hc-m1-val': '99.98% خالٍ من الأعطال',
-                'hc-m2-lbl': 'زمن البث', 'hc-m2-val': '&lt; 180ms WebRTC',
-                'hc-m3-lbl': 'طبقة الأمان', 'hc-m3-val': 'حصن خزينة المفاتيح',
-                'wn-badge-scale': 'ملايين المعاملات', 'wn-role': 'مطور أندرويد أول',
-                'wn-location': 'تجارة سريعة النمو',
-                'wn-desc': 'تصميم وحدات الدفع والكتالوج ومعالجة الطلبات عالية التزامن. خفض زمن بدء التشغيل البارد بنسبة 42% عبر ملفات تعريف الأساس والمُهيئات الكسولة وتقليم رسم التبعيات. قيادة الانتقال من تخطيطات XML إلى Jetpack Compose بالكامل.',
-                'wn-m1-lbl': 'زمن بدء التشغيل', 'wn-m1-val': 'إقلاع بارد أسرع بـ 42%',
-                'wn-m2-lbl': 'تزامن الدفع', 'wn-m2-val': 'طابور بلا قفل',
-                'wn-m3-lbl': 'حجم التطبيق', 'wn-m3-val': 'وحدات ديناميكية (28%−)',
-                'em-role': 'مطور أندرويد متقدم',
-                'em-desc': 'قيادة إعادة الهيكلة المعمارية من RxJava2 إلى كوروتينات كوتلن، واعتماد MVVM، وبرمجيات مؤسسية متعددة الطبقات.',
-                'it-role': 'مطور أندرويد',
-                'it-desc': 'تكاملات عميل REST عالية الإنتاجية، وآليات التخزين المؤقت على القرص، وقنوات الاتصال التفاعلية بين العميل والخادم.',
-                'te-role': 'مطور أندرويد',
-                'te-desc': 'أسس أندرويد الأصلية، والانتقال من Java إلى Kotlin، وتحسينات عرض التخطيط، وتشخيص تسرب الذاكرة.',
-                'oss-lbl': '03 // المصدر المفتوح وأثر GitHub',
-                'oss-h2': 'مساهمات في نظم المصدر المفتوح العالمية.',
-                'oss-p': 'مساهمات إنتاجية في قواعد كود المصدر المفتوح الموثوقة من ملايين المستخدمين حول العالم.',
-                'oss-stats-title': 'حجم المساهمة على GitHub',
-                'oss-c1-h3': 'خط بث LibreTube الأساسي',
-                'oss-c1-p': 'تصميم تحديثات استقرار بث الوسائط الحيوية ضمن LibreTube، عميل YouTube المحترم للخصوصية. تحسين معالجة دورة حياة ExoPlayer / Media3 واستعادة المخزن المؤقت في الخلفية.',
-                'oss-c2-h3': 'تحسينات متقدمة لـ LibreTube',
-                'oss-c2-p': 'مساهمة في أداء المعمارية تعالج تشغيل الصوت في الخلفية، وانتقالات حالة إعادة الاتصال، وتقليل البصمة الذاكرية خلال جلسات الوسائط المستمرة.',
-                'oss-c3-h3': 'التدريب التطوعي لمطوري أندرويد (VADT)',
-                'oss-c3-p': 'مؤسس ومرشد تقني رئيسي. تمكين المهندسين عبر دفعات متعددة بتدريب معمّق في كوروتينات كوتلن وJetpack Compose والمعمارية متعددة الوحدات وصرامة الاختبار.',
-                'skills-lbl': '04 // مصفوفة الكفاءات التقنية',
-                'skills-h2': 'منظومة تقنية معايرة وترسانة معمارية.',
-                'sk1-title': '<span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>الأساسيات وكوتلن',
-                'sk2-title': 'البنية المعمارية', 'sk3-title': 'Jetpack والمكتبات',
-                'sk4-title': 'الذكاء الاصطناعي على أندرويد', 'sk5-title': 'الاختبار وCI/CD',
-                'ct-sublbl': 'خط التعاون والقيادة',
-                'ct-h2': 'لنبنِ أنظمة أندرويد مرنة معاً.',
-                'ct-p': 'سواء كنت تتوسع في تطبيقات مؤسسية تعمل دون إنترنت، أو تنتقل إلى نظام تصميم Jetpack Compose بالكامل، أو تدمج خطوط أنابيب الذكاء الاصطناعي على الجهاز — طرفيتي الهندسية مفتوحة.',
-                'ct-location': 'عمل عن بُعد عالمياً · منفتح على الانتقال',
-                'ct-available': 'متاح: مطور أندرويد أول / ذكاء اصطناعي',
-                'ct-btn-li': 'التواصل عبر LinkedIn',
-                'terminal-email-lbl': '# البريد الإلكتروني', 'terminal-gh-lbl': '# GitHub', 'terminal-li-lbl': '# LinkedIn',
-                'ct-mail-btn': 'فتح عميل البريد &gt;_',
-                'ft-role': 'مهندس أندرويد أول ومهندس بنية أنظمة الذكاء الاصطناعي على الحافة · مطور أندرويد منذ 2016',
-                'ft-copyright': '© 2026 علي طارق هرهرة. مُصمَّم لبنيات الحافة عالية الأداء.',
-            }
-        };
-
-        let currentLang = localStorage.getItem('lang') ||
-            (navigator.language.startsWith('ar') ? 'ar' : 'en');
-
-        function applyLang(lang) {
-            currentLang = lang;
-            document.documentElement.lang = lang;
-            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-            const label = lang === 'ar' ? 'EN' : 'AR';
-            const ll = document.getElementById('lang-label');
-            const llm = document.getElementById('lang-label-mobile');
-            if (ll) ll.textContent = label;
-            if (llm) llm.textContent = label;
-            document.querySelectorAll('[data-i18n]').forEach(el => {
-                const key = el.getAttribute('data-i18n');
-                const val = translations[lang][key];
-                if (val !== undefined) el.innerHTML = val;
-            });
-            localStorage.setItem('lang', lang);
-        }
-
-        function toggleLang() { applyLang(currentLang === 'en' ? 'ar' : 'en'); }
-
-        applyLang(currentLang);
-    </script>
 
 </body>
 
