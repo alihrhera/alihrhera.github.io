@@ -205,7 +205,7 @@ const translations = {
         'cert-android': 'تطوير أندرويد', 'cert-a1': 'تطوير أندرويد - Udemy', 'cert-a2': 'أندرويد متقدم - Udemy', 'cert-a3': 'إتقان أندرويد - Udemy', 'cert-a4': 'تطوير أندرويد - Edraak', 'cert-a5': 'تطوير أندرويد - Mhara Tech',
         'cert-backend': 'Backend والبرمجة', 'cert-j1': 'مقدمة في Java', 'cert-j2': 'برمجة Java - Mhara Tech', 'cert-g1': 'إتقان Git و GitHub',
         'cert-cloud': 'السحابة والمواضيع المتقدمة', 'cert-c1': 'شهادة Coursera المهنية #1', 'cert-c2': 'شهادة Coursera المهنية #2', 'cert-c3': 'شهادة Coursera المهنية #3', 'cert-c4': 'شهادة Coursera المهنية #4',
-        'cert-edu': 'التعليم', 'cert-grad': 'شهادة الجامعة',
+        'cert-edu': 'التعليم', 'cert-grad': 'بكالوريوس علوم الحاسوب (BCS) - 2023 3.7/4.0',
         'copy': 'نسخ', 'copied': 'تم النسخ!',
         'ft-copyright': '© 2026 علي حرحيره. مُصمَّم لبنيات الحافة عالية الأداء.',
         'ft-role': 'مهندس أندرويد أول ومهندس بنية أنظمة الذكاء الاصطناعي على الحافة · مطور أندرويد منذ 2016',
