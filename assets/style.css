@@ -2027,7 +2027,7 @@
             }
 
             .btn-grp .btn {
-                flex: 1;
+                flex: 1 1 140px;
                 min-width: 0;
                 padding: 0 12px;
             }
