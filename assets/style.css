@@ -150,10 +150,7 @@
         }
 
         .accent {
-            background: linear-gradient(135deg, var(--accent), var(--accent-soft) 45%, var(--accent-2));
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--accent);
         }
 
         /* Buttons */
@@ -187,12 +184,12 @@
         .btn.primary {
             background: linear-gradient(90deg, var(--accent), var(--accent-end));
             color: var(--on-accent);
-            box-shadow: 0 8px 28px rgba(var(--accent-rgb), 0.22);
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
         }
 
         .btn.primary:hover {
             filter: brightness(1.08);
-            box-shadow: 0 8px 36px rgba(var(--accent-rgb), 0.4);
+            box-shadow: 0 8px 36px rgba(0, 0, 0, 0.45);
         }
 
         .btn.secondary {
@@ -203,7 +200,7 @@
 
         .btn.secondary:hover {
             border-color: rgba(var(--accent2-rgb), 0.5);
-            box-shadow: 0 8px 28px rgba(var(--accent2-rgb), 0.14);
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
         }
 
         /* ── Loader ─────────────────────────────── */
@@ -254,7 +251,7 @@
             height: 32px;
             margin: -16px 0 0 -16px;
             background: var(--accent);
-            box-shadow: 0 0 24px var(--accent);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
             animation: ripple 1s ease-in-out infinite;
         }
 
@@ -592,7 +589,7 @@
             height: 7px;
             border-radius: 50%;
             background: var(--accent-2);
-            box-shadow: 0 0 8px var(--accent-2);
+            box-shadow: 0 0 0 3px rgba(var(--accent2-rgb), 0.22);
         }
 
         .dot::after {
@@ -734,7 +731,7 @@
         }
 
         .state {
-            font-size: 0.62rem;
+            font-size: 0.7rem;
             font-weight: 700;
             color: var(--accent-2);
             border: 1px solid rgba(var(--accent2-rgb), 0.3);
@@ -804,7 +801,7 @@
         }
 
         .cm {
-            color: #6b7280;
+            color: #8b93a4;
             font-style: italic;
         }
 
@@ -1109,7 +1106,7 @@
         .metric small {
             display: block;
             font-family: var(--mono);
-            font-size: 0.62rem;
+            font-size: 0.7rem;
             text-transform: uppercase;
             letter-spacing: 0.06em;
             color: var(--accent-soft);
@@ -1232,7 +1229,7 @@
             display: block;
             margin-top: 4px;
             font-family: var(--mono);
-            font-size: 0.66rem;
+            font-size: 0.7rem;
             color: var(--accent-soft);
         }
 
@@ -1331,7 +1328,7 @@
         .project-card:hover,
         .project-card.expanded {
             border-color: rgba(var(--accent-rgb), 0.4);
-            box-shadow: 0 0 34px rgba(var(--accent-rgb), 0.12);
+            box-shadow: 0 14px 36px rgba(0, 0, 0, 0.35);
         }
 
         .project-card.is-hidden {
@@ -1376,7 +1373,7 @@
             color: rgb(var(--c));
             background: rgba(var(--c), 0.1);
             border: 1px solid rgba(var(--c), 0.35);
-            box-shadow: 0 0 40px rgba(var(--c), 0.2);
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);
         }
 
         .cover-tag {
@@ -1384,7 +1381,7 @@
             top: 16px;
             inset-inline-start: 16px;
             font-family: var(--mono);
-            font-size: 0.66rem;
+            font-size: 0.7rem;
             font-weight: 700;
             letter-spacing: 0.06em;
             color: rgb(var(--c));
@@ -1399,7 +1396,7 @@
             top: 16px;
             inset-inline-end: 16px;
             font-family: var(--mono);
-            font-size: 0.66rem;
+            font-size: 0.7rem;
             font-weight: 700;
             color: var(--gold);
             padding: 3px 9px;
@@ -1413,7 +1410,7 @@
             top: 36px;
             inset-inline-start: 16px;
             font-family: var(--mono);
-            font-size: 0.6rem;
+            font-size: 0.7rem;
             font-weight: 600;
             color: rgba(255, 255, 255, 0.7);
             padding: 2px 8px;
@@ -1634,7 +1631,7 @@
         .copy-btn {
             margin-inline-start: auto;
             font-family: var(--mono);
-            font-size: 0.66rem;
+            font-size: 0.7rem;
             font-weight: 700;
             text-transform: uppercase;
             padding: 5px 10px;
@@ -1788,7 +1785,7 @@
             font-size: 1.6rem;
             background: var(--accent);
             color: var(--on-accent);
-            box-shadow: 0 0 24px rgba(var(--accent-rgb), 0.35);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
             transition: transform 0.3s;
         }
 
@@ -2047,7 +2044,7 @@
             }
 
             .code {
-                font-size: 0.68rem;
+                font-size: 0.7rem;
             }
 
             .about-img {
