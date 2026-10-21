@@ -5,8 +5,7 @@ const translations = {
         'nav-home': 'Home', 'nav-about': 'About', 'nav-work': 'Portfolio', 'nav-contact': 'Contact',
         'nav-talk': "Let's Talk",
         'hero-status': 'Available · Lead Roles & Freelance Projects',
-        'hero-eyebrow': 'Hi There,',
-        'hero-h1': 'I\'m <span class="accent">Ali Hrhera</span>',
+        'hero-h1': 'Ali<br>Hrhera',
         'hero-iam': 'I am a',
         'hero-sub': 'A Senior Software Engineer & Systems Architect specializing in Android, Mobile, and Backend systems. I design and build mission-critical, offline-first software across construction-tech, digital healthcare, and commerce, spanning high-performance mobile applications, scalable APIs, and backend services with Kotlin, Jetpack Compose, PHP, and Laravel. I also work on on-device AI and NPU-accelerated inference. Outside work, I contribute to open source and mentor Android engineers through VADT.',
         'hero-cta-work': 'View My Work', 'hero-cta-contact': 'Contact Me', 'hero-cta-cv': 'Download CV',
@@ -80,7 +79,7 @@ const translations = {
         'pj-wn-h': 'WNDO Social Commerce',
         'pj-wn-p': 'Checkout, catalog and order modules handling millions of transactions. 42% faster cold start and a 28% smaller app via dynamic feature modules.',
         'pj-kn-h': 'KN Libya',
-        'pj-kn-p': 'Full-stack Laravel platform for KN Libya, an all-in-one Libyan service hub covering money transfers, jobs, rides, a marketplace and messaging.',
+        'pj-kn-p': 'Full-stack Laravel platform for KN Libya, a Libyan service hub covering money transfers, jobs, rides, a marketplace and messaging.',
         'pj-corc-h': 'CORC Championship',
         'pj-corc-p': 'Full-stack Laravel website for the Creators\' Open Championship, a robotics, programming and AI competition, with team registration, events and gallery.',
         'pj-wa-h': 'WhatsApp Message Gateway',
@@ -105,7 +104,7 @@ const translations = {
         'cert-cloud': 'Cloud & Advanced Topics', 'cert-c1': 'Coursera Professional Certificate #1', 'cert-c2': 'Coursera Professional Certificate #2', 'cert-c3': 'Coursera Professional Certificate #3', 'cert-c4': 'Coursera Professional Certificate #4',
         'cert-edu': 'Education', 'cert-grad': 'University Graduation Certificate',
         'copy': 'Copy', 'copied': 'Copied!',
-        'ft-copyright': '© 2026 Ali Tarek Hrhera. Crafted for high-performance edge architectures.',
+        'ft-name': 'Ali Hrhera', 'ft-copyright': '© 2026 Ali Tarek Hrhera',
         'ft-role': 'Senior Software Engineer · Android Developer since 2016',
         roles: ['Android  Engineer', 'Backend Developer', 'Kotlin & Compose Expert', 'Open Source Contributor'],
     },
@@ -113,15 +112,14 @@ const translations = {
         'nav-home': 'الرئيسية', 'nav-about': 'عني', 'nav-work': 'أعمالي', 'nav-contact': 'تواصل',
         'nav-talk': 'لنتحدث',
         'hero-status': 'متاح · مناصب قيادية ومشاريع حرة',
-        'hero-eyebrow': 'مرحباً،',
-        'hero-h1': 'أنا <span class="accent">علي حرحيره</span>',
+        'hero-h1': 'علي<br>حرحيره',
         'hero-iam': '',
-        'hero-sub': 'مهندس برمجيات أول متخصص في أندرويد والموبايل والأنظمة الخلفية، بخبرة تزيد عن 8 سنوات في بناء برمجيات تعمل دون اتصال بالإنترنت وعالية الأداء في قطاعات التقنية الإنشائية والرعاية الصحية الرقمية والتجارة، تشمل تطبيقات موبايل وواجهات برمجية وخدمات خلفية باستخدام Kotlin وJetpack Compose وPHP وLaravel. أعمل أيضًا على الذكاء الاصطناعي على الجهاز والاستدلال المسرّع بالمعالج العصبي. خارج العمل أساهم في المصادر المفتوحة وأدرّب مهندسي أندرويد عبر VADT.',
+        'hero-sub': 'مهندس برمجيات أول متخصص في أندرويد والموبايل والأنظمة الخلفية، بخبرة تزيد عن 8 سنوات في بناء برمجيات تعمل دون اتصال بالإنترنت وعالية الأداء في قطاعات التقنية الإنشائية والرعاية الصحية الرقمية والتجارة، تشمل تطبيقات موبايل وواجهات برمجية وخدمات خلفية باستخدام Kotlin و Jetpack Compose و PHP و Laravel. أعمل أيضًا على الذكاء الاصطناعي على الجهاز والاستدلال المسرّع بالمعالج العصبي. خارج العمل أساهم في المصادر المفتوحة وأدرّب مهندسي أندرويد عبر VADT.',
         'hero-cta-work': 'تصفح أعمالي', 'hero-cta-contact': 'تواصل معي', 'hero-cta-cv': 'تحميل السيرة الذاتية',
         'terminal-thread': 'الخيط الرئيسي: 1.2ms (بلا تلعثم)',
         'tag-remote': 'عن بُعد عالمياً', 'tag-since': 'أندرويد منذ 2016',
         'about-lbl': '01 // عني', 'about-h2': 'نبذة عني',
-        'about-p': 'أنا <b>علي حرحيره</b>، مهندس برمجيات متخصص في تطوير تطبيقات الموبايل والأنظمة الخلفية (Backend)، أعمل على تصميم وبناء حلول برمجية قابلة للتوسع وموثوقة، من واجهات وتجارب المستخدم على Android إلى الخدمات والـ APIs والبنية الخلفية. أمتلك خبرة في Kotlin وJetpack Compose وPHP وLaravel، مع خبرة في تطوير أنظمة تعمل بكفاءة في بيئات الاتصال المحدود أو دون اتصال بالإنترنت. خارج العمل، أساهم في مشاريع المصدر المفتوح وأشارك في تدريب وتطوير مطوري Android من خلال مبادرة VADT.',
+        'about-p': 'أنا <b>علي حرحيره</b>، مهندس برمجيات متخصص في تطوير تطبيقات الموبايل والأنظمة الخلفية (Backend)، أعمل على تصميم وبناء حلول برمجية قابلة للتوسع وموثوقة، من واجهات وتجارب المستخدم على Android إلى الخدمات والـ APIs والبنية الخلفية. أمتلك خبرة في Kotlin و Jetpack Compose و PHP و Laravel، مع خبرة في تطوير أنظمة تعمل بكفاءة في بيئات الاتصال المحدود أو دون اتصال بالإنترنت. خارج العمل، أساهم في مشاريع المصدر المفتوح وأشارك في تدريب وتطوير مطوري Android من خلال مبادرة VADT.',
         'tab-exp': 'الخبرة', 'tab-skills': 'المهارات', 'tab-principles': 'المبادئ', 'tab-impact': 'الأثر',
         'pr-badge-scale': '+500 ألف وحدة ميدانية نشطة', 'pr-role': 'مطور أندرويد أول',
         'pr-location': 'النمسا / عن بُعد',
@@ -130,7 +128,7 @@ const translations = {
         'pr-m2-lbl': 'سلامة المزامنة', 'pr-m2-val': 'إعادة 2G بلا خسارة',
         'pr-m3-lbl': 'قاعدة الكود', 'pr-m3-val': 'Jetpack Compose',
         'pr-m4-lbl': 'المعمارية', 'pr-m4-val': 'Kotlin معياري',
-        'hc-badge-cert': 'متوافق مع HIPAA وGDPR', 'hc-role': 'مطور أندرويد أول',
+        'hc-badge-cert': 'متوافق مع HIPAA و GDPR', 'hc-role': 'مطور أندرويد أول',
         'hc-location': 'تقنية الصحة',
         'hc-desc': 'تصميم أنظمة قياس عن بُعد لمؤشرات المريض وخطوط الاستشارة الطبية عن بُعد منخفضة الزمن. تطبيق بروتوكولات أمان HIPAA الصارمة عبر تشفير SQLCipher وإدارة خزينة المفاتيح البيومترية. الحفاظ على معدل 99.98% من الجلسات الخالية من الأعطال.',
         'hc-m1-lbl': 'مستوى الخدمة', 'hc-m1-val': '99.98% خالٍ من الأعطال',
@@ -149,13 +147,13 @@ const translations = {
         'te-role': 'مطور أندرويد',
         'te-desc': 'أسس أندرويد الأصلية، والانتقال من Java إلى Kotlin، وتحسينات عرض التخطيط، وتشخيص تسرب الذاكرة.',
         'sk1-title': 'الأساسيات وكوتلن', 'sk2-title': 'البنية المعمارية', 'sk3-title': 'Jetpack والمكتبات',
-        'sk4-title': 'الذكاء الاصطناعي على أندرويد', 'sk5-title': 'الاختبار وCI/CD',
+        'sk4-title': 'الذكاء الاصطناعي على أندرويد', 'sk5-title': 'الاختبار و CI/CD',
         'p1-h3': 'أولوية دون إنترنت والمزامنة المرنة',
         'p1-p': 'قواعد بيانات SQLCipher مشفرة، ومصالحة مستوحاة من CRDT، وقوائم انتظار WorkManager دائمة تتعافى من انقطاع الشبكة دون فساد البيانات.',
         'p2-h3': 'واجهة Compose التصريحية بالكامل',
         'p2-p': 'بنيات رموز التصميم للمؤسسات، ومعدّلات التخطيط المخصصة، ودلالات إمكانية الوصول، ومراجعة صارمة لإعادة التركيب لتفاعلات سلسة بـ 120 هرتز.',
         'p3-h3': 'الذكاء الاصطناعي على الجهاز وعوامل الحافة',
-        'p3-p': 'ضغط INT8 محلي مع MediaPipe وGemini Nano. تضمينات المستندات على الحافة (Local Vector RAG) ورؤية الحاسوب في الوقت الفعلي بدون تكاليف خادم.',
+        'p3-p': 'ضغط INT8 محلي مع MediaPipe و Gemini Nano. تضمينات المستندات على الحافة (Local Vector RAG) ورؤية الحاسوب في الوقت الفعلي بدون تكاليف خادم.',
         'p4-h3': 'بنية نظيفة معيارية',
         'p4-p': 'تقسيم إلى وحدات :feature و:core و:domain. أوقات تجميع سريعة عبر ذاكرة التخزين المؤقت، وحقن التبعيات عبر Dagger-Hilt، واختبارات وحدة شاملة مع Turbine.',
         'st-lt-stars': '⭐ نجوم LibreTube · مساهم', 'st-amaze-stars': '⭐ نجوم AmazeFileManager · مساهم',
@@ -174,7 +172,7 @@ const translations = {
         'oss-c2-h3': 'تحسينات متقدمة لـ LibreTube',
         'oss-c2-p': 'تحسينات أداء لتشغيل الصوت في الخلفية، وانتقالات حالة إعادة الاتصال، وتقليل استهلاك الذاكرة خلال جلسات الوسائط الطويلة.',
         'oss-c3-h3': 'التدريب التطوعي لمطوري أندرويد (VADT)',
-        'oss-c3-p': 'مؤسس ومرشد رئيسي. تدريب أكثر من 150 مهندساً عبر دفعات متعددة في كوروتينات كوتلن وJetpack Compose والمعمارية متعددة الوحدات واختبارات الإنتاج.',
+        'oss-c3-p': 'مؤسس ومرشد رئيسي. تدريب أكثر من 150 مهندساً عبر دفعات متعددة في كوروتينات كوتلن و Jetpack Compose والمعمارية متعددة الوحدات واختبارات الإنتاج.',
         'oss-ew-h': 'تحسين معاملات Easy Wallet',
         'oss-ew-p': 'تحسين Backend لمكتبة easy-wallet PHP لإدارة المحافظ الرقمية. تعزيز طريقة السحب لإرجاع كائنات WalletTransaction الكاملة مع البيانات الوصفية ومعرّفات المعاملات لتتبع محسّن من جهة العميل.',
         'oss-af1-h': 'إعادة هيكلة AmazeFileManager AsyncTask',
@@ -213,7 +211,7 @@ const translations = {
         'cert-cloud': 'السحابة والمواضيع المتقدمة', 'cert-c1': 'شهادة Coursera المهنية #1', 'cert-c2': 'شهادة Coursera المهنية #2', 'cert-c3': 'شهادة Coursera المهنية #3', 'cert-c4': 'شهادة Coursera المهنية #4',
         'cert-edu': 'التعليم', 'cert-grad': 'بكالوريوس علوم الحاسوب (BCS) - 2023 3.7/4.0',
         'copy': 'نسخ', 'copied': 'تم النسخ!',
-        'ft-copyright': '© 2026 علي حرحيره. مُصمَّم لبنيات الحافة عالية الأداء.',
+        'ft-name': 'علي حرحيره', 'ft-copyright': '© 2026 علي حرحيره',
         'ft-role': 'مهندس أندرويد أول ومهندس بنية أنظمة الذكاء الاصطناعي على الحافة · مطور أندرويد منذ 2016',
         roles: ['مهندس برمجيات لأنظمة أندرويد', 'خبير Kotlin و Compose', 'مساهم في المصدر المفتوح', 'مطور full stack laravel'],
     }
@@ -319,20 +317,6 @@ viewMoreBtn.addEventListener('click', () => {
     showAll = !showAll;
     renderWorks();
     if (!showAll) document.getElementById('work').scrollIntoView();
-});
-
-// Touch devices have no hover, so a tap toggles the expanded card details.
-cards.forEach(card => {
-    const toggle = () => {
-        const open = !card.classList.contains('expanded');
-        cards.forEach(c => { c.classList.remove('expanded'); c.setAttribute('aria-expanded', 'false'); });
-        card.classList.toggle('expanded', open);
-        card.setAttribute('aria-expanded', open);
-    };
-    card.addEventListener('click', e => { if (!e.target.closest('a')) toggle(); });
-    card.addEventListener('keydown', e => {
-        if ((e.key === 'Enter' || e.key === ' ') && e.target === card) { e.preventDefault(); toggle(); }
-    });
 });
 
 // ─── Typing effect ───────────────────────────────────
