@@ -397,11 +397,11 @@ applyLang(currentLang);
 function toggleTheme() {
     const next = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
     document.documentElement.dataset.theme = next;
-    document.querySelector('meta[name="theme-color"]').content = next === 'light' ? '#fdf8f3' : '#0b0d12';
+    document.querySelector('meta[name="theme-color"]').content = next === 'light' ? '#f6f2ea' : '#131211';
     try { localStorage.setItem('theme', next); } catch (e) { /* storage blocked */ }
 }
 
 window.toggleTheme = toggleTheme;
 if (document.documentElement.dataset.theme === 'dark') {
-    document.querySelector('meta[name="theme-color"]').content = '#0b0d12';
+    document.querySelector('meta[name="theme-color"]').content = '#131211';
 }
