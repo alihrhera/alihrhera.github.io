@@ -1435,8 +1435,10 @@
         }
 
         .project-card:hover .card-content,
+        .project-card:focus-within .card-content,
         .project-card.expanded .card-content {
             height: 100%;
+            overflow-y: auto;
         }
 
         .card-content h4 {
